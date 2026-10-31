@@ -70,7 +70,8 @@ The log is already loaded. Call `get_log_summary` and `get_groups` (once each), 
 answer with a single JSON object and nothing else:
 - summary: 2-4 sentences on what broke, when, and the impact.
 - root_cause_group_id: the group id of the root cause, or null if unclear.
-- ranking: every group id you were given, most important first.
+- ranking: every group id you were given, most important first. If you name a
+  root cause, rank it first (its precursors and symptoms follow).
 - moves: for every group whose position in your ranking differs from its
   base_position: group_id, old_position (= base_position), new_position, and a
   one-line reason. This includes groups that only shifted because you moved

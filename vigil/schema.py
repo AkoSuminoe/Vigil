@@ -153,5 +153,10 @@ def validate_output(text: str | None, groups: list[dict[str, Any]]) -> Validatio
                 move = move.model_copy(update={"old_position": expected[0], "new_position": expected[1]})
             kept_moves.append(move)
         output = output.model_copy(update={"moves": sorted(kept_moves, key=lambda m: m.new_position)})
+        if output.root_cause_group_id and output.ranking[0] != output.root_cause_group_id:
+            warnings.append(
+                f"root cause {output.root_cause_group_id} is ranked "
+                f"#{new_position[output.root_cause_group_id]}, not first"
+            )
 
     return Validation(output if not errors else None, errors, warnings)

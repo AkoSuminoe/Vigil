@@ -72,6 +72,12 @@ def test_passively_shifted_groups_get_an_auto_reason():
     assert any("auto-filled" in w for w in result.warnings)
 
 
+def test_root_cause_not_ranked_first_is_a_warning():
+    result = validate_output(answer(root_cause_group_id="G1"), groups())
+    assert result.ok
+    assert "root cause G1 is ranked #2, not first" in result.warnings
+
+
 def test_unexplained_reordering_is_still_an_error():
     # G1 and G2 swap without any reason: not a passive shift.
     moves = [{"group_id": "G3", "old_position": 3, "new_position": 1, "reason": "Root cause."}]
