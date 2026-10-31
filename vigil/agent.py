@@ -4,6 +4,7 @@ from typing import Literal
 
 from dotenv import load_dotenv
 from google.adk.agents.llm_agent import Agent
+from google.adk.models.google_llm import Gemini
 from google.genai import types
 
 from .schema import AgentOutput
@@ -13,6 +14,14 @@ from .tools import enforce_tool_cap, get_groups, get_log_summary, read_logs, wri
 load_dotenv(Path(__file__).resolve().parent.parent / ".env")
 
 MODEL = os.getenv("VIGIL_MODEL", "gemini-flash-latest")
+# Used by the pipeline when MODEL is still overloaded (503/429) after retries. Empty disables it.
+FALLBACK_MODEL = os.getenv("VIGIL_FALLBACK_MODEL", "gemini-flash-lite-latest")
+
+# Retry transient API errors (429 rate limit, 503 "high demand", other 5xx) with exponential
+# backoff. The pipeline's overall timeout still bounds the total time.
+RETRY_OPTIONS = types.HttpRetryOptions(
+    attempts=4, initial_delay=2, max_delay=20, exp_base=2, http_status_codes=[408, 429, 500, 502, 503, 504]
+)
 
 CORE_INSTRUCTION = """
 You are vigil, a read-only incident triage assistant for server logs.
@@ -79,7 +88,7 @@ def build_agent(mode: Mode = "interactive", model: str | None = None) -> Agent:
     the agent has no tool that touches the filesystem, and it must answer in JSON.
     """
     common = dict(
-        model=model or MODEL,
+        model=Gemini(model=model or MODEL, retry_options=RETRY_OPTIONS),
         name="vigil",
         description=(
             "Read-only log triage agent: groups related errors, re-ranks them by root cause "

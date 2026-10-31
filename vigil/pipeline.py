@@ -60,6 +60,15 @@ class AgentTurn:
     prompt_tokens: int = 0
     output_tokens: int = 0
     total_tokens: int = 0
+    model: str | None = None
+
+
+_TRANSIENT_MARKERS = ("UNAVAILABLE", "RESOURCE_EXHAUSTED", "503", "429", "overloaded", "high demand")
+
+
+def is_transient(exc: Exception) -> bool:
+    """Overload / rate-limit errors that another model may not have."""
+    return any(marker in str(exc) for marker in _TRANSIENT_MARKERS)
 
 
 class AgentSession(Protocol):
@@ -70,21 +79,42 @@ SessionFactory = Callable[[dict[str, Any]], AgentSession]
 
 
 class AdkSession:
-    """One ADK session for one analysis; send() runs a single user turn."""
+    """One ADK session for one analysis; send() runs a single user turn.
+
+    If the primary model is overloaded even after its HTTP retries, the turn is re-sent
+    once on the fallback model, continuing the same session.
+    """
 
     def __init__(self, state: dict[str, Any]) -> None:
         # Imported here so the deterministic parts (and tests) don't need the agent wiring.
-        from google.adk.runners import Runner
         from google.adk.sessions import InMemorySessionService
 
-        from .agent import build_agent
+        from .agent import FALLBACK_MODEL, MODEL
 
         self._state = state
         self._sessions = InMemorySessionService()
-        self._runner = Runner(agent=build_agent("pipeline"), app_name=APP_NAME, session_service=self._sessions)
         self._session_id: str | None = None
+        self._models = [MODEL] + ([FALLBACK_MODEL] if FALLBACK_MODEL and FALLBACK_MODEL != MODEL else [])
+        self._use_model(self._models[0])
+
+    def _use_model(self, model: str) -> None:
+        from google.adk.runners import Runner
+
+        from .agent import build_agent
+
+        self.model = model
+        self._runner = Runner(agent=build_agent("pipeline", model=model), app_name=APP_NAME, session_service=self._sessions)
 
     async def send(self, message: str) -> AgentTurn:
+        try:
+            return await self._send(message)
+        except Exception as exc:
+            if not is_transient(exc) or self.model == self._models[-1]:
+                raise
+            self._use_model(self._models[-1])
+            return await self._send(message)
+
+    async def _send(self, message: str) -> AgentTurn:
         from google.adk.agents.run_config import RunConfig
         from google.genai import types
 
@@ -92,7 +122,7 @@ class AdkSession:
             session = await self._sessions.create_session(app_name=APP_NAME, user_id=USER_ID, state=self._state)
             self._session_id = session.id
 
-        turn = AgentTurn()
+        turn = AgentTurn(model=self.model)
         async for event in self._runner.run_async(
             user_id=USER_ID,
             session_id=self._session_id,
@@ -145,6 +175,7 @@ async def analyze(
     sent = groups[:MAX_GROUPS_FOR_MODEL]
 
     metrics = {
+        "model": None,
         "latency_ms": 0,
         "attempts": 0,
         "llm_calls": 0,
@@ -192,13 +223,16 @@ async def analyze(
     from google.adk.agents.invocation_context import LlmCallsLimitExceededError
 
     session = session_factory({STATE_SUMMARY: summary, STATE_GROUPS: groups})
+    metrics["model"] = getattr(session, "model", None)
     message = FIRST_MESSAGE.format(source=source)
     validation = None
+    rejected: list[str] = []
     try:
         async with asyncio.timeout(timeout):
             for attempt in (1, 2):
                 metrics["attempts"] = attempt
                 turn = await session.send(message)
+                metrics["model"] = turn.model or metrics["model"]
                 metrics["llm_calls"] += turn.llm_calls
                 metrics["tool_calls"] += turn.tool_calls
                 metrics["tokens"]["prompt"] += turn.prompt_tokens
@@ -207,6 +241,7 @@ async def analyze(
                 validation = validate_output(turn.text, sent)
                 if validation.ok:
                     break
+                rejected.append(f"attempt {attempt} rejected: " + "; ".join(validation.errors[:5]))
                 message = RETRY_MESSAGE.format(errors="\n".join(f"- {e}" for e in validation.errors))
     except TimeoutError:
         return fail("timeout", f"Analysis timed out after {timeout:.0f}s.")
@@ -228,7 +263,7 @@ async def analyze(
         return fail("invalid_output", "Agent output failed validation after one retry: " + "; ".join(errors[:5]))
 
     output = validation.output
-    result["warnings"] = validation.warnings
+    result["warnings"] = rejected + validation.warnings
     result["summary"] = output.summary
     result["root_cause_group_id"] = output.root_cause_group_id
 

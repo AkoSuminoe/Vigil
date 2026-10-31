@@ -79,6 +79,7 @@ def render_markdown(result: dict[str, Any]) -> str:
     lines += [
         "---",
         "",
+        f"{'Model ' + m['model'] + ' · ' if m.get('model') else ''}"
         f"Latency {m['latency_ms']} ms · {m['llm_calls']} LLM calls · {m['tool_calls']} tool calls · "
         f"{m['attempts']} attempt(s) · tokens {m['tokens']['prompt']} in / {m['tokens']['output']} out "
         f"/ {m['tokens']['total']} total",

@@ -73,6 +73,7 @@ def test_invalid_then_valid_retries_once_with_the_errors():
     assert result["status"] == "ok"
     assert result["metrics"]["attempts"] == 2
     assert "failed validation" in session.messages[1]
+    assert result["warnings"][0].startswith("attempt 1 rejected: The answer is not valid JSON")
 
 
 def test_invalid_twice_returns_clear_error_with_baseline():
@@ -102,6 +103,42 @@ def test_rejected_api_key_is_a_config_error_with_a_hint():
     assert result["error_kind"] == "config"
     assert "aistudio.google.com" in result["error"]
     assert result["metrics"]["attempts"] == 1
+
+
+def test_transient_errors_are_recognised():
+    from vigil.pipeline import is_transient
+
+    assert is_transient(ModelError("UNAVAILABLE: 503 This model is currently experiencing high demand"))
+    assert is_transient(RuntimeError("429 RESOURCE_EXHAUSTED"))
+    assert not is_transient(ModelError("INVALID_ARGUMENT: 400 bad request"))
+
+
+def test_adk_session_falls_back_once_on_transient_errors(monkeypatch):
+    import vigil.agent as agent
+    from vigil.pipeline import AdkSession
+
+    monkeypatch.setattr(agent, "MODEL", "primary")
+    monkeypatch.setattr(agent, "FALLBACK_MODEL", "fallback")
+    session = AdkSession({})
+    calls = []
+
+    async def fake_send(message):
+        calls.append(session.model)
+        if session.model == "primary":
+            raise ModelError("UNAVAILABLE: 503 high demand")
+        return AgentTurn(text="{}", model=session.model)
+
+    monkeypatch.setattr(session, "_send", fake_send)
+    turn = asyncio.run(session.send("hi"))
+    assert calls == ["primary", "fallback"] and turn.model == "fallback"
+
+    # Already on the last model: the error propagates.
+    async def always_down(message):
+        raise ModelError("UNAVAILABLE: 503")
+
+    monkeypatch.setattr(session, "_send", always_down)
+    with pytest.raises(ModelError):
+        asyncio.run(session.send("hi"))
 
 
 def test_metrics_are_summed_over_attempts():

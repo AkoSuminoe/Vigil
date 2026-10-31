@@ -404,6 +404,7 @@
       metric("tokens (in / out)", `${m.tokens.prompt.toLocaleString()} / ${m.tokens.output.toLocaleString()}`),
       metric("total tokens", m.tokens.total.toLocaleString()),
       metric("attempts", m.attempts),
+      m.model ? metric("model", m.model) : null,
       el("div", { class: "spacer" }),
       download);
   }
