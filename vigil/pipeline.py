@@ -193,8 +193,8 @@ async def analyze(
     try:
         async with asyncio.timeout(timeout):
             for attempt in (1, 2):
-                turn = await session.send(message)
                 metrics["attempts"] = attempt
+                turn = await session.send(message)
                 metrics["llm_calls"] += turn.llm_calls
                 metrics["tool_calls"] += turn.tool_calls
                 metrics["tokens"]["prompt"] += turn.prompt_tokens
@@ -209,7 +209,15 @@ async def analyze(
     except (LlmCallsLimitExceededError, StepLimitError) as exc:
         return fail("step_limit", f"Agent hit its step limit: {_sanitise(str(exc))}")
     except Exception as exc:  # model/API errors: report, don't crash the caller
-        return fail("model", f"Model call failed: {type(exc).__name__}: {_sanitise(str(exc))}")
+        detail = str(exc)
+        if "API_KEY_SERVICE_BLOCKED" in detail or "API_KEY_INVALID" in detail:
+            return fail(
+                "config",
+                "The Gemini API rejected GOOGLE_API_KEY (not allowed to call the Generative Language API). "
+                "Create a key at https://aistudio.google.com/apikey, or allow 'Generative Language API' "
+                "in the key's API restrictions.",
+            )
+        return fail("model", f"Model call failed: {type(exc).__name__}: {_sanitise(detail)}")
 
     if validation is None or not validation.ok:
         errors = validation.errors if validation else ["no answer"]

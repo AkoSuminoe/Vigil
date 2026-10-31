@@ -97,6 +97,13 @@ def test_model_errors_are_reported_not_raised():
     assert "RESOURCE_EXHAUSTED" in result["error"]
 
 
+def test_rejected_api_key_is_a_config_error_with_a_hint():
+    result, _ = run([ModelError("PERMISSION_DENIED: 403 ... 'reason': 'API_KEY_SERVICE_BLOCKED' ...")])
+    assert result["error_kind"] == "config"
+    assert "aistudio.google.com" in result["error"]
+    assert result["metrics"]["attempts"] == 1
+
+
 def test_metrics_are_summed_over_attempts():
     result, _ = run(["bad", answer()])
     metrics = result["metrics"]
