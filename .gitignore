@@ -13,5 +13,10 @@ vigil/.env
 .adk/
 
 # Generated incident reports
-reports/*
-!reports/.gitkeep
+reports/
+
+# Local tooling and notes
+.claude/
+CLAUDE.md
+AGENTS.md
+VIGIL_HANDOFF.md
