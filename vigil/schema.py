@@ -116,11 +116,27 @@ def validate_output(text: str | None, groups: list[dict[str, Any]]) -> Validatio
         new_position = {gid: pos for pos, gid in enumerate(output.ranking, start=1)}
         moved = {gid for gid in ids if new_position[gid] != base[gid]}
         moves_by_id = {m.group_id: m for m in output.moves}
-        if missing_moves := sorted(moved - moves_by_id.keys(), key=new_position.get):
+        missing_moves = sorted(moved - moves_by_id.keys(), key=new_position.get)
+        # Groups the agent didn't explain are fine if they only shifted because explained
+        # groups moved past them: their order relative to each other is unchanged.
+        unexplained = [gid for gid in ids if gid not in moves_by_id]
+        passive = [gid for gid in output.ranking if gid not in moves_by_id] == unexplained
+        if missing_moves and not passive:
             errors.append(
                 "moves is missing groups whose position changed: "
                 + ", ".join(f"{g} ({base[g]} -> {new_position[g]})" for g in missing_moves)
             )
+        elif missing_moves:
+            for gid in missing_moves:
+                direction = "down" if new_position[gid] > base[gid] else "up"
+                moves_by_id[gid] = RankMove(
+                    group_id=gid,
+                    old_position=base[gid],
+                    new_position=new_position[gid],
+                    reason=f"(auto) Shifted {direction} by the moves above; relative order unchanged.",
+                )
+            output = output.model_copy(update={"moves": list(moves_by_id.values())})
+            warnings.append(f"auto-filled reasons for passively shifted groups: {', '.join(missing_moves)}")
         kept_moves = []
         for move in output.moves:
             if move.group_id not in moved:

@@ -60,6 +60,26 @@ def test_every_moved_group_needs_a_move_with_reason():
     assert any("G2 (2 -> 1)" in e and "G1 (1 -> 2)" in e for e in result.errors)
 
 
+def test_passively_shifted_groups_get_an_auto_reason():
+    # Only G3 is explained (moved to the top); G1 and G2 slide down one, keeping their order.
+    moves = [{"group_id": "G3", "old_position": 3, "new_position": 1, "reason": "Root cause."}]
+    result = validate_output(answer(ranking=["G3", "G1", "G2"], moves=moves), groups())
+    assert result.ok, result.errors
+    reasons = {m.group_id: m.reason for m in result.output.moves}
+    assert reasons["G3"] == "Root cause."
+    assert reasons["G1"].startswith("(auto) Shifted down")
+    assert (result.output.moves[1].old_position, result.output.moves[1].new_position) == (1, 2)
+    assert any("auto-filled" in w for w in result.warnings)
+
+
+def test_unexplained_reordering_is_still_an_error():
+    # G1 and G2 swap without any reason: not a passive shift.
+    moves = [{"group_id": "G3", "old_position": 3, "new_position": 1, "reason": "Root cause."}]
+    result = validate_output(answer(ranking=["G3", "G2", "G1"], moves=moves), groups())
+    assert not result.ok
+    assert any("moves is missing groups" in e for e in result.errors)
+
+
 def test_wrong_positions_are_corrected_with_a_warning():
     data = json.loads(answer())
     data["moves"][0]["old_position"] = 5

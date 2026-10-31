@@ -73,7 +73,8 @@ answer with a single JSON object and nothing else:
 - ranking: every group id you were given, most important first.
 - moves: for every group whose position in your ranking differs from its
   base_position: group_id, old_position (= base_position), new_position, and a
-  one-line reason.
+  one-line reason. This includes groups that only shifted because you moved
+  another group past them (e.g. "pushed down: symptom of G6").
 - findings: exactly one per group: group_id, severity, title, justification (one
   line), likely_cause, suggested_fix, evidence_lines, confidence, is_root_cause.
 """.strip()
