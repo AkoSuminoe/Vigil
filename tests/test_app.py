@@ -29,6 +29,20 @@ def test_index_and_security_headers(client):
     assert "Vigil only reads and suggests" in response.text
     assert "default-src 'self'" in response.headers["content-security-policy"]
     assert response.headers["x-content-type-options"] == "nosniff"
+    assert 'href="https://berktan.dev"' in response.text
+    assert "don't upload real or sensitive logs" in response.text
+
+
+def test_fonts_are_self_hosted(client):
+    html = client.get("/").text
+    assert "fonts.googleapis" not in html and "https://cdn" not in html
+    for name in ("inter-latin-wght-normal.woff2", "geist-mono-latin-wght-normal.woff2"):
+        assert f"/static/fonts/{name}" in html
+        response = client.get(f"/static/fonts/{name}")
+        assert response.status_code == 200
+        assert response.content[:4] == b"wOF2"
+        assert "default-src 'self'" in response.headers["content-security-policy"]
+    assert client.get("/static/index.html").status_code == 404
 
 
 def test_samples_lists_the_sample_logs(client):

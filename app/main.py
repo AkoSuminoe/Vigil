@@ -18,6 +18,7 @@ from pathlib import Path
 
 from fastapi import FastAPI, Request
 from fastapi.responses import FileResponse, JSONResponse
+from fastapi.staticfiles import StaticFiles
 from starlette.datastructures import UploadFile
 from starlette.formparsers import MultiPartParser
 
@@ -72,6 +73,8 @@ limiter = RateLimiter(RATE_LIMIT, RATE_WINDOW_S)
 analysis_slots = asyncio.Semaphore(MAX_CONCURRENT_ANALYSES)
 
 app = FastAPI(title="vigil", docs_url=None, redoc_url=None, openapi_url=None)
+# Self-hosted fonts (SIL OFL), so the page needs nothing outside 'self'.
+app.mount("/static/fonts", StaticFiles(directory=STATIC_DIR / "fonts"), name="fonts")
 
 
 @app.middleware("http")
