@@ -1,9 +1,14 @@
 from pathlib import Path
 
 from vigil.tools import (
-    group_errors,
+    MAX_TOOL_CALLS,
+    analyse_entries,
+    enforce_tool_cap,
+    get_groups,
+    get_log_summary,
     normalise_message,
     parse_line,
+    parse_log_text,
     read_logs,
     write_report,
 )
@@ -38,7 +43,18 @@ def test_parse_line_normalises_level_aliases_and_rejects_garbage():
     assert parse_line("    at com.example.Foo.bar(Foo.java:12)") is None
 
 
-def test_read_logs_summarises_and_stores_entries(tmp_path):
+def test_parse_log_text_keeps_real_line_numbers():
+    entries, unparsed = parse_log_text(
+        "2026-10-31 10:00:00 INFO [api] started\n"
+        "\n"
+        "    at some.stack.Frame(File.java:1)\n"
+        "2026-10-31 10:00:05 ERROR [payments] timeout\n"
+    )
+    assert [e["line_no"] for e in entries] == [1, 4]
+    assert unparsed == 1
+
+
+def test_read_logs_summarises_and_stores_groups(tmp_path):
     path = write_log(
         tmp_path,
         "2026-10-31 10:00:00 INFO [api] started\n"
@@ -51,13 +67,15 @@ def test_read_logs_summarises_and_stores_entries(tmp_path):
     result = read_logs(str(path), ctx)
 
     assert result["status"] == "success"
+    assert result["source"] == "app.log"
     assert result["parsed_lines"] == 3
     assert result["unparsed_lines"] == 1
     assert result["level_counts"] == {"ERROR": 1, "WARNING": 1, "INFO": 1}
     assert result["services"] == {"api": 2, "payments": 1}
     assert result["first_timestamp"] == "2026-10-31 10:00:00"
     assert result["last_timestamp"] == "2026-10-31 10:01:00"
-    assert len(ctx.state["vigil_entries"]) == 3
+    assert len(ctx.state["vigil_groups"]) == 2
+    assert get_log_summary(ctx)["parsed_lines"] == 3
 
 
 def test_read_logs_missing_file(tmp_path):
@@ -78,51 +96,54 @@ def test_normalise_message_strips_volatile_tokens():
     assert "<IP>" in a and "<UUID>" in a and "<ID>" in a
 
 
-def test_group_errors_clusters_by_service_and_normalised_message(tmp_path):
-    path = write_log(
-        tmp_path,
+def test_groups_cluster_by_service_and_normalised_message():
+    entries, _ = parse_log_text(
         "2026-10-31 10:00:00 INFO [api] all good\n"
         "2026-10-31 10:00:01 ERROR [db] pool exhausted (active=20, waiting=31)\n"
         "2026-10-31 10:00:09 ERROR [db] pool exhausted (active=20, waiting=48)\n"
         "2026-10-31 10:00:04 CRITICAL [db] pool exhausted (active=20, waiting=90)\n"
         "2026-10-31 10:00:05 ERROR [api] pool exhausted (active=20, waiting=12)\n"
-        "2026-10-31 10:00:06 WARN [api] cache miss ratio 41%\n",
+        "2026-10-31 10:00:06 WARN [api] cache miss ratio 41%\n"
     )
-    ctx = FakeToolContext()
-    read_logs(str(path), ctx)
-    result = group_errors(ctx)
+    groups = analyse_entries(entries)
 
-    assert result["status"] == "success"
-    groups = result["groups"]
     # INFO is ignored; db and api pool messages stay separate groups.
-    assert [(g["service"], g["count"]) for g in groups] == [("db", 3), ("api", 1), ("api", 1)]
+    assert [(g["id"], g["service"], g["count"]) for g in groups] == [("G1", "db", 3), ("G2", "api", 1), ("G3", "api", 1)]
 
     db = groups[0]
-    assert db["id"] == "G1"
     assert db["level"] == "CRITICAL"  # worst level seen wins
     assert db["signature"] == "pool exhausted (active=<N>, waiting=<N>)"
     assert db["first_seen"] == "2026-10-31 10:00:01"
     assert db["last_seen"] == "2026-10-31 10:00:09"
-    assert len(db["samples"]) == 3
+    assert db["line_nos"] == [2, 3, 4]
+    assert db["samples"][0] == {"line_no": 2, "text": "2026-10-31 10:00:01 ERROR [db] pool exhausted (active=20, waiting=31)"}
 
 
-def test_group_errors_is_deterministic_and_needs_read_logs_first():
-    assert group_errors(FakeToolContext())["status"] == "error"
+def test_get_groups_trims_for_model_and_needs_a_loaded_log():
+    assert get_groups(FakeToolContext())["status"] == "error"
 
+    ctx = FakeToolContext()
+    read_logs(str(SAMPLE_LOGS / "payments_incident.log"), ctx)
+    result = get_groups(ctx)
+    assert result["status"] == "success"
+    first = result["groups"][0]
+    assert first["base_position"] == 1 and first["id"] == "G1"
+    assert len(first["line_nos"]) <= 15
+    assert first["line_nos_total"] == first["count"]
+
+
+def test_grouping_is_deterministic():
     first, second = FakeToolContext(), FakeToolContext()
     read_logs(str(SAMPLE_LOGS / "payments_incident.log"), first)
     read_logs(str(SAMPLE_LOGS / "payments_incident.log"), second)
-    assert group_errors(first) == group_errors(second)
+    assert get_groups(first) == get_groups(second)
 
 
-def test_sample_incident_log_surfaces_pool_exhaustion():
+def test_tool_cap_refuses_calls_past_the_limit():
     ctx = FakeToolContext()
-    read_logs(str(SAMPLE_LOGS / "payments_incident.log"), ctx)
-    groups = group_errors(ctx)["groups"]
-    top = groups[0]
-    assert top["service"] == "payments"
-    assert top["level"] == "CRITICAL"
-    assert "Connection is not available" in top["signature"]
+    results = [enforce_tool_cap(None, {}, ctx) for _ in range(MAX_TOOL_CALLS + 1)]
+    assert results[:-1] == [None] * MAX_TOOL_CALLS
+    assert results[-1]["status"] == "error"
 
 
 def test_write_report_saves_markdown(tmp_path, monkeypatch):

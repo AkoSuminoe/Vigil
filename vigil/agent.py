@@ -4,7 +4,7 @@ from pathlib import Path
 from dotenv import load_dotenv
 from google.adk.agents.llm_agent import Agent
 
-from .tools import group_errors, read_logs, write_report
+from .tools import get_groups as group_errors, read_logs, write_report
 
 # `adk web` / `adk run` load vigil/.env; also accept a .env at the project root.
 load_dotenv(Path(__file__).resolve().parent.parent / ".env")

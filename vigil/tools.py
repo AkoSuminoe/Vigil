@@ -1,9 +1,9 @@
 """Tools for the vigil agent.
 
-Parsing and grouping are plain, deterministic Python. The LLM never sees the
-raw log; it only sees the summary from ``read_logs`` and the clustered groups
-from ``group_errors``. The only thing vigil ever writes is a markdown report
-under ``reports/``.
+Parsing, grouping and baseline ranking are plain, deterministic Python. The LLM
+never sees the raw log; it only sees a summary and the clustered groups (with a
+few sample lines and their line numbers). The only thing vigil ever writes is a
+markdown report under ``reports/``.
 """
 
 from __future__ import annotations
@@ -13,7 +13,10 @@ from datetime import datetime
 from pathlib import Path
 from typing import Any
 
+from google.adk.tools.base_tool import BaseTool
 from google.adk.tools.tool_context import ToolContext
+
+from .ranking import rank_baseline
 
 PROJECT_ROOT = Path(__file__).resolve().parent.parent
 REPORTS_DIR = PROJECT_ROOT / "reports"
@@ -21,10 +24,14 @@ REPORTS_DIR = PROJECT_ROOT / "reports"
 # Refuse to load anything bigger than this; vigil is for incident triage, not bulk ingestion.
 MAX_LOG_BYTES = 50 * 1024 * 1024
 MAX_SAMPLES_PER_GROUP = 3
-MAX_GROUPS_RETURNED = 40
+MAX_GROUPS_FOR_MODEL = 15
+MAX_LINE_NOS_FOR_MODEL = 15
+MAX_TOOL_CALLS = 6
 
-STATE_ENTRIES = "vigil_entries"
-STATE_SOURCE = "vigil_source"
+STATE_SUMMARY = "vigil_summary"
+STATE_GROUPS = "vigil_groups"
+# temp: state lives for one invocation, so the cap applies per user turn.
+STATE_TOOL_CALLS = "temp:vigil_tool_calls"
 
 # "2026-10-31 10:15:02 ERROR [payments] message"
 # Also tolerates a 'T' separator, fractional seconds and a trailing timezone.
@@ -82,27 +89,50 @@ def parse_line(line: str, line_no: int = 0) -> dict[str, Any] | None:
     }
 
 
-def parse_log_file(path: Path) -> tuple[list[dict[str, Any]], int]:
-    """Parse a log file. Returns (entries, number_of_unparsed_lines)."""
+def parse_log_text(text: str) -> tuple[list[dict[str, Any]], int]:
+    """Parse log text in memory. Returns (entries, number_of_unparsed_lines)."""
     entries: list[dict[str, Any]] = []
     unparsed = 0
-    with path.open("r", encoding="utf-8", errors="replace") as fh:
-        for line_no, line in enumerate(fh, start=1):
-            if not line.strip():
-                continue
-            entry = parse_line(line, line_no)
-            if entry is None:
-                unparsed += 1
-            else:
-                entries.append(entry)
+    for line_no, line in enumerate(text.splitlines(), start=1):
+        if not line.strip():
+            continue
+        entry = parse_line(line, line_no)
+        if entry is None:
+            unparsed += 1
+        else:
+            entries.append(entry)
     return entries, unparsed
+
+
+def parse_log_file(path: Path) -> tuple[list[dict[str, Any]], int]:
+    """Parse a log file. Returns (entries, number_of_unparsed_lines)."""
+    return parse_log_text(path.read_text(encoding="utf-8", errors="replace"))
+
+
+def summarise_entries(entries: list[dict[str, Any]], unparsed: int) -> dict[str, Any]:
+    """Counts per level and service plus the time range covered."""
+    level_counts: dict[str, int] = {}
+    services: dict[str, int] = {}
+    for entry in entries:
+        level_counts[entry["level"]] = level_counts.get(entry["level"], 0) + 1
+        services[entry["service"]] = services.get(entry["service"], 0) + 1
+    timestamps = [e["timestamp"] for e in entries]
+    return {
+        "parsed_lines": len(entries),
+        "unparsed_lines": unparsed,
+        "level_counts": dict(sorted(level_counts.items(), key=lambda kv: -LEVEL_RANK.get(kv[0], 0))),
+        "services": dict(sorted(services.items())),
+        "first_timestamp": min(timestamps) if timestamps else None,
+        "last_timestamp": max(timestamps) if timestamps else None,
+    }
 
 
 def cluster_entries(entries: list[dict[str, Any]]) -> list[dict[str, Any]]:
     """Group WARNING+ entries by (service, normalised message).
 
-    Deterministic: the same entries always give the same groups in the same order
-    (worst level first, then most frequent, then service and signature).
+    Each group records every line number it covers, so cited evidence can be
+    checked later. Output order is deterministic (first seen, service, signature);
+    ranking happens in ``rank_baseline``.
     """
     groups: dict[tuple[str, str], dict[str, Any]] = {}
     for entry in entries:
@@ -120,22 +150,37 @@ def cluster_entries(entries: list[dict[str, Any]]) -> list[dict[str, Any]]:
                 "first_seen": entry["timestamp"],
                 "last_seen": entry["timestamp"],
                 "samples": [],
+                "line_nos": [],
             }
         group["count"] += 1
+        group["line_nos"].append(entry["line_no"])
         if LEVEL_RANK.get(entry["level"], 0) > LEVEL_RANK.get(group["level"], 0):
             group["level"] = entry["level"]
         group["first_seen"] = min(group["first_seen"], entry["timestamp"])
         group["last_seen"] = max(group["last_seen"], entry["timestamp"])
         if len(group["samples"]) < MAX_SAMPLES_PER_GROUP:
-            group["samples"].append(entry["raw"])
+            group["samples"].append({"line_no": entry["line_no"], "text": entry["raw"]})
 
-    ordered = sorted(
-        groups.values(),
-        key=lambda g: (-LEVEL_RANK.get(g["level"], 0), -g["count"], g["service"], g["signature"]),
-    )
-    for index, group in enumerate(ordered, start=1):
-        group["id"] = f"G{index}"
-    return ordered
+    return sorted(groups.values(), key=lambda g: (g["first_seen"], g["service"], g["signature"]))
+
+
+def analyse_entries(entries: list[dict[str, Any]]) -> list[dict[str, Any]]:
+    """Cluster the entries and rank the groups by baseline score (G1 = baseline #1)."""
+    timestamps = [e["timestamp"] for e in entries]
+    log_start = min(timestamps) if timestamps else None
+    log_end = max(timestamps) if timestamps else None
+    return rank_baseline(cluster_entries(entries), log_start, log_end)
+
+
+def groups_for_model(groups: list[dict[str, Any]]) -> list[dict[str, Any]]:
+    """The slice of each group the model sees: top groups only, line numbers trimmed."""
+    payload = []
+    for group in groups[:MAX_GROUPS_FOR_MODEL]:
+        item = {k: v for k, v in group.items() if k != "line_nos"}
+        item["line_nos"] = group["line_nos"][:MAX_LINE_NOS_FOR_MODEL]
+        item["line_nos_total"] = len(group["line_nos"])
+        payload.append(item)
+    return payload
 
 
 def _resolve_log_path(path: str) -> Path:
@@ -150,9 +195,9 @@ def read_logs(path: str, tool_context: ToolContext) -> dict:
     """Read and parse a server log file. Always call this first.
 
     Each line is parsed into timestamp, level, service and message, e.g.
-    "2026-10-31 10:15:02 ERROR [payments] connection refused". The parsed
-    entries are kept in session state for group_errors; this returns only a
-    summary so the raw log is not sent to the model.
+    "2026-10-31 10:15:02 ERROR [payments] connection refused". Errors and
+    warnings are grouped and ranked in Python and kept in session state for
+    get_groups; this returns only a summary so the raw log is not sent to the model.
 
     Args:
         path: Path to the log file, absolute or relative to the project root
@@ -169,52 +214,46 @@ def read_logs(path: str, tool_context: ToolContext) -> dict:
         return {"status": "error", "error_message": f"Log file is larger than {MAX_LOG_BYTES} bytes."}
 
     entries, unparsed = parse_log_file(log_path)
-    tool_context.state[STATE_ENTRIES] = entries
-    tool_context.state[STATE_SOURCE] = str(log_path)
-
-    level_counts: dict[str, int] = {}
-    services: dict[str, int] = {}
-    for entry in entries:
-        level_counts[entry["level"]] = level_counts.get(entry["level"], 0) + 1
-        services[entry["service"]] = services.get(entry["service"], 0) + 1
-
-    timestamps = [e["timestamp"] for e in entries]
-    return {
-        "status": "success",
-        "path": str(log_path),
-        "parsed_lines": len(entries),
-        "unparsed_lines": unparsed,
-        "level_counts": dict(sorted(level_counts.items(), key=lambda kv: -LEVEL_RANK.get(kv[0], 0))),
-        "services": dict(sorted(services.items())),
-        "first_timestamp": min(timestamps) if timestamps else None,
-        "last_timestamp": max(timestamps) if timestamps else None,
-    }
+    summary = {"source": log_path.name, **summarise_entries(entries, unparsed)}
+    tool_context.state[STATE_SUMMARY] = summary
+    tool_context.state[STATE_GROUPS] = analyse_entries(entries)
+    return {"status": "success", **summary}
 
 
-def group_errors(tool_context: ToolContext) -> dict:
-    """Group the errors and warnings from the last read_logs call into distinct issues.
-
-    Messages are normalised (numbers, UUIDs, IPs, hex and request ids removed)
-    and clustered by service + normalised message, so repeats of the same
-    underlying problem become one group. Call read_logs before this.
+def get_log_summary(tool_context: ToolContext) -> dict:
+    """Get the summary of the log that is already loaded: line counts, counts per
+    level, services seen and the time range covered.
 
     Returns:
-        A dict with status and a list of groups. Each group has id, service,
-        level (worst seen), signature (normalised message), count, first_seen,
-        last_seen and up to three raw sample lines.
+        A dict with status and the summary fields.
     """
-    entries = tool_context.state.get(STATE_ENTRIES)
-    if entries is None:
-        return {"status": "error", "error_message": "No log loaded. Call read_logs first."}
+    summary = tool_context.state.get(STATE_SUMMARY)
+    if summary is None:
+        return {"status": "error", "error_message": "No log loaded."}
+    return {"status": "success", **summary}
 
-    groups = cluster_entries(entries)
+
+def get_groups(tool_context: ToolContext) -> dict:
+    """Get the errors and warnings of the loaded log, grouped into distinct issues
+    and listed in baseline order.
+
+    Messages are normalised (numbers, UUIDs, IPs, hex and request ids removed)
+    and clustered by service + normalised message. The baseline rank is
+    score = level weight (CRITICAL 10, ERROR 5, WARNING 1) x count x recency.
+
+    Returns:
+        A dict with status and groups. Each group has id, base_position, score,
+        service, level (worst seen), signature, count, first_seen, last_seen,
+        samples ({line_no, text}) and line_nos (line numbers you may cite as evidence).
+    """
+    groups = tool_context.state.get(STATE_GROUPS)
+    if groups is None:
+        return {"status": "error", "error_message": "No log loaded. Call read_logs first."}
     return {
         "status": "success",
-        "source": tool_context.state.get(STATE_SOURCE),
-        "issue_entries": sum(g["count"] for g in groups),
         "group_count": len(groups),
-        "groups": groups[:MAX_GROUPS_RETURNED],
-        "truncated": len(groups) > MAX_GROUPS_RETURNED,
+        "groups": groups_for_model(groups),
+        "omitted_groups": max(0, len(groups) - MAX_GROUPS_FOR_MODEL),
     }
 
 
@@ -232,7 +271,11 @@ def write_report(report_markdown: str) -> dict:
     """
     if not report_markdown.strip():
         return {"status": "error", "error_message": "Report is empty."}
+    return {"status": "success", "report_path": str(save_report(report_markdown))}
 
+
+def save_report(report_markdown: str) -> Path:
+    """Write a report to reports/<timestamp>.md without overwriting an existing one."""
     REPORTS_DIR.mkdir(parents=True, exist_ok=True)
     stamp = datetime.now().strftime("%Y-%m-%d_%H%M%S")
     report_path = REPORTS_DIR / f"{stamp}.md"
@@ -241,4 +284,16 @@ def write_report(report_markdown: str) -> dict:
         report_path = REPORTS_DIR / f"{stamp}_{suffix}.md"
         suffix += 1
     report_path.write_text(report_markdown.rstrip() + "\n", encoding="utf-8")
-    return {"status": "success", "report_path": str(report_path)}
+    return report_path
+
+
+def enforce_tool_cap(tool: BaseTool, args: dict[str, Any], tool_context: ToolContext) -> dict | None:
+    """before_tool_callback: refuse tool calls past MAX_TOOL_CALLS in one turn."""
+    calls = tool_context.state.get(STATE_TOOL_CALLS, 0) + 1
+    tool_context.state[STATE_TOOL_CALLS] = calls
+    if calls > MAX_TOOL_CALLS:
+        return {
+            "status": "error",
+            "error_message": f"Tool call limit ({MAX_TOOL_CALLS}) reached. Give your final answer now.",
+        }
+    return None
