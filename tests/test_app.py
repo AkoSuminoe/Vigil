@@ -41,6 +41,7 @@ def test_fonts_are_self_hosted(client):
         response = client.get(f"/static/fonts/{name}")
         assert response.status_code == 200
         assert response.content[:4] == b"wOF2"
+        assert response.headers["content-type"] == "font/woff2"
         assert "default-src 'self'" in response.headers["content-security-policy"]
     assert client.get("/static/index.html").status_code == 404
 

@@ -11,6 +11,7 @@ from __future__ import annotations
 
 import asyncio
 import math
+import mimetypes
 import os
 import time
 from collections import deque
@@ -73,7 +74,9 @@ limiter = RateLimiter(RATE_LIMIT, RATE_WINDOW_S)
 analysis_slots = asyncio.Semaphore(MAX_CONCURRENT_ANALYSES)
 
 app = FastAPI(title="vigil", docs_url=None, redoc_url=None, openapi_url=None)
-# Self-hosted fonts (SIL OFL), so the page needs nothing outside 'self'.
+# Self-hosted fonts (SIL OFL), so the page needs nothing outside 'self'. Slim images
+# ship no mime table, so register the type explicitly.
+mimetypes.add_type("font/woff2", ".woff2")
 app.mount("/static/fonts", StaticFiles(directory=STATIC_DIR / "fonts"), name="fonts")
 
 

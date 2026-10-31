@@ -1,0 +1,21 @@
+# Secrets and local state never enter the image.
+.env
+.env.*
+!.env.example
+vigil/.env
+.venv
+venv
+reports
+.adk
+.claude
+.git
+.gitignore
+__pycache__
+*.py[cod]
+.pytest_cache
+
+# Not needed to serve the app.
+docs
+tests
+Dockerfile
+.dockerignore
