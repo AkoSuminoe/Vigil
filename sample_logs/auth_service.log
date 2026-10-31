@@ -1,0 +1,377 @@
+2026-10-31 08:00:00 WARNING [auth] TLS certificate for auth.internal.example expires in 6 days (2026-11-06)
+2026-10-31 08:00:02 INFO [notifications] email queued template=login_alert id=d7e11b1b-7aa6-440d-8800-7596a28f5b37
+2026-10-31 08:00:06 DEBUG [redis] keyspace hits=77168 misses=475
+2026-10-31 08:00:12 INFO [auth] login succeeded user=eeca8c28-5efc-4a76-839d-74ed00d0722d method=passkey ip=203.0.113.111
+2026-10-31 08:00:14 DEBUG [redis] keyspace hits=40441 misses=1987
+2026-10-31 08:00:18 INFO [auth] login succeeded user=c54cb0e4-bd1a-43f1-bed0-c435ff602bda method=sso ip=203.0.113.159
+2026-10-31 08:00:23 INFO [api-gateway] GET /api/v1/me -> 200 (77ms) req=req-7f5f96b6
+2026-10-31 08:00:32 WARNING [api-gateway] rate limit exceeded for client 203.0.113.242 on POST /api/v1/login (44 req/min)
+2026-10-31 08:00:33 DEBUG [redis] keyspace hits=21595 misses=355
+2026-10-31 08:00:43 INFO [auth] login succeeded user=57c9b2c0-ba7c-4a75-8d50-0f76293dc206 method=sso ip=203.0.113.126
+2026-10-31 08:00:46 INFO [notifications] email queued template=login_alert id=3c202fb0-d1f4-4b87-9daa-ad70784e1ea4
+2026-10-31 08:00:48 INFO [auth] login succeeded user=e4daf1c3-cd8b-4e9c-b801-3ebbac7dc96b method=passkey ip=203.0.113.195
+2026-10-31 08:00:59 INFO [api-gateway] GET /api/v1/me -> 200 (17ms) req=req-1f5ab5ad
+2026-10-31 08:01:06 WARNING [auth] login failed: invalid password user=ec54b3b3-575a-4c6a-b379-f0ee6354951f ip=203.0.113.39 attempt=3
+2026-10-31 08:01:12 INFO [auth] login succeeded user=51654acd-62c2-4387-805e-50077389d071 method=sso ip=203.0.113.100
+2026-10-31 08:01:16 INFO [api-gateway] GET /api/v1/me -> 200 (28ms) req=req-b7d4ea02
+2026-10-31 08:01:25 INFO [api-gateway] GET /api/v1/me -> 200 (8ms) req=req-7dd58a3f
+2026-10-31 08:01:26 WARNING [auth] login failed: invalid password user=9be0f62c-924f-4814-b8d7-27ff85ad1e9f ip=203.0.113.83 attempt=3
+2026-10-31 08:01:38 INFO [auth] login succeeded user=59241c90-a062-4cba-ab8b-23a4ab6fe701 method=sso ip=203.0.113.90
+2026-10-31 08:01:48 INFO [api-gateway] GET /api/v1/me -> 200 (39ms) req=req-1a701d5a
+2026-10-31 08:01:50 INFO [api-gateway] GET /api/v1/me -> 200 (30ms) req=req-c6eab0aa
+2026-10-31 08:01:56 INFO [auth] login succeeded user=e6110c52-8508-4ee2-ad07-e6250964ffa7 method=passkey ip=203.0.113.247
+2026-10-31 08:02:00 INFO [api-gateway] GET /api/v1/me -> 200 (28ms) req=req-f62042d7
+2026-10-31 08:02:09 INFO [auth] login succeeded user=6024b5b0-8191-4dec-bdac-664c58bb65bb method=passkey ip=203.0.113.65
+2026-10-31 08:02:20 INFO [auth] login succeeded user=ce26f256-7071-48b5-91bf-f2d98fd338ea method=sso ip=203.0.113.200
+2026-10-31 08:02:29 INFO [auth] login succeeded user=420ac140-da72-46f3-8d5b-402749b91be1 method=passkey ip=203.0.113.76
+2026-10-31 08:02:31 INFO [auth] login succeeded user=568c912d-ded1-47d4-91c7-8edf64ff9bd8 method=passkey ip=203.0.113.232
+2026-10-31 08:02:33 INFO [auth] login succeeded user=40912637-0ca5-4ddf-ba9d-fcc1ba7d1aab method=password ip=203.0.113.247
+2026-10-31 08:02:42 INFO [api-gateway] GET /api/v1/me -> 200 (69ms) req=req-073ea193
+2026-10-31 08:02:53 INFO [api-gateway] GET /api/v1/me -> 200 (54ms) req=req-cb936d5a
+2026-10-31 08:02:56 INFO [auth] login succeeded user=94c58f0a-7c05-494b-ad13-be18c5d3d13c method=sso ip=203.0.113.80
+2026-10-31 08:02:58 WARNING [auth] login failed: invalid password user=029eaa8c-b884-4839-84ac-693123a9df12 ip=203.0.113.99 attempt=3
+2026-10-31 08:03:01 INFO [notifications] email queued template=login_alert id=a4d3efdf-537f-4adb-97fb-d74243b118bc
+2026-10-31 08:03:04 INFO [api-gateway] GET /api/v1/me -> 200 (61ms) req=req-41d7a5bc
+2026-10-31 08:03:13 DEBUG [redis] keyspace hits=28155 misses=373
+2026-10-31 08:03:15 INFO [auth] login succeeded user=72651e94-a448-403c-867b-2cd62fca48f7 method=password ip=203.0.113.20
+2026-10-31 08:03:26 WARNING [api-gateway] rate limit exceeded for client 203.0.113.34 on POST /api/v1/login (40 req/min)
+2026-10-31 08:03:33 INFO [auth] login succeeded user=9f0707f8-3838-4987-a351-18ce7e6e0d5d method=password ip=203.0.113.48
+2026-10-31 08:03:36 INFO [auth] login succeeded user=c1ce6e79-8ccf-491b-be83-c807b5c0ef2a method=password ip=203.0.113.156
+2026-10-31 08:03:45 INFO [api-gateway] GET /api/v1/me -> 200 (15ms) req=req-ca6cfc4d
+2026-10-31 08:03:56 INFO [auth] login succeeded user=c3904463-65df-41db-9040-f95bdd4d7117 method=passkey ip=203.0.113.46
+2026-10-31 08:04:06 INFO [auth] login succeeded user=504938d7-9aed-457c-b25d-1980f6c8d366 method=passkey ip=203.0.113.12
+2026-10-31 08:04:10 INFO [auth] login succeeded user=4b86e3e8-fd90-4889-a697-d678b9e483c4 method=passkey ip=203.0.113.207
+2026-10-31 08:04:17 INFO [api-gateway] GET /api/v1/me -> 200 (20ms) req=req-8ba08732
+2026-10-31 08:04:25 INFO [auth] token refreshed session=84503379-f794-4ba8-92ec-9ff6bc0cf378
+2026-10-31 08:04:29 INFO [notifications] email queued template=login_alert id=30868365-8f88-4430-8200-01bc8699f458
+2026-10-31 08:04:31 INFO [api-gateway] GET /api/v1/me -> 200 (33ms) req=req-5af014f7
+2026-10-31 08:04:33 WARNING [api-gateway] rate limit exceeded for client 203.0.113.109 on POST /api/v1/login (27 req/min)
+2026-10-31 08:04:43 WARNING [api-gateway] rate limit exceeded for client 203.0.113.162 on POST /api/v1/login (49 req/min)
+2026-10-31 08:04:50 INFO [api-gateway] GET /api/v1/me -> 200 (90ms) req=req-b4a57fc6
+2026-10-31 08:04:56 INFO [auth] token refreshed session=1202bb7f-66c9-4cad-a02b-880f63afd368
+2026-10-31 08:04:59 INFO [auth] login succeeded user=468c90a4-3f3f-4f58-8ac3-221b6f151c9b method=passkey ip=203.0.113.152
+2026-10-31 08:05:09 INFO [notifications] email queued template=login_alert id=6620e0ca-3c87-4255-8c30-a43174bbe6ae
+2026-10-31 08:05:14 INFO [auth] token refreshed session=a7827839-f68f-4c8e-aa27-b211a1bf2f80
+2026-10-31 08:05:16 INFO [auth] token refreshed session=9ac67930-b798-4fff-9f7e-be3e7dec2b60
+2026-10-31 08:05:27 DEBUG [redis] keyspace hits=89376 misses=1531
+2026-10-31 08:05:37 INFO [auth] login succeeded user=62cdca1a-7fa9-44b9-aaab-782d7b2fefd4 method=sso ip=203.0.113.159
+2026-10-31 08:05:42 WARNING [auth] login failed: invalid password user=01a27ae2-e8ba-456a-bd3c-c7afb61ce648 ip=203.0.113.43 attempt=2
+2026-10-31 08:05:45 INFO [api-gateway] GET /api/v1/me -> 200 (26ms) req=req-1737fd30
+2026-10-31 08:05:52 INFO [auth] login succeeded user=601ba227-f18a-4f36-9eb6-285f4d775979 method=passkey ip=203.0.113.192
+2026-10-31 08:05:59 INFO [auth] login succeeded user=6eeb0400-b436-47c7-aa9b-f29ff4bc869e method=password ip=203.0.113.175
+2026-10-31 08:06:03 WARNING [api-gateway] rate limit exceeded for client 203.0.113.176 on POST /api/v1/login (33 req/min)
+2026-10-31 08:06:07 INFO [api-gateway] GET /api/v1/me -> 200 (49ms) req=req-83c1a8b7
+2026-10-31 08:06:11 INFO [api-gateway] GET /api/v1/me -> 200 (27ms) req=req-e6541b5c
+2026-10-31 08:06:19 INFO [auth] login succeeded user=b758253b-4704-4916-b02b-8fb799148070 method=sso ip=203.0.113.42
+2026-10-31 08:06:31 INFO [auth] token refreshed session=aa6ee480-9df9-43e5-b5f1-a6026fd76ede
+2026-10-31 08:06:35 INFO [auth] login succeeded user=19555799-45bc-4f78-9f28-72db6277662d method=password ip=203.0.113.251
+2026-10-31 08:06:46 INFO [auth] login succeeded user=df48d120-ef4b-43be-a124-6115cf788c2c method=passkey ip=203.0.113.96
+2026-10-31 08:06:48 INFO [auth] token refreshed session=70f4d830-9b9c-48b4-a5ed-46db0a0d8052
+2026-10-31 08:06:56 INFO [auth] login succeeded user=25db9193-8b5e-493e-b109-be9501f23358 method=password ip=203.0.113.251
+2026-10-31 08:07:01 INFO [auth] token refreshed session=2a8c477d-5ebb-4741-80c4-42a1e4faef69
+2026-10-31 08:07:03 DEBUG [redis] keyspace hits=66644 misses=1184
+2026-10-31 08:07:13 INFO [auth] login succeeded user=8d4939e2-e1ee-4713-a729-167c6ac9873f method=password ip=203.0.113.59
+2026-10-31 08:07:21 INFO [api-gateway] GET /api/v1/me -> 200 (82ms) req=req-ecd76385
+2026-10-31 08:07:27 DEBUG [redis] keyspace hits=86293 misses=249
+2026-10-31 08:07:29 INFO [api-gateway] GET /api/v1/me -> 200 (32ms) req=req-26f05d21
+2026-10-31 08:07:30 INFO [api-gateway] GET /api/v1/me -> 200 (85ms) req=req-891a1085
+2026-10-31 08:07:38 INFO [auth] token refreshed session=2717c6a4-5686-4fec-ad16-4f18ccd4364e
+2026-10-31 08:07:42 INFO [auth] login succeeded user=025db9fd-a08a-45d4-a3d5-3cb94c48f25d method=password ip=203.0.113.173
+2026-10-31 08:07:44 INFO [auth] token refreshed session=5c35795b-3095-4839-940c-299fad92021a
+2026-10-31 08:07:48 INFO [auth] login succeeded user=4676b3f3-7ebc-482a-95d4-e316098282d6 method=passkey ip=203.0.113.204
+2026-10-31 08:07:56 INFO [auth] login succeeded user=5bcc8520-ee4d-4ce6-bb90-be571aa6e2ac method=passkey ip=203.0.113.66
+2026-10-31 08:08:02 INFO [notifications] email queued template=login_alert id=6c68ebbf-864a-4058-b439-be9bba521b61
+2026-10-31 08:08:04 INFO [api-gateway] GET /api/v1/me -> 200 (35ms) req=req-80b5b5e9
+2026-10-31 08:08:05 INFO [auth] login succeeded user=a48052fc-a0d3-47d0-a20c-8cfd8855374c method=password ip=203.0.113.7
+2026-10-31 08:08:14 INFO [auth] token refreshed session=71055306-d9d8-45e5-9d3b-e277297983fe
+2026-10-31 08:08:24 INFO [api-gateway] GET /api/v1/me -> 200 (15ms) req=req-37a1da64
+2026-10-31 08:08:32 WARNING [api-gateway] rate limit exceeded for client 203.0.113.159 on POST /api/v1/login (55 req/min)
+2026-10-31 08:08:40 INFO [auth] login succeeded user=f11c04b5-35cc-4a4a-a3e0-99cd4f78663c method=sso ip=203.0.113.241
+2026-10-31 08:08:48 INFO [auth] login succeeded user=9d148d8d-2c60-4ce6-9a17-52f4e9c7df5f method=sso ip=203.0.113.157
+2026-10-31 08:08:50 INFO [auth] login succeeded user=ee48cfe8-2ead-428b-a956-5ce9bf9def9b method=passkey ip=203.0.113.130
+2026-10-31 08:09:00 INFO [auth] login succeeded user=49349c2a-8e0b-4388-83c0-dfc2ff80e2e5 method=sso ip=203.0.113.191
+2026-10-31 08:09:10 INFO [api-gateway] GET /api/v1/me -> 200 (18ms) req=req-3d682dfe
+2026-10-31 08:09:15 INFO [auth] login succeeded user=ddd7e27c-d0a2-4dc7-abff-8af58a3351ca method=sso ip=203.0.113.148
+2026-10-31 08:09:18 INFO [auth] login succeeded user=c152f8ea-9497-48fc-b461-ecc46c4679ae method=password ip=203.0.113.253
+2026-10-31 08:09:26 INFO [auth] login succeeded user=8852276a-ed7d-46cc-b671-f16d1b671674 method=passkey ip=203.0.113.96
+2026-10-31 08:09:37 INFO [auth] token refreshed session=a9860129-3d73-46ac-a93c-e9371f72ed19
+2026-10-31 08:09:43 WARNING [api-gateway] rate limit exceeded for client 203.0.113.199 on POST /api/v1/login (52 req/min)
+2026-10-31 08:09:52 WARNING [api-gateway] rate limit exceeded for client 203.0.113.66 on POST /api/v1/login (32 req/min)
+2026-10-31 08:09:52 WARNING [auth] TLS certificate for auth.internal.example expires in 6 days (2026-11-06)
+2026-10-31 08:09:58 INFO [auth] login succeeded user=0a5e8283-43f6-46f7-ba29-d2857d54fae3 method=passkey ip=203.0.113.221
+2026-10-31 08:10:04 INFO [auth] login succeeded user=70b7eeef-9621-4409-960a-b325d2a95464 method=sso ip=203.0.113.190
+2026-10-31 08:10:06 INFO [auth] login succeeded user=64c3be1d-246d-4821-a07a-beb528945a6e method=password ip=203.0.113.2
+2026-10-31 08:10:16 INFO [api-gateway] GET /api/v1/me -> 200 (45ms) req=req-93916266
+2026-10-31 08:10:26 INFO [auth] token refreshed session=bbf0cd7d-deaf-4f3c-ba2e-51b67c6b0c6b
+2026-10-31 08:10:33 DEBUG [redis] keyspace hits=17203 misses=155
+2026-10-31 08:10:38 INFO [api-gateway] GET /api/v1/me -> 200 (71ms) req=req-55728aaf
+2026-10-31 08:10:44 INFO [auth] login succeeded user=b7f69ba2-9936-47dd-b2ac-2867a0e3c170 method=passkey ip=203.0.113.20
+2026-10-31 08:10:55 DEBUG [redis] keyspace hits=59140 misses=1443
+2026-10-31 08:10:58 DEBUG [redis] keyspace hits=26373 misses=2000
+2026-10-31 08:11:09 WARNING [auth] login failed: invalid password user=13c4c27c-d944-489b-a3fe-375c554c3306 ip=203.0.113.192 attempt=2
+2026-10-31 08:11:13 INFO [auth] login succeeded user=43cc9f34-ef68-421f-94c6-e131c0700cfb method=password ip=203.0.113.176
+2026-10-31 08:11:21 WARNING [api-gateway] rate limit exceeded for client 203.0.113.133 on POST /api/v1/login (34 req/min)
+2026-10-31 08:11:23 DEBUG [redis] keyspace hits=74909 misses=546
+2026-10-31 08:11:25 INFO [api-gateway] GET /api/v1/me -> 200 (74ms) req=req-5e417dad
+2026-10-31 08:11:26 INFO [api-gateway] GET /api/v1/me -> 200 (44ms) req=req-0ec89b71
+2026-10-31 08:11:30 INFO [api-gateway] GET /api/v1/me -> 200 (15ms) req=req-1f8ce522
+2026-10-31 08:11:39 WARNING [auth] login failed: invalid password user=b988e170-ff13-43b2-856a-7a4882cf025f ip=203.0.113.61 attempt=3
+2026-10-31 08:11:48 INFO [auth] token refreshed session=5fb7d28f-8c7d-4c58-b653-c56f899b5eb9
+2026-10-31 08:11:53 INFO [auth] login succeeded user=58ac2dfe-2483-469f-9da0-6b7ff37a8967 method=sso ip=203.0.113.195
+2026-10-31 08:11:59 WARNING [api-gateway] rate limit exceeded for client 203.0.113.186 on POST /api/v1/login (53 req/min)
+2026-10-31 08:12:07 INFO [auth] token refreshed session=a4a7df45-da2b-4a78-8516-a0ec3b8345de
+2026-10-31 08:12:18 INFO [api-gateway] GET /api/v1/me -> 200 (83ms) req=req-e6f6cf36
+2026-10-31 08:12:18 ERROR [auth] failed to store session 2786664c-7d77-40ed-9848-1fc2163731b7: READONLY You can't write against a read only replica (redis 10.0.2.7:6379)
+2026-10-31 08:12:20 DEBUG [redis] keyspace hits=52852 misses=1517
+2026-10-31 08:12:20 ERROR [auth] failed to store session 74ef70ca-0c52-4b8b-b6ed-1a94372408a2: READONLY You can't write against a read only replica (redis 10.0.2.7:6379)
+2026-10-31 08:12:23 INFO [auth] login succeeded user=273234a7-d8eb-47be-a877-07ae9fca0c9c method=password ip=203.0.113.143
+2026-10-31 08:12:23 ERROR [auth] failed to store session a0e6fd32-1d98-41f2-a4b4-46f288d28e6d: READONLY You can't write against a read only replica (redis 10.0.2.7:6379)
+2026-10-31 08:12:29 DEBUG [redis] keyspace hits=36628 misses=1534
+2026-10-31 08:12:36 INFO [auth] login succeeded user=916a1bdb-9971-4a2b-b836-23923e170da3 method=password ip=203.0.113.64
+2026-10-31 08:12:36 ERROR [auth] failed to store session edb3e9e8-d16e-487f-89e1-b25693a4a2cc: READONLY You can't write against a read only replica (redis 10.0.2.7:6379)
+2026-10-31 08:12:43 INFO [notifications] email queued template=login_alert id=f5a59bbc-4d77-4241-a651-937e02526b49
+2026-10-31 08:12:43 ERROR [auth] failed to store session e26de9cc-5b86-48d9-afe1-6b6fe9d612d9: READONLY You can't write against a read only replica (redis 10.0.2.7:6379)
+2026-10-31 08:12:52 INFO [auth] login succeeded user=6770bef1-e436-4459-8be1-78c67f98b111 method=passkey ip=203.0.113.125
+2026-10-31 08:12:52 ERROR [auth] failed to store session c76c962a-146d-4ce2-a3fc-1a91ed1d2d9b: READONLY You can't write against a read only replica (redis 10.0.2.7:6379)
+2026-10-31 08:13:04 DEBUG [redis] keyspace hits=44315 misses=1186
+2026-10-31 08:13:08 INFO [auth] login succeeded user=63aa068d-439b-4a77-a7ee-74837db0dd41 method=sso ip=203.0.113.15
+2026-10-31 08:13:08 ERROR [auth] failed to store session 53273e82-7c9b-4c57-9727-25a095ba38ff: READONLY You can't write against a read only replica (redis 10.0.2.7:6379)
+2026-10-31 08:13:18 INFO [auth] login succeeded user=4ef2bf90-4fd1-4326-a63d-3588b89ee8d9 method=sso ip=203.0.113.30
+2026-10-31 08:13:18 ERROR [auth] failed to store session 3b48f0b2-e815-4826-b14d-1707ad5bea1d: READONLY You can't write against a read only replica (redis 10.0.2.7:6379)
+2026-10-31 08:13:20 DEBUG [redis] keyspace hits=65723 misses=1149
+2026-10-31 08:13:27 INFO [auth] token refreshed session=b9c44a9e-5d23-4a8a-a219-20478e70c522
+2026-10-31 08:13:27 ERROR [auth] failed to store session 9bb5459d-4df3-4032-a04b-649a7e9278cc: READONLY You can't write against a read only replica (redis 10.0.2.7:6379)
+2026-10-31 08:13:32 INFO [auth] login succeeded user=80b4d328-6cee-4cfa-84cb-0a83e9d1d10c method=password ip=203.0.113.43
+2026-10-31 08:13:32 ERROR [auth] failed to store session f6b5535e-de54-4338-aa55-f56536d80492: READONLY You can't write against a read only replica (redis 10.0.2.7:6379)
+2026-10-31 08:13:37 INFO [notifications] email queued template=login_alert id=f6cb7c81-a68e-464d-99a7-d0473b0294d2
+2026-10-31 08:13:37 ERROR [auth] failed to store session d88dc064-8748-4ee2-9aca-2649bc841f54: READONLY You can't write against a read only replica (redis 10.0.2.7:6379)
+2026-10-31 08:13:42 INFO [auth] login succeeded user=2e7d7cfd-d4f5-4cd0-a624-73f9982195e6 method=passkey ip=203.0.113.96
+2026-10-31 08:13:42 ERROR [auth] failed to store session e714cc65-e434-49fc-9e2e-8364541937d6: READONLY You can't write against a read only replica (redis 10.0.2.7:6379)
+2026-10-31 08:13:52 INFO [auth] login succeeded user=b24df59f-c5a7-4ec4-8002-15cdade2ba7e method=passkey ip=203.0.113.190
+2026-10-31 08:14:03 INFO [auth] login succeeded user=8f53d6e3-53e0-4af5-8dda-8d53ff2a5bd6 method=sso ip=203.0.113.212
+2026-10-31 08:14:06 INFO [auth] login succeeded user=ea8fd937-45dc-400a-93f0-7657a03bf528 method=sso ip=203.0.113.56
+2026-10-31 08:14:13 DEBUG [redis] keyspace hits=25889 misses=1886
+2026-10-31 08:14:13 ERROR [auth] failed to store session fa7ba87e-6081-4415-92c8-f68735d19e79: READONLY You can't write against a read only replica (redis 10.0.2.7:6379)
+2026-10-31 08:14:17 WARNING [api-gateway] rate limit exceeded for client 203.0.113.172 on POST /api/v1/login (53 req/min)
+2026-10-31 08:14:17 ERROR [auth] failed to store session 6e3a4d94-e6f8-4540-a7b0-5cc02ab2f389: READONLY You can't write against a read only replica (redis 10.0.2.7:6379)
+2026-10-31 08:14:22 INFO [api-gateway] GET /api/v1/me -> 200 (24ms) req=req-84eedc78
+2026-10-31 08:14:22 ERROR [auth] failed to store session c11e033e-0107-4690-b68e-b3f3230acbe3: READONLY You can't write against a read only replica (redis 10.0.2.7:6379)
+2026-10-31 08:14:24 INFO [auth] token refreshed session=1311c262-0c6b-48c5-b92f-20fcc36a4450
+2026-10-31 08:14:26 INFO [auth] token refreshed session=df4a728b-7229-4ec6-a71a-ced14bb8aefc
+2026-10-31 08:14:32 INFO [auth] login succeeded user=477daf4d-1da8-4ade-8dda-aaa2ba8115d3 method=sso ip=203.0.113.3
+2026-10-31 08:14:42 INFO [api-gateway] GET /api/v1/me -> 200 (40ms) req=req-76992ea8
+2026-10-31 08:14:46 INFO [notifications] email queued template=login_alert id=87a8895a-2294-4716-9964-cdd8d89ff38c
+2026-10-31 08:14:46 ERROR [auth] failed to store session 346fff37-5a36-42b4-a155-259eefad79b0: READONLY You can't write against a read only replica (redis 10.0.2.7:6379)
+2026-10-31 08:14:54 INFO [api-gateway] GET /api/v1/me -> 200 (43ms) req=req-cb5dacc4
+2026-10-31 08:14:55 INFO [auth] login succeeded user=b17c8885-5889-4f98-8a03-87d62ab9b24e method=password ip=203.0.113.131
+2026-10-31 08:14:55 ERROR [auth] failed to store session 532a939f-2c6a-49ae-8771-b1d7cd9a144e: READONLY You can't write against a read only replica (redis 10.0.2.7:6379)
+2026-10-31 08:15:02 WARNING [auth] login failed: invalid password user=528f1e38-d8d1-4332-a0d0-9330d9781202 ip=203.0.113.161 attempt=3
+2026-10-31 08:15:02 ERROR [auth] failed to store session 2c7ee30c-18f5-4bb8-b2d5-b053c2c6700d: READONLY You can't write against a read only replica (redis 10.0.2.7:6379)
+2026-10-31 08:15:14 INFO [auth] login succeeded user=ba230fd6-3773-489c-9389-dcb740b54f3d method=sso ip=203.0.113.100
+2026-10-31 08:15:24 DEBUG [redis] keyspace hits=15383 misses=599
+2026-10-31 08:15:24 INFO [redis] sentinel: failover complete, new master 10.0.2.8:6379
+2026-10-31 08:15:28 INFO [auth] login succeeded user=dfddcdcb-c510-4043-aeef-6b24d24127be method=password ip=203.0.113.246
+2026-10-31 08:15:30 INFO [api-gateway] GET /api/v1/me -> 200 (67ms) req=req-75fec1a2
+2026-10-31 08:15:39 INFO [api-gateway] GET /api/v1/me -> 200 (31ms) req=req-2fd64826
+2026-10-31 08:15:48 INFO [auth] token refreshed session=e95e5a32-6179-438e-a15f-f8510cd93ad1
+2026-10-31 08:15:54 INFO [api-gateway] GET /api/v1/me -> 200 (79ms) req=req-7c8ca670
+2026-10-31 08:16:05 INFO [api-gateway] GET /api/v1/me -> 200 (78ms) req=req-e8cf4c14
+2026-10-31 08:16:08 INFO [api-gateway] GET /api/v1/me -> 200 (11ms) req=req-fce4f4ce
+2026-10-31 08:16:12 INFO [auth] login succeeded user=e3425405-a146-4d25-807c-e8dea2ad7149 method=password ip=203.0.113.225
+2026-10-31 08:16:24 INFO [api-gateway] GET /api/v1/me -> 200 (64ms) req=req-170b0864
+2026-10-31 08:16:31 INFO [auth] login succeeded user=c9b54ec7-65fe-48cc-9d0b-d5969b2dfedf method=sso ip=203.0.113.127
+2026-10-31 08:16:40 INFO [auth] login succeeded user=f8df9655-c37f-48b2-a3ad-d28f4c5c499c method=password ip=203.0.113.79
+2026-10-31 08:16:42 INFO [api-gateway] GET /api/v1/me -> 200 (28ms) req=req-eb1ccf5d
+2026-10-31 08:16:47 INFO [auth] login succeeded user=64752470-5a3a-4213-84e2-6fcb42fdd2c4 method=passkey ip=203.0.113.192
+2026-10-31 08:16:50 WARNING [auth] login failed: invalid password user=a436ac5d-1433-4d54-a952-bc100d131441 ip=203.0.113.53 attempt=1
+2026-10-31 08:16:56 INFO [auth] token refreshed session=a872e04d-3ddc-4bdd-963c-3fe983ff71e8
+2026-10-31 08:17:03 INFO [auth] login succeeded user=50bcb897-927b-42aa-af95-8bb931e30f40 method=sso ip=203.0.113.159
+2026-10-31 08:17:10 INFO [auth] token refreshed session=a1fec011-3acc-4448-80a5-33516b946e87
+2026-10-31 08:17:21 INFO [api-gateway] GET /api/v1/me -> 200 (34ms) req=req-abec0f3a
+2026-10-31 08:17:24 WARNING [auth] login failed: invalid password user=183e649d-2a57-4900-a7bd-9677f5a974b9 ip=203.0.113.243 attempt=3
+2026-10-31 08:17:27 INFO [api-gateway] GET /api/v1/me -> 200 (69ms) req=req-6c691b21
+2026-10-31 08:17:35 INFO [auth] login succeeded user=dd90d72a-1645-42b8-81cd-665a80842dff method=passkey ip=203.0.113.166
+2026-10-31 08:17:45 INFO [api-gateway] GET /api/v1/me -> 200 (45ms) req=req-902b3158
+2026-10-31 08:17:56 INFO [auth] login succeeded user=02dcfb24-b252-4b82-ab96-be2e89ae677d method=passkey ip=203.0.113.199
+2026-10-31 08:18:03 INFO [api-gateway] GET /api/v1/me -> 200 (89ms) req=req-3cadd6cd
+2026-10-31 08:18:11 INFO [notifications] email queued template=login_alert id=accb4cda-d8ef-4add-af0a-6d7fff1da959
+2026-10-31 08:18:17 WARNING [auth] login failed: invalid password user=03e89f6f-3132-48d3-ae66-1c502e1f0a6f ip=203.0.113.184 attempt=2
+2026-10-31 08:18:28 INFO [auth] token refreshed session=fe0c329a-a828-4d5d-abb3-be9ee44d4065
+2026-10-31 08:18:32 INFO [notifications] email queued template=login_alert id=7ddd3113-65b3-4a24-9b72-fecdaa36e051
+2026-10-31 08:18:36 INFO [notifications] email queued template=login_alert id=5cc0be8f-abd2-4090-8f46-c36d3b217c62
+2026-10-31 08:18:40 INFO [api-gateway] GET /api/v1/me -> 200 (75ms) req=req-6d86149e
+2026-10-31 08:18:47 INFO [auth] login succeeded user=3bf3304d-e54e-401d-b4ef-f9f52918401a method=password ip=203.0.113.28
+2026-10-31 08:18:52 DEBUG [redis] keyspace hits=39688 misses=450
+2026-10-31 08:19:01 INFO [auth] login succeeded user=eb4642f0-b89e-4898-86c6-317198552cc0 method=passkey ip=203.0.113.156
+2026-10-31 08:19:03 INFO [api-gateway] GET /api/v1/me -> 200 (69ms) req=req-d383c106
+2026-10-31 08:19:13 WARNING [auth] login failed: invalid password user=607e269e-659c-49e5-b5d9-8a5e2b27c74b ip=203.0.113.212 attempt=2
+2026-10-31 08:19:19 INFO [auth] login succeeded user=efba573c-2faa-4cc8-a562-27f52a70a1f9 method=passkey ip=203.0.113.99
+2026-10-31 08:19:28 INFO [auth] token refreshed session=621bb0a5-f67a-401c-8d68-1829675c2986
+2026-10-31 08:19:32 INFO [notifications] email queued template=login_alert id=d43c1e30-839a-4968-a4fb-68b6345e9fa3
+2026-10-31 08:19:35 INFO [auth] login succeeded user=f75841c6-1d71-43b9-8a22-2b38563435e9 method=sso ip=203.0.113.206
+2026-10-31 08:19:43 WARNING [auth] login failed: invalid password user=45e99e8b-7a2f-46e5-baf6-a479cbae972f ip=203.0.113.23 attempt=3
+2026-10-31 08:19:55 INFO [auth] login succeeded user=86333ed5-e9f8-4b55-b9b3-33c5c41c1d53 method=passkey ip=203.0.113.66
+2026-10-31 08:19:57 INFO [auth] token refreshed session=19f68ef3-d7c6-4694-91b3-f1a216b95499
+2026-10-31 08:20:03 INFO [auth] token refreshed session=c2fae440-7aa0-4d3b-90e6-19d3739ad33d
+2026-10-31 08:20:07 WARNING [auth] login failed: invalid password user=a4f30541-3e46-4629-a951-14c80e998039 ip=203.0.113.234 attempt=1
+2026-10-31 08:20:07 WARNING [auth] TLS certificate for auth.internal.example expires in 6 days (2026-11-06)
+2026-10-31 08:20:17 DEBUG [redis] keyspace hits=85292 misses=643
+2026-10-31 08:20:20 INFO [auth] login succeeded user=6d3bddde-8f36-4ab8-8b8c-a68192fd6508 method=password ip=203.0.113.201
+2026-10-31 08:20:32 INFO [notifications] email queued template=login_alert id=57a93f48-e4a5-41e9-a14f-dc156f49f3d0
+2026-10-31 08:20:43 INFO [api-gateway] GET /api/v1/me -> 200 (32ms) req=req-5024216b
+2026-10-31 08:20:48 DEBUG [redis] keyspace hits=47110 misses=1501
+2026-10-31 08:20:53 INFO [api-gateway] GET /api/v1/me -> 200 (19ms) req=req-fb419cef
+2026-10-31 08:21:02 INFO [api-gateway] GET /api/v1/me -> 200 (68ms) req=req-51c346ce
+2026-10-31 08:21:13 INFO [auth] login succeeded user=135cfeac-4272-405f-86a6-a4703a3c02f7 method=password ip=203.0.113.47
+2026-10-31 08:21:25 INFO [auth] login succeeded user=8c783f54-87a5-43ca-a78b-363ea0f5cba3 method=passkey ip=203.0.113.104
+2026-10-31 08:21:36 DEBUG [redis] keyspace hits=29029 misses=277
+2026-10-31 08:21:41 INFO [api-gateway] GET /api/v1/me -> 200 (71ms) req=req-30e595d2
+2026-10-31 08:21:45 INFO [auth] login succeeded user=a6015b39-2b0e-4da8-84c5-f44634c35cbd method=passkey ip=203.0.113.53
+2026-10-31 08:21:45 ERROR [notifications] SMTP send failed for message b23f53ce-990c-461b-a5b5-ec679949310f: 421 4.7.0 Try again later (smtp relay 198.51.100.25:587), retry 2/5
+2026-10-31 08:21:52 INFO [api-gateway] GET /api/v1/me -> 200 (44ms) req=req-d6d54391
+2026-10-31 08:21:52 ERROR [notifications] SMTP send failed for message e09304e8-44f3-4a37-aa76-dd369521d2b8: 421 4.7.0 Try again later (smtp relay 198.51.100.25:587), retry 1/5
+2026-10-31 08:22:00 INFO [api-gateway] GET /api/v1/me -> 200 (39ms) req=req-eaf79df3
+2026-10-31 08:22:06 INFO [auth] login succeeded user=be2e3fbb-7a4d-4143-bb87-56035fb2bc68 method=passkey ip=203.0.113.71
+2026-10-31 08:22:06 ERROR [notifications] SMTP send failed for message 086c6ee0-20be-4f14-a501-a0428a10ab6b: 421 4.7.0 Try again later (smtp relay 198.51.100.25:587), retry 4/5
+2026-10-31 08:22:13 WARNING [auth] login failed: invalid password user=76c35198-b4ab-4bac-b201-daa550a6184e ip=203.0.113.183 attempt=1
+2026-10-31 08:22:17 WARNING [api-gateway] rate limit exceeded for client 203.0.113.14 on POST /api/v1/login (37 req/min)
+2026-10-31 08:22:21 INFO [notifications] email queued template=login_alert id=e5550c07-98f6-49d4-b587-9cd921c6586b
+2026-10-31 08:22:21 ERROR [notifications] SMTP send failed for message 82f91ba9-4386-4710-93f6-4ae3095b1082: 421 4.7.0 Try again later (smtp relay 198.51.100.25:587), retry 2/5
+2026-10-31 08:22:26 WARNING [auth] login failed: invalid password user=1537509b-fa76-49c1-8672-342aca53054e ip=203.0.113.68 attempt=2
+2026-10-31 08:22:36 DEBUG [redis] keyspace hits=55455 misses=879
+2026-10-31 08:22:45 INFO [auth] login succeeded user=bd244bab-a22e-4be5-b81d-97827c5878ce method=sso ip=203.0.113.64
+2026-10-31 08:22:50 INFO [auth] login succeeded user=a5d642df-b529-4b6e-ba1f-100dcc3be9ce method=passkey ip=203.0.113.165
+2026-10-31 08:22:58 INFO [auth] login succeeded user=4244cfb1-facd-4a29-bae2-d4bd03daba3f method=password ip=203.0.113.38
+2026-10-31 08:22:58 ERROR [notifications] SMTP send failed for message a4c5f9be-2392-4b93-8a56-554fd464d1d8: 421 4.7.0 Try again later (smtp relay 198.51.100.25:587), retry 5/5
+2026-10-31 08:23:01 INFO [api-gateway] GET /api/v1/me -> 200 (89ms) req=req-d4a1a198
+2026-10-31 08:23:01 ERROR [notifications] SMTP send failed for message 7ba4e5b6-da74-4f76-9dba-25c3f1124acc: 421 4.7.0 Try again later (smtp relay 198.51.100.25:587), retry 3/5
+2026-10-31 08:23:03 INFO [auth] login succeeded user=6b384790-4860-4508-990e-4b3aa5d6d094 method=passkey ip=203.0.113.246
+2026-10-31 08:23:08 INFO [auth] login succeeded user=2efad4c2-99a0-4745-91c5-7210de431718 method=sso ip=203.0.113.225
+2026-10-31 08:23:18 INFO [auth] login succeeded user=8ac68cc2-a2ce-4d4a-823a-17af8754bc8c method=passkey ip=203.0.113.216
+2026-10-31 08:23:26 INFO [auth] login succeeded user=be32fcad-024a-424d-8d10-a64a27b13106 method=passkey ip=203.0.113.14
+2026-10-31 08:23:36 INFO [auth] login succeeded user=d8c48685-740c-42c7-ac79-0a4dac4012d6 method=passkey ip=203.0.113.41
+2026-10-31 08:23:43 INFO [auth] token refreshed session=87c2171d-25d8-43fd-ba50-0d1fa547923e
+2026-10-31 08:23:49 INFO [auth] login succeeded user=8efd0d5d-f20c-4724-9e7c-331f7b411369 method=passkey ip=203.0.113.111
+2026-10-31 08:23:55 INFO [auth] login succeeded user=3f3f67a4-4309-4295-8497-53ede5edcb77 method=sso ip=203.0.113.122
+2026-10-31 08:23:58 INFO [auth] login succeeded user=582a2985-a214-4257-ba48-c0b176442a48 method=sso ip=203.0.113.46
+2026-10-31 08:24:09 INFO [auth] login succeeded user=cffd2c94-38ea-4f55-bbf8-5116d20afda0 method=passkey ip=203.0.113.133
+2026-10-31 08:24:09 ERROR [notifications] SMTP send failed for message b8be47bb-3e75-4a2d-9027-f9c19a6e2a2d: 421 4.7.0 Try again later (smtp relay 198.51.100.25:587), retry 5/5
+2026-10-31 08:24:15 WARNING [auth] login failed: invalid password user=5a7b604b-138a-4dfe-abe8-698e606ca05f ip=203.0.113.228 attempt=1
+2026-10-31 08:24:24 INFO [api-gateway] GET /api/v1/me -> 200 (78ms) req=req-e7e9b2e5
+2026-10-31 08:24:31 INFO [api-gateway] GET /api/v1/me -> 200 (18ms) req=req-32baf625
+2026-10-31 08:24:38 INFO [api-gateway] GET /api/v1/me -> 200 (74ms) req=req-0e9a4384
+2026-10-31 08:24:43 INFO [notifications] email queued template=login_alert id=a2f9f413-99a8-40a1-92ac-11c7cbedc25c
+2026-10-31 08:24:43 ERROR [notifications] SMTP send failed for message 6367f685-0008-4307-81e3-c8e2a82eb134: 421 4.7.0 Try again later (smtp relay 198.51.100.25:587), retry 3/5
+2026-10-31 08:24:49 DEBUG [redis] keyspace hits=32062 misses=1503
+2026-10-31 08:24:51 INFO [auth] login succeeded user=6e27f3fe-ecae-47c8-aca5-ee25b1f01728 method=password ip=203.0.113.251
+2026-10-31 08:24:56 WARNING [api-gateway] rate limit exceeded for client 203.0.113.21 on POST /api/v1/login (49 req/min)
+2026-10-31 08:24:56 ERROR [notifications] SMTP send failed for message adc25b67-e41d-4ee0-8879-7cdb1426a5fa: 421 4.7.0 Try again later (smtp relay 198.51.100.25:587), retry 4/5
+2026-10-31 08:25:02 INFO [auth] login succeeded user=e6ad487c-6e35-4159-af92-5b337b96cadc method=passkey ip=203.0.113.52
+2026-10-31 08:25:02 ERROR [notifications] SMTP send failed for message fe00cc96-0080-4dee-9935-f203a681759d: 421 4.7.0 Try again later (smtp relay 198.51.100.25:587), retry 1/5
+2026-10-31 08:25:09 WARNING [api-gateway] rate limit exceeded for client 203.0.113.90 on POST /api/v1/login (29 req/min)
+2026-10-31 08:25:13 WARNING [api-gateway] rate limit exceeded for client 203.0.113.162 on POST /api/v1/login (53 req/min)
+2026-10-31 08:25:13 ERROR [notifications] SMTP send failed for message b85dfd9d-5b71-4326-a944-32672d52a843: 421 4.7.0 Try again later (smtp relay 198.51.100.25:587), retry 4/5
+2026-10-31 08:25:15 WARNING [auth] login failed: invalid password user=73bcc517-8a0f-4fa3-8f18-7a98c4405bb9 ip=203.0.113.109 attempt=2
+2026-10-31 08:25:16 INFO [auth] login succeeded user=e61a3883-4e04-4a23-a117-309d0d1ea1e8 method=sso ip=203.0.113.165
+2026-10-31 08:25:27 INFO [auth] login succeeded user=598dde88-8932-40cf-8da4-e2feb7f27060 method=sso ip=203.0.113.184
+2026-10-31 08:25:38 WARNING [auth] login failed: invalid password user=7af4e981-39ca-4b0e-8fd6-b0e50961825d ip=203.0.113.69 attempt=2
+2026-10-31 08:25:48 INFO [auth] login succeeded user=56c89351-271d-409f-bd5b-ad1bd8e0d9e1 method=passkey ip=203.0.113.249
+2026-10-31 08:25:59 INFO [notifications] email queued template=login_alert id=4ffac54d-cf91-4d1f-a479-af6ea8b732a0
+2026-10-31 08:26:05 INFO [auth] login succeeded user=24926154-3310-4b1f-8f5e-56c859c8c7cf method=passkey ip=203.0.113.49
+2026-10-31 08:26:05 ERROR [notifications] SMTP send failed for message cd9416c1-99a7-48c7-a3c2-66d7ea3a38cf: 421 4.7.0 Try again later (smtp relay 198.51.100.25:587), retry 4/5
+2026-10-31 08:26:11 INFO [auth] login succeeded user=24e30ced-28ef-4ae3-9054-d4ef908fd9c7 method=password ip=203.0.113.252
+2026-10-31 08:26:13 INFO [auth] login succeeded user=46c7061a-a523-41c5-9f82-c111ca3216fa method=password ip=203.0.113.56
+2026-10-31 08:26:21 INFO [auth] token refreshed session=48b70e1b-7bee-42e6-ae13-8ebf530ab979
+2026-10-31 08:26:21 ERROR [notifications] SMTP send failed for message e1c5bfcb-6f67-467e-ae23-93fc4eaa8f59: 421 4.7.0 Try again later (smtp relay 198.51.100.25:587), retry 2/5
+2026-10-31 08:26:26 INFO [auth] token refreshed session=caf17c25-46d3-46d8-9e79-365ba77144d9
+2026-10-31 08:26:29 WARNING [auth] login failed: invalid password user=28a5df99-a76e-4fac-b01c-05258a00df40 ip=203.0.113.225 attempt=3
+2026-10-31 08:26:41 INFO [auth] login succeeded user=7353ece4-71de-426f-8c66-5e9af43569ba method=sso ip=203.0.113.186
+2026-10-31 08:26:52 INFO [api-gateway] GET /api/v1/me -> 200 (46ms) req=req-9ee32b33
+2026-10-31 08:26:52 ERROR [notifications] SMTP send failed for message a4b431b3-ac15-4938-b187-ce373424dfb6: 421 4.7.0 Try again later (smtp relay 198.51.100.25:587), retry 1/5
+2026-10-31 08:26:54 INFO [auth] login succeeded user=f179552e-567d-4481-9e5a-8b4bfebde54b method=password ip=203.0.113.234
+2026-10-31 08:26:56 INFO [api-gateway] GET /api/v1/me -> 200 (75ms) req=req-82e57acb
+2026-10-31 08:27:07 INFO [auth] login succeeded user=f35d0d20-c96f-4076-8cdb-0ab137142824 method=passkey ip=203.0.113.206
+2026-10-31 08:27:12 WARNING [auth] login failed: invalid password user=74b1f9fa-f2d8-47e8-9b8c-f713f1d6d34d ip=203.0.113.236 attempt=1
+2026-10-31 08:27:24 INFO [api-gateway] GET /api/v1/me -> 200 (73ms) req=req-8599c441
+2026-10-31 08:27:34 INFO [auth] login succeeded user=34445661-466e-44f0-a27b-1637ccb15c8d method=password ip=203.0.113.210
+2026-10-31 08:27:34 ERROR [notifications] SMTP send failed for message 5f2e36a2-4c79-4695-b6a7-1cf32642330f: 421 4.7.0 Try again later (smtp relay 198.51.100.25:587), retry 2/5
+2026-10-31 08:27:41 INFO [api-gateway] GET /api/v1/me -> 200 (70ms) req=req-e864710f
+2026-10-31 08:27:41 ERROR [notifications] SMTP send failed for message 3eb9432c-d9ef-48c4-9f53-176a8ec0c70c: 421 4.7.0 Try again later (smtp relay 198.51.100.25:587), retry 4/5
+2026-10-31 08:27:49 INFO [auth] login succeeded user=5bee2b88-29a3-4779-9bea-4bdb1b8f828a method=sso ip=203.0.113.60
+2026-10-31 08:27:56 DEBUG [redis] keyspace hits=74373 misses=467
+2026-10-31 08:27:56 ERROR [notifications] SMTP send failed for message 623eb967-0b44-4347-9489-34270a1e3acc: 421 4.7.0 Try again later (smtp relay 198.51.100.25:587), retry 1/5
+2026-10-31 08:28:03 INFO [api-gateway] GET /api/v1/me -> 200 (9ms) req=req-a8ae6aa2
+2026-10-31 08:28:06 INFO [notifications] email queued template=login_alert id=8ac47c84-99f4-4f01-94d0-b59c4a1e5ae2
+2026-10-31 08:28:17 INFO [notifications] email queued template=login_alert id=46e05350-8a37-42a2-a56f-ca40ce0c85a4
+2026-10-31 08:28:22 WARNING [auth] login failed: invalid password user=c2515da2-9a46-4d38-8702-f1c25f604676 ip=203.0.113.178 attempt=3
+2026-10-31 08:28:28 WARNING [auth] login failed: invalid password user=5307872a-fa0e-41b0-9c1d-8cbc4bb52e3e ip=203.0.113.84 attempt=1
+2026-10-31 08:28:34 INFO [notifications] email queued template=login_alert id=10f0e34a-1464-4c3c-b8a9-6a3566ec0832
+2026-10-31 08:28:34 ERROR [notifications] SMTP send failed for message fb85606e-cf6d-4aba-a079-44cc029d10d7: 421 4.7.0 Try again later (smtp relay 198.51.100.25:587), retry 1/5
+2026-10-31 08:28:35 INFO [notifications] email queued template=login_alert id=f2671812-966d-4809-a7ab-226574bb0482
+2026-10-31 08:28:47 INFO [api-gateway] GET /api/v1/me -> 200 (59ms) req=req-d3767667
+2026-10-31 08:28:58 INFO [auth] login succeeded user=1b647aec-9e80-4b6d-b29d-d8f2dfc0b94a method=passkey ip=203.0.113.53
+2026-10-31 08:29:05 INFO [auth] login succeeded user=3e7a0f1e-5a85-4a47-bf78-5e943fc8f1e2 method=password ip=203.0.113.184
+2026-10-31 08:29:05 ERROR [notifications] SMTP send failed for message 391f7056-6bdb-4a98-9262-2d49b6747b5f: 421 4.7.0 Try again later (smtp relay 198.51.100.25:587), retry 4/5
+2026-10-31 08:29:11 INFO [api-gateway] GET /api/v1/me -> 200 (39ms) req=req-5324545d
+2026-10-31 08:29:16 DEBUG [redis] keyspace hits=27151 misses=418
+2026-10-31 08:29:22 WARNING [api-gateway] rate limit exceeded for client 203.0.113.61 on POST /api/v1/login (21 req/min)
+2026-10-31 08:29:34 INFO [auth] login succeeded user=ef560a17-f77c-4607-bde8-6916f8c12fb3 method=sso ip=203.0.113.25
+2026-10-31 08:29:34 ERROR [notifications] SMTP send failed for message 72a079a0-f685-4928-8c2f-3ed97f2643ca: 421 4.7.0 Try again later (smtp relay 198.51.100.25:587), retry 1/5
+2026-10-31 08:29:38 INFO [auth] login succeeded user=9a5a4727-39b9-4537-9d97-6184f3e595f3 method=passkey ip=203.0.113.39
+2026-10-31 08:29:47 INFO [api-gateway] GET /api/v1/me -> 200 (46ms) req=req-a8bad2bc
+2026-10-31 08:29:53 INFO [auth] login succeeded user=cd4c246f-94b9-4531-818f-5581114d71aa method=sso ip=203.0.113.74
+2026-10-31 08:30:02 INFO [auth] token refreshed session=db432488-ad1f-4432-b74d-dbb58f51518c
+2026-10-31 08:30:10 WARNING [auth] login failed: invalid password user=e5109ae4-ce9e-4a9d-acbc-1d5d5c0fbee5 ip=203.0.113.211 attempt=3
+2026-10-31 08:30:14 INFO [auth] token refreshed session=8d8ceaed-9081-4561-9047-41fda1e7ccb2
+2026-10-31 08:30:15 INFO [api-gateway] GET /api/v1/me -> 200 (26ms) req=req-33fe992f
+2026-10-31 08:30:22 INFO [api-gateway] GET /api/v1/me -> 200 (47ms) req=req-28500c5c
+2026-10-31 08:30:29 WARNING [auth] login failed: invalid password user=ebf6e682-8f34-4f55-aaf0-576816d2891a ip=203.0.113.101 attempt=1
+2026-10-31 08:30:35 INFO [auth] login succeeded user=05352d2a-9692-46f5-ad04-8211cec84529 method=password ip=203.0.113.24
+2026-10-31 08:30:35 ERROR [notifications] SMTP send failed for message e4c808fd-bd47-4815-85c1-e265610d6604: 421 4.7.0 Try again later (smtp relay 198.51.100.25:587), retry 4/5
+2026-10-31 08:30:38 INFO [api-gateway] GET /api/v1/me -> 200 (68ms) req=req-58056b1d
+2026-10-31 08:30:48 INFO [api-gateway] GET /api/v1/me -> 200 (61ms) req=req-2d312748
+2026-10-31 08:30:58 INFO [auth] login succeeded user=fb8e7475-def7-4a8b-970b-66134dfbc7e9 method=sso ip=203.0.113.213
+2026-10-31 08:30:58 ERROR [notifications] SMTP send failed for message 1ab26acf-c70b-4759-97c3-ede9f01babb6: 421 4.7.0 Try again later (smtp relay 198.51.100.25:587), retry 2/5
+2026-10-31 08:31:08 INFO [auth] login succeeded user=310431f2-062a-46f2-8dc9-80032eea4b69 method=sso ip=203.0.113.159
+2026-10-31 08:31:10 INFO [auth] login succeeded user=dbe3af16-b389-494c-b2d4-243344ac744c method=sso ip=203.0.113.21
+2026-10-31 08:31:10 ERROR [notifications] SMTP send failed for message f88c6c55-e67b-431e-ba30-28ceb114bbca: 421 4.7.0 Try again later (smtp relay 198.51.100.25:587), retry 2/5
+2026-10-31 08:31:10 WARNING [auth] TLS certificate for auth.internal.example expires in 6 days (2026-11-06)
+2026-10-31 08:31:17 INFO [auth] login succeeded user=0f382b07-5fee-48f0-af42-4abd2e202aac method=passkey ip=203.0.113.37
+2026-10-31 08:31:19 WARNING [api-gateway] rate limit exceeded for client 203.0.113.237 on POST /api/v1/login (23 req/min)
+2026-10-31 08:31:19 ERROR [notifications] SMTP send failed for message 12e8130b-490a-4952-9983-fb8bfc9cb183: 421 4.7.0 Try again later (smtp relay 198.51.100.25:587), retry 1/5
+2026-10-31 08:31:25 INFO [auth] login succeeded user=d232d92a-fb15-477f-b9a2-8fb8b322bd23 method=password ip=203.0.113.53
+2026-10-31 08:31:33 INFO [notifications] email queued template=login_alert id=89652d65-53d9-4818-b1b8-0dc9c17c053a
+2026-10-31 08:31:38 INFO [api-gateway] GET /api/v1/me -> 200 (42ms) req=req-06094563
+2026-10-31 08:31:40 INFO [api-gateway] GET /api/v1/me -> 200 (14ms) req=req-f657e078
+2026-10-31 08:31:46 INFO [api-gateway] GET /api/v1/me -> 200 (29ms) req=req-6cea0787
+2026-10-31 08:31:54 INFO [auth] login succeeded user=77d59371-86bf-4a9a-b9f8-801d2e9398a1 method=password ip=203.0.113.194
+2026-10-31 08:31:59 INFO [api-gateway] GET /api/v1/me -> 200 (48ms) req=req-e7c015ff
+2026-10-31 08:32:09 INFO [auth] login succeeded user=77a4574b-f39d-40f2-9fd1-bec0acc6c29b method=passkey ip=203.0.113.151
+2026-10-31 08:32:14 INFO [api-gateway] GET /api/v1/me -> 200 (14ms) req=req-d280247e
+2026-10-31 08:32:17 INFO [auth] login succeeded user=224e0c59-5953-41dd-9ceb-dd6fb99b94de method=passkey ip=203.0.113.17
+2026-10-31 08:32:25 INFO [api-gateway] GET /api/v1/me -> 200 (42ms) req=req-c53c02cb
+2026-10-31 08:32:35 INFO [api-gateway] GET /api/v1/me -> 200 (18ms) req=req-20344d22
+2026-10-31 08:32:37 INFO [api-gateway] GET /api/v1/me -> 200 (29ms) req=req-f984e4e5
+2026-10-31 08:32:40 INFO [notifications] email queued template=login_alert id=e9d716c3-1a9c-4bc4-948d-125618d10e92
+2026-10-31 08:32:43 WARNING [auth] login failed: invalid password user=9b6b97c1-d7b0-4a35-8d21-8f145f1055c4 ip=203.0.113.41 attempt=1
+2026-10-31 08:32:54 DEBUG [redis] keyspace hits=59093 misses=1322
+2026-10-31 08:33:01 INFO [notifications] email queued template=login_alert id=6c8921e5-eea0-4012-b181-88911f3b8e79
+2026-10-31 08:33:07 INFO [auth] token refreshed session=323c23e0-055b-4cc1-8086-bce3da2cf749
+2026-10-31 08:33:11 INFO [auth] login succeeded user=ebc99cdb-37f5-4b8e-8185-85d4bc8d5ad6 method=passkey ip=203.0.113.214
+2026-10-31 08:33:20 INFO [api-gateway] GET /api/v1/me -> 200 (31ms) req=req-5405950c
+2026-10-31 08:33:26 DEBUG [redis] keyspace hits=68239 misses=1993
+2026-10-31 08:33:29 INFO [notifications] email queued template=login_alert id=43562b40-7283-4200-a50f-caf7cb5f3ef1
+2026-10-31 08:33:34 INFO [auth] login succeeded user=22a368c7-d717-4087-9eaf-685167eafbf6 method=sso ip=203.0.113.155
+2026-10-31 08:33:45 INFO [auth] login succeeded user=cfebae53-c769-4ea1-ae78-771779deac9a method=passkey ip=203.0.113.110
+2026-10-31 08:33:53 INFO [auth] login succeeded user=d1a2af4a-b856-4422-89ce-e625389cc6bb method=passkey ip=203.0.113.50
+2026-10-31 08:33:55 INFO [auth] login succeeded user=7b199c8b-e3b0-4d91-b430-2d67c97bbbf7 method=passkey ip=203.0.113.58
+2026-10-31 08:34:03 INFO [api-gateway] GET /api/v1/me -> 200 (33ms) req=req-3b2261f1
+2026-10-31 08:34:09 INFO [notifications] email queued template=login_alert id=a06f000c-9230-4d21-97a6-366312f84e5a
+2026-10-31 08:34:17 INFO [auth] login succeeded user=7330d1ea-c8b9-4dc9-9e06-bc1a3405fe77 method=password ip=203.0.113.41
+2026-10-31 08:34:25 INFO [auth] token refreshed session=57fca85c-e02d-4a40-bff5-1f2963b8cce5
+2026-10-31 08:34:30 INFO [api-gateway] GET /api/v1/me -> 200 (37ms) req=req-8df405db
+2026-10-31 08:34:38 DEBUG [redis] keyspace hits=63794 misses=640
+2026-10-31 08:34:42 WARNING [auth] login failed: invalid password user=b014afc8-de74-401d-bb7a-b65d4a274b1e ip=203.0.113.195 attempt=1
+2026-10-31 08:34:50 INFO [auth] login succeeded user=f54ef22e-9382-4b33-9cb3-2205cbc6b798 method=passkey ip=203.0.113.236
+2026-10-31 08:34:54 INFO [auth] token refreshed session=126d41ae-b2d2-4cf1-a8bd-6eef8fb726f5
+2026-10-31 08:35:02 INFO [api-gateway] GET /api/v1/me -> 200 (76ms) req=req-9107f319

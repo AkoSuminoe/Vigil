@@ -1,0 +1,329 @@
+2026-10-31 10:00:00 INFO [api-gateway] starting api-gateway v3.14.2 on 0.0.0.0:8080
+2026-10-31 10:00:00 INFO [payments] HikariPool-1 - Start completed (maximumPoolSize=20)
+2026-10-31 10:00:03 INFO [api-gateway] GET /api/v1/products -> 200 (30ms) client=203.0.113.212 req=req-892f902b
+2026-10-31 10:00:04 INFO [payments] charge authorised order=ord_76510 amount=114.04 EUR
+2026-10-31 10:00:06 INFO [api-gateway] GET /api/v1/cart -> 200 (35ms) client=203.0.113.143 req=req-6cad4a26
+2026-10-31 10:00:07 INFO [payments] charge authorised order=ord_39260 amount=327.80 EUR
+2026-10-31 10:00:13 INFO [api-gateway] POST /api/v1/checkout -> 200 (113ms) client=203.0.113.14 req=req-f9ebdacc
+2026-10-31 10:00:15 INFO [payments] charge authorised order=ord_27455 amount=153.53 EUR
+2026-10-31 10:00:17 INFO [api-gateway] POST /api/v1/cart/items -> 200 (155ms) client=203.0.113.210 req=req-ae97ba94
+2026-10-31 10:00:19 INFO [payments] charge authorised order=ord_93743 amount=101.47 EUR
+2026-10-31 10:00:21 INFO [orders] order ord_83972 created with 1 items
+2026-10-31 10:00:26 INFO [api-gateway] POST /api/v1/checkout -> 200 (121ms) client=203.0.113.200 req=req-506bf2ef
+2026-10-31 10:00:31 DEBUG [inventory] stock sync batch 470 applied (48 skus)
+2026-10-31 10:00:33 INFO [api-gateway] GET /api/v1/cart -> 200 (32ms) client=203.0.113.149 req=req-4cdd2055
+2026-10-31 10:00:38 WARNING [auth] JWT expired for session 9be4bcfc-49b6-4a08-b2e6-cc3ababced20, asking client to refresh
+2026-10-31 10:00:46 INFO [api-gateway] GET /api/v1/orders -> 200 (54ms) client=203.0.113.195 req=req-5790f82e
+2026-10-31 10:00:48 INFO [api-gateway] GET /api/v1/products -> 200 (31ms) client=203.0.113.197 req=req-8ede0d7a
+2026-10-31 10:00:53 WARNING [auth] JWT expired for session 59a54a7b-b1fe-408f-9712-42425051c1cc, asking client to refresh
+2026-10-31 10:00:58 INFO [payments] charge authorised order=ord_69795 amount=40.11 EUR
+2026-10-31 10:01:06 INFO [api-gateway] GET /api/v1/products -> 200 (27ms) client=203.0.113.189 req=req-b394fb36
+2026-10-31 10:01:09 INFO [payments] charge authorised order=ord_99291 amount=233.36 EUR
+2026-10-31 10:01:15 WARNING [auth] JWT expired for session 7631a992-f0ce-4835-85c6-af0758d5563d, asking client to refresh
+2026-10-31 10:01:18 INFO [payments] charge authorised order=ord_74709 amount=35.27 EUR
+2026-10-31 10:01:25 INFO [api-gateway] GET /api/v1/cart -> 200 (113ms) client=203.0.113.102 req=req-eab477d2
+2026-10-31 10:01:32 INFO [api-gateway] GET /api/v1/orders -> 200 (114ms) client=203.0.113.142 req=req-4720771f
+2026-10-31 10:01:39 WARNING [api-gateway] cache miss ratio 44% above target 30% for key prefix product:
+2026-10-31 10:01:44 INFO [orders] order ord_57024 created with 6 items
+2026-10-31 10:01:51 INFO [inventory] reserved 2 units of sku-2359
+2026-10-31 10:01:53 INFO [api-gateway] GET /api/v1/cart -> 200 (15ms) client=203.0.113.126 req=req-d4c28c2e
+2026-10-31 10:01:58 INFO [api-gateway] GET /api/v1/products -> 200 (49ms) client=203.0.113.109 req=req-88daf401
+2026-10-31 10:02:02 INFO [payments] charge authorised order=ord_26448 amount=358.65 EUR
+2026-10-31 10:02:10 INFO [payments] charge authorised order=ord_17076 amount=238.99 EUR
+2026-10-31 10:02:17 INFO [payments] charge authorised order=ord_83304 amount=205.50 EUR
+2026-10-31 10:02:21 INFO [api-gateway] GET /api/v1/orders -> 200 (27ms) client=203.0.113.50 req=req-113db17d
+2026-10-31 10:02:29 INFO [api-gateway] GET /api/v1/products -> 200 (99ms) client=203.0.113.155 req=req-0d75985d
+2026-10-31 10:02:31 INFO [payments] charge authorised order=ord_80335 amount=56.46 EUR
+2026-10-31 10:02:36 INFO [api-gateway] GET /api/v1/cart -> 200 (169ms) client=203.0.113.98 req=req-2607679d
+2026-10-31 10:02:42 INFO [inventory] reserved 3 units of sku-8768
+2026-10-31 10:02:43 WARNING [api-gateway] cache miss ratio 38% above target 30% for key prefix product:
+2026-10-31 10:02:48 INFO [api-gateway] GET /api/v1/cart -> 200 (38ms) client=203.0.113.193 req=req-57b6fb7e
+2026-10-31 10:02:54 INFO [api-gateway] GET /api/v1/cart -> 200 (144ms) client=203.0.113.7 req=req-3488f876
+2026-10-31 10:03:02 INFO [api-gateway] GET /api/v1/cart -> 200 (151ms) client=203.0.113.236 req=req-06ec41ad
+2026-10-31 10:03:08 INFO [api-gateway] GET /api/v1/products -> 200 (78ms) client=203.0.113.134 req=req-5de00997
+2026-10-31 10:03:15 INFO [api-gateway] GET /api/v1/cart -> 200 (148ms) client=203.0.113.140 req=req-c7702420
+2026-10-31 10:03:20 INFO [payments] charge authorised order=ord_90377 amount=393.24 EUR
+2026-10-31 10:03:26 WARNING [api-gateway] cache miss ratio 42% above target 30% for key prefix product:
+2026-10-31 10:03:33 INFO [api-gateway] GET /api/v1/orders -> 200 (103ms) client=203.0.113.189 req=req-076b3e36
+2026-10-31 10:03:41 INFO [orders] order ord_71897 created with 3 items
+2026-10-31 10:03:43 INFO [payments] charge authorised order=ord_55125 amount=233.92 EUR
+2026-10-31 10:03:51 INFO [inventory] reserved 3 units of sku-2319
+2026-10-31 10:03:54 INFO [api-gateway] GET /api/v1/cart -> 200 (98ms) client=203.0.113.54 req=req-7b8f2ab5
+2026-10-31 10:03:59 WARNING [auth] JWT expired for session e8c14743-7abe-4539-807d-1034d726c86b, asking client to refresh
+2026-10-31 10:04:05 INFO [orders] order ord_21112 created with 6 items
+2026-10-31 10:04:07 INFO [api-gateway] GET /api/v1/cart -> 200 (134ms) client=203.0.113.229 req=req-2db3997f
+2026-10-31 10:04:11 INFO [payments] charge authorised order=ord_21370 amount=374.50 EUR
+2026-10-31 10:04:15 INFO [orders] order ord_21130 created with 6 items
+2026-10-31 10:04:17 INFO [inventory] reserved 1 units of sku-3476
+2026-10-31 10:04:22 INFO [api-gateway] GET /api/v1/cart -> 200 (168ms) client=203.0.113.213 req=req-988af3fb
+2026-10-31 10:04:30 INFO [payments] charge authorised order=ord_55928 amount=84.70 EUR
+2026-10-31 10:04:35 INFO [api-gateway] GET /api/v1/products -> 200 (146ms) client=203.0.113.193 req=req-ef02090b
+2026-10-31 10:04:37 INFO [inventory] reserved 2 units of sku-4457
+2026-10-31 10:04:38 INFO [api-gateway] POST /api/v1/checkout -> 200 (73ms) client=203.0.113.197 req=req-9620bf0d
+2026-10-31 10:04:41 INFO [api-gateway] GET /api/v1/cart -> 200 (27ms) client=203.0.113.234 req=req-bd6b881a
+2026-10-31 10:04:45 INFO [api-gateway] POST /api/v1/checkout -> 200 (144ms) client=203.0.113.109 req=req-d3bf6d01
+2026-10-31 10:04:52 INFO [api-gateway] POST /api/v1/checkout -> 200 (50ms) client=203.0.113.136 req=req-82b33599
+2026-10-31 10:04:53 INFO [api-gateway] GET /api/v1/cart -> 200 (167ms) client=203.0.113.3 req=req-c6aa7d55
+2026-10-31 10:05:00 INFO [api-gateway] GET /api/v1/orders -> 200 (170ms) client=203.0.113.187 req=req-1ece615d
+2026-10-31 10:05:05 INFO [api-gateway] POST /api/v1/checkout -> 200 (147ms) client=203.0.113.144 req=req-7b8444d1
+2026-10-31 10:05:11 INFO [api-gateway] POST /api/v1/checkout -> 200 (26ms) client=203.0.113.65 req=req-30f97058
+2026-10-31 10:05:14 INFO [orders] order ord_76547 created with 4 items
+2026-10-31 10:05:19 INFO [orders] order ord_18305 created with 4 items
+2026-10-31 10:05:22 INFO [inventory] reserved 2 units of sku-5541
+2026-10-31 10:05:27 INFO [api-gateway] GET /api/v1/orders -> 200 (141ms) client=203.0.113.243 req=req-3f665ede
+2026-10-31 10:05:32 WARNING [auth] JWT expired for session ec3b9605-4274-43eb-ad84-e91ef132bf2d, asking client to refresh
+2026-10-31 10:05:37 DEBUG [inventory] stock sync batch 960 applied (67 skus)
+2026-10-31 10:05:39 INFO [api-gateway] GET /api/v1/orders -> 200 (92ms) client=203.0.113.20 req=req-abd0d7fb
+2026-10-31 10:05:42 INFO [api-gateway] POST /api/v1/cart/items -> 200 (43ms) client=203.0.113.231 req=req-c6e50df2
+2026-10-31 10:05:44 INFO [orders] order ord_96541 created with 3 items
+2026-10-31 10:05:46 WARNING [auth] JWT expired for session bf268ea0-3836-4865-b7bd-891ff7b103df, asking client to refresh
+2026-10-31 10:05:54 INFO [api-gateway] GET /api/v1/orders -> 200 (53ms) client=203.0.113.172 req=req-d51b1815
+2026-10-31 10:05:56 INFO [orders] order ord_77581 created with 4 items
+2026-10-31 10:06:00 INFO [api-gateway] POST /api/v1/cart/items -> 200 (35ms) client=203.0.113.186 req=req-5daf106d
+2026-10-31 10:06:01 INFO [payments] charge authorised order=ord_67731 amount=365.02 EUR
+2026-10-31 10:06:05 INFO [api-gateway] POST /api/v1/cart/items -> 200 (143ms) client=203.0.113.247 req=req-10755c97
+2026-10-31 10:06:06 DEBUG [inventory] stock sync batch 334 applied (23 skus)
+2026-10-31 10:06:08 INFO [api-gateway] GET /api/v1/cart -> 200 (81ms) client=203.0.113.195 req=req-212a8d9b
+2026-10-31 10:06:15 WARNING [api-gateway] cache miss ratio 41% above target 30% for key prefix product:
+2026-10-31 10:06:21 INFO [api-gateway] GET /api/v1/cart -> 200 (149ms) client=203.0.113.237 req=req-83c8cb28
+2026-10-31 10:06:26 INFO [orders] order ord_21725 created with 3 items
+2026-10-31 10:06:28 INFO [payments] charge authorised order=ord_65747 amount=42.34 EUR
+2026-10-31 10:06:35 INFO [payments] charge authorised order=ord_44151 amount=47.77 EUR
+2026-10-31 10:06:42 INFO [api-gateway] GET /api/v1/products -> 200 (128ms) client=203.0.113.4 req=req-56d2a68c
+2026-10-31 10:06:50 INFO [api-gateway] POST /api/v1/cart/items -> 200 (171ms) client=203.0.113.35 req=req-0b0f873b
+2026-10-31 10:06:55 INFO [api-gateway] GET /api/v1/products -> 200 (53ms) client=203.0.113.69 req=req-0ce5af69
+2026-10-31 10:06:57 DEBUG [inventory] stock sync batch 743 applied (49 skus)
+2026-10-31 10:07:02 INFO [api-gateway] GET /api/v1/orders -> 200 (140ms) client=203.0.113.174 req=req-2d8ad8c0
+2026-10-31 10:07:05 WARNING [api-gateway] cache miss ratio 35% above target 30% for key prefix product:
+2026-10-31 10:07:06 INFO [api-gateway] POST /api/v1/checkout -> 200 (153ms) client=203.0.113.252 req=req-30803889
+2026-10-31 10:07:11 INFO [api-gateway] GET /api/v1/orders -> 200 (39ms) client=203.0.113.170 req=req-d1a4c01e
+2026-10-31 10:07:16 INFO [payments] charge authorised order=ord_81553 amount=206.64 EUR
+2026-10-31 10:07:19 INFO [api-gateway] GET /api/v1/cart -> 200 (99ms) client=203.0.113.52 req=req-d510bb04
+2026-10-31 10:07:27 INFO [orders] order ord_28313 created with 4 items
+2026-10-31 10:07:35 INFO [inventory] reserved 2 units of sku-1233
+2026-10-31 10:07:36 INFO [orders] order ord_43501 created with 4 items
+2026-10-31 10:07:38 INFO [api-gateway] GET /api/v1/orders -> 200 (141ms) client=203.0.113.173 req=req-f88ede10
+2026-10-31 10:07:41 INFO [api-gateway] POST /api/v1/cart/items -> 200 (23ms) client=203.0.113.119 req=req-2f733b05
+2026-10-31 10:07:43 INFO [api-gateway] POST /api/v1/cart/items -> 200 (105ms) client=203.0.113.248 req=req-54348156
+2026-10-31 10:07:51 INFO [api-gateway] GET /api/v1/cart -> 200 (20ms) client=203.0.113.249 req=req-e1e437b7
+2026-10-31 10:07:54 INFO [api-gateway] GET /api/v1/products -> 200 (97ms) client=203.0.113.99 req=req-1579da0a
+2026-10-31 10:07:59 INFO [api-gateway] GET /api/v1/cart -> 200 (75ms) client=203.0.113.131 req=req-c6b789ef
+2026-10-31 10:08:00 INFO [api-gateway] GET /api/v1/products -> 200 (48ms) client=203.0.113.104 req=req-963892a7
+2026-10-31 10:08:01 INFO [api-gateway] POST /api/v1/cart/items -> 200 (173ms) client=203.0.113.61 req=req-15a0a8ae
+2026-10-31 10:08:06 INFO [api-gateway] GET /api/v1/cart -> 200 (180ms) client=203.0.113.230 req=req-b74b589b
+2026-10-31 10:08:12 INFO [payments] charge authorised order=ord_52747 amount=373.63 EUR
+2026-10-31 10:08:14 INFO [orders] order ord_94308 created with 2 items
+2026-10-31 10:08:16 WARNING [api-gateway] cache miss ratio 39% above target 30% for key prefix product:
+2026-10-31 10:08:21 INFO [orders] order ord_76262 created with 2 items
+2026-10-31 10:08:29 INFO [orders] order ord_84511 created with 1 items
+2026-10-31 10:08:35 INFO [payments] charge authorised order=ord_99508 amount=359.82 EUR
+2026-10-31 10:08:38 INFO [api-gateway] GET /api/v1/cart -> 200 (175ms) client=203.0.113.94 req=req-f5a2d879
+2026-10-31 10:08:40 WARNING [api-gateway] cache miss ratio 39% above target 30% for key prefix product:
+2026-10-31 10:08:41 INFO [api-gateway] POST /api/v1/checkout -> 200 (74ms) client=203.0.113.127 req=req-4387ee7b
+2026-10-31 10:08:42 INFO [orders] order ord_75925 created with 5 items
+2026-10-31 10:08:44 INFO [api-gateway] GET /api/v1/orders -> 200 (76ms) client=203.0.113.209 req=req-130f27b2
+2026-10-31 10:08:51 INFO [api-gateway] GET /api/v1/cart -> 200 (71ms) client=203.0.113.191 req=req-a661f62c
+2026-10-31 10:08:58 INFO [api-gateway] GET /api/v1/orders -> 200 (31ms) client=203.0.113.124 req=req-e91457db
+2026-10-31 10:09:04 INFO [orders] order ord_90868 created with 6 items
+2026-10-31 10:09:10 INFO [api-gateway] GET /api/v1/cart -> 200 (96ms) client=203.0.113.67 req=req-a6caf4a3
+2026-10-31 10:09:16 INFO [api-gateway] POST /api/v1/checkout -> 200 (46ms) client=203.0.113.5 req=req-7b7fec4b
+2026-10-31 10:09:17 INFO [api-gateway] GET /api/v1/products -> 200 (67ms) client=203.0.113.174 req=req-7d575d17
+2026-10-31 10:09:20 INFO [api-gateway] GET /api/v1/orders -> 200 (131ms) client=203.0.113.121 req=req-c4653cde
+2026-10-31 10:09:22 WARNING [auth] JWT expired for session 15fa8b65-fa66-42cd-8fc9-e91833020ccd, asking client to refresh
+2026-10-31 10:09:51 ERROR [inventory] failed to publish event to topic stock-updates: broker 10.0.4.12:9092 not available, will retry
+2026-10-31 10:09:52 INFO [api-gateway] POST /api/v1/checkout -> 200 (127ms) client=203.0.113.70 req=req-63087e52
+2026-10-31 10:09:54 DEBUG [inventory] stock sync batch 315 applied (19 skus)
+2026-10-31 10:09:59 INFO [api-gateway] POST /api/v1/checkout -> 200 (79ms) client=203.0.113.245 req=req-5c0bb40f
+2026-10-31 10:10:01 WARNING [api-gateway] cache miss ratio 39% above target 30% for key prefix product:
+2026-10-31 10:10:04 INFO [api-gateway] POST /api/v1/cart/items -> 200 (71ms) client=203.0.113.129 req=req-e5d00a4d
+2026-10-31 10:10:11 INFO [api-gateway] GET /api/v1/cart -> 200 (12ms) client=203.0.113.245 req=req-7ddfcbc9
+2026-10-31 10:10:33 ERROR [inventory] failed to publish event to topic stock-updates: broker 10.0.4.12:9092 not available, will retry
+2026-10-31 10:10:37 INFO [orders] order ord_64549 created with 3 items
+2026-10-31 10:10:41 INFO [api-gateway] POST /api/v1/cart/items -> 200 (12ms) client=203.0.113.85 req=req-c0301b21
+2026-10-31 10:10:44 INFO [api-gateway] GET /api/v1/cart -> 200 (15ms) client=203.0.113.232 req=req-bd6a996d
+2026-10-31 10:10:47 INFO [api-gateway] GET /api/v1/orders -> 200 (111ms) client=203.0.113.224 req=req-96d4480f
+2026-10-31 10:10:49 DEBUG [inventory] stock sync batch 873 applied (45 skus)
+2026-10-31 10:10:56 INFO [api-gateway] GET /api/v1/products -> 200 (85ms) client=203.0.113.164 req=req-ef82d1a3
+2026-10-31 10:11:04 ERROR [inventory] failed to publish event to topic stock-updates: broker 10.0.4.12:9092 not available, will retry
+2026-10-31 10:11:12 INFO [api-gateway] POST /api/v1/cart/items -> 200 (60ms) client=203.0.113.199 req=req-5f93d180
+2026-10-31 10:11:19 INFO [api-gateway] GET /api/v1/products -> 200 (173ms) client=203.0.113.104 req=req-e9d625c9
+2026-10-31 10:11:26 INFO [payments] charge authorised order=ord_36664 amount=373.10 EUR
+2026-10-31 10:11:27 INFO [orders] order ord_69095 created with 5 items
+2026-10-31 10:11:34 INFO [payments] charge authorised order=ord_47513 amount=253.06 EUR
+2026-10-31 10:11:41 INFO [payments] charge authorised order=ord_32382 amount=246.53 EUR
+2026-10-31 10:11:54 ERROR [inventory] failed to publish event to topic stock-updates: broker 10.0.4.12:9092 not available, will retry
+2026-10-31 10:11:58 INFO [orders] order ord_95566 created with 3 items
+2026-10-31 10:12:01 INFO [api-gateway] GET /api/v1/orders -> 200 (154ms) client=203.0.113.173 req=req-64f54969
+2026-10-31 10:12:03 INFO [payments] charge authorised order=ord_19852 amount=111.64 EUR
+2026-10-31 10:12:11 INFO [api-gateway] GET /api/v1/cart -> 200 (127ms) client=203.0.113.234 req=req-5534a034
+2026-10-31 10:12:19 INFO [api-gateway] GET /api/v1/cart -> 200 (152ms) client=203.0.113.51 req=req-3e7c6567
+2026-10-31 10:12:20 INFO [api-gateway] GET /api/v1/products -> 200 (93ms) client=203.0.113.63 req=req-5e49422a
+2026-10-31 10:12:20 INFO [payments] reconciliation job started for ledger window 2026-10-30
+2026-10-31 10:12:23 WARNING [payments] slow query 4364ms: SELECT * FROM ledger_entries WHERE account_id = 64104 ORDER BY created_at
+2026-10-31 10:12:27 INFO [orders] order ord_37525 created with 4 items
+2026-10-31 10:12:30 INFO [orders] order ord_75292 created with 3 items
+2026-10-31 10:12:34 WARNING [payments] slow query 8323ms: SELECT * FROM ledger_entries WHERE account_id = 79366 ORDER BY created_at
+2026-10-31 10:12:40 WARNING [auth] JWT expired for session e59409c1-4561-4fc0-97b4-834c37495c5e, asking client to refresh
+2026-10-31 10:12:42 INFO [api-gateway] GET /api/v1/orders -> 200 (122ms) client=203.0.113.246 req=req-4fe04802
+2026-10-31 10:12:48 WARNING [payments] slow query 7683ms: SELECT * FROM ledger_entries WHERE account_id = 72032 ORDER BY created_at
+2026-10-31 10:12:55 INFO [api-gateway] GET /api/v1/products -> 200 (112ms) client=203.0.113.240 req=req-ed448d4e
+2026-10-31 10:13:03 INFO [api-gateway] GET /api/v1/orders -> 200 (126ms) client=203.0.113.65 req=req-c879b663
+2026-10-31 10:13:05 WARNING [payments] slow query 9787ms: SELECT * FROM ledger_entries WHERE account_id = 24272 ORDER BY created_at
+2026-10-31 10:13:13 INFO [orders] order ord_94849 created with 4 items
+2026-10-31 10:13:15 INFO [orders] order ord_10179 created with 2 items
+2026-10-31 10:13:21 INFO [api-gateway] POST /api/v1/cart/items -> 200 (147ms) client=203.0.113.164 req=req-6ffb726a
+2026-10-31 10:13:26 INFO [api-gateway] GET /api/v1/products -> 200 (88ms) client=203.0.113.136 req=req-f18bde0e
+2026-10-31 10:13:31 WARNING [payments] slow query 9123ms: SELECT * FROM ledger_entries WHERE account_id = 10150 ORDER BY created_at
+2026-10-31 10:13:32 INFO [api-gateway] GET /api/v1/orders -> 200 (83ms) client=203.0.113.247 req=req-50fcc626
+2026-10-31 10:13:37 WARNING [auth] JWT expired for session 8c0856a4-3c19-4315-86ba-22dd79ad8999, asking client to refresh
+2026-10-31 10:13:44 INFO [api-gateway] GET /api/v1/orders -> 200 (177ms) client=203.0.113.109 req=req-14c2732a
+2026-10-31 10:13:46 INFO [payments] charge authorised order=ord_58525 amount=121.63 EUR
+2026-10-31 10:13:52 INFO [api-gateway] GET /api/v1/products -> 200 (86ms) client=203.0.113.191 req=req-d85bbb6b
+2026-10-31 10:13:57 INFO [api-gateway] GET /api/v1/cart -> 200 (91ms) client=203.0.113.198 req=req-d1ebd086
+2026-10-31 10:13:59 WARNING [payments] slow query 6616ms: SELECT * FROM ledger_entries WHERE account_id = 24287 ORDER BY created_at
+2026-10-31 10:14:07 INFO [api-gateway] GET /api/v1/cart -> 200 (69ms) client=203.0.113.126 req=req-6ac26ae0
+2026-10-31 10:14:14 INFO [api-gateway] POST /api/v1/checkout -> 200 (49ms) client=203.0.113.238 req=req-64b9cb1c
+2026-10-31 10:14:19 INFO [api-gateway] GET /api/v1/products -> 200 (59ms) client=203.0.113.102 req=req-731bbc41
+2026-10-31 10:14:26 WARNING [auth] JWT expired for session 145103c7-ff5e-4d1f-9cfb-0a06bb93c8eb, asking client to refresh
+2026-10-31 10:14:32 WARNING [payments] slow query 9545ms: SELECT * FROM ledger_entries WHERE account_id = 78786 ORDER BY created_at
+2026-10-31 10:14:38 INFO [api-gateway] GET /api/v1/orders -> 200 (107ms) client=203.0.113.254 req=req-54ea2061
+2026-10-31 10:14:42 INFO [api-gateway] GET /api/v1/products -> 200 (83ms) client=203.0.113.22 req=req-59f9bb79
+2026-10-31 10:14:52 INFO [api-gateway] POST /api/v1/cart/items -> 200 (122ms) client=203.0.113.24 req=req-0c9c20ef
+2026-10-31 10:14:58 INFO [api-gateway] POST /api/v1/checkout -> 200 (126ms) client=203.0.113.51 req=req-52c4641b
+2026-10-31 10:15:01 WARNING [payments] slow query 7565ms: SELECT * FROM ledger_entries WHERE account_id = 42507 ORDER BY created_at
+2026-10-31 10:15:01 WARNING [payments] HikariPool-1 - pool usage high: active=15, idle=5, waiting=0
+2026-10-31 10:15:08 INFO [orders] order ord_15328 created with 4 items
+2026-10-31 10:15:09 INFO [api-gateway] GET /api/v1/products -> 200 (77ms) client=203.0.113.51 req=req-bf4e302c
+2026-10-31 10:15:11 WARNING [payments] slow query 6430ms: SELECT * FROM ledger_entries WHERE account_id = 53905 ORDER BY created_at
+2026-10-31 10:15:11 WARNING [payments] HikariPool-1 - pool usage high: active=17, idle=3, waiting=6
+2026-10-31 10:15:19 INFO [payments] charge authorised order=ord_44363 amount=387.91 EUR
+2026-10-31 10:15:25 DEBUG [inventory] stock sync batch 404 applied (10 skus)
+2026-10-31 10:15:30 WARNING [payments] HikariPool-1 - pool usage high: active=19, idle=1, waiting=12
+2026-10-31 10:15:35 DEBUG [inventory] stock sync batch 124 applied (39 skus)
+2026-10-31 10:15:37 INFO [orders] order ord_71045 created with 4 items
+2026-10-31 10:15:42 WARNING [payments] HikariPool-1 - pool usage high: active=20, idle=0, waiting=15
+2026-10-31 10:15:44 INFO [api-gateway] GET /api/v1/products -> 200 (89ms) client=203.0.113.212 req=req-b12e1de2
+2026-10-31 10:15:51 INFO [payments] charge authorised order=ord_52965 amount=168.58 EUR
+2026-10-31 10:15:54 WARNING [payments] slow query 5816ms: SELECT * FROM ledger_entries WHERE account_id = 61338 ORDER BY created_at
+2026-10-31 10:15:54 WARNING [payments] HikariPool-1 - pool usage high: active=20, idle=0, waiting=15
+2026-10-31 10:16:00 INFO [api-gateway] GET /api/v1/products -> 200 (178ms) client=203.0.113.10 req=req-7b50079e
+2026-10-31 10:16:05 INFO [api-gateway] GET /api/v1/orders -> 200 (38ms) client=203.0.113.254 req=req-1279688c
+2026-10-31 10:16:08 WARNING [payments] slow query 7649ms: SELECT * FROM ledger_entries WHERE account_id = 75336 ORDER BY created_at
+2026-10-31 10:16:08 WARNING [payments] HikariPool-1 - pool usage high: active=20, idle=0, waiting=15
+2026-10-31 10:16:16 INFO [inventory] reserved 2 units of sku-4837
+2026-10-31 10:16:18 INFO [api-gateway] GET /api/v1/cart -> 200 (149ms) client=203.0.113.218 req=req-c61c96db
+2026-10-31 10:16:23 WARNING [payments] HikariPool-1 - pool usage high: active=20, idle=0, waiting=15
+2026-10-31 10:16:26 INFO [api-gateway] POST /api/v1/cart/items -> 200 (107ms) client=203.0.113.67 req=req-bcf1fcb5
+2026-10-31 10:16:29 INFO [api-gateway] GET /api/v1/cart -> 200 (74ms) client=203.0.113.62 req=req-27401fa0
+2026-10-31 10:16:32 WARNING [payments] slow query 4730ms: SELECT * FROM ledger_entries WHERE account_id = 61913 ORDER BY created_at
+2026-10-31 10:16:32 WARNING [payments] HikariPool-1 - pool usage high: active=20, idle=0, waiting=15
+2026-10-31 10:16:35 INFO [api-gateway] POST /api/v1/checkout -> 200 (71ms) client=203.0.113.168 req=req-cef61d03
+2026-10-31 10:16:36 INFO [api-gateway] GET /api/v1/products -> 200 (38ms) client=203.0.113.3 req=req-798a0d59
+2026-10-31 10:16:42 WARNING [payments] HikariPool-1 - pool usage high: active=20, idle=0, waiting=15
+2026-10-31 10:16:49 INFO [api-gateway] POST /api/v1/cart/items -> 200 (71ms) client=203.0.113.32 req=req-0ce66f73
+2026-10-31 10:16:51 INFO [inventory] reserved 2 units of sku-2230
+2026-10-31 10:16:55 WARNING [payments] slow query 6329ms: SELECT * FROM ledger_entries WHERE account_id = 97130 ORDER BY created_at
+2026-10-31 10:16:55 WARNING [payments] HikariPool-1 - pool usage high: active=20, idle=0, waiting=15
+2026-10-31 10:17:03 INFO [api-gateway] POST /api/v1/checkout -> 200 (170ms) client=203.0.113.91 req=req-37b79c48
+2026-10-31 10:17:04 INFO [api-gateway] GET /api/v1/products -> 200 (64ms) client=203.0.113.67 req=req-09c9d592
+2026-10-31 10:17:08 WARNING [payments] HikariPool-1 - pool usage high: active=20, idle=0, waiting=15
+2026-10-31 10:17:15 WARNING [api-gateway] cache miss ratio 37% above target 30% for key prefix product:
+2026-10-31 10:17:21 INFO [api-gateway] POST /api/v1/cart/items -> 200 (31ms) client=203.0.113.54 req=req-080e31b0
+2026-10-31 10:17:26 WARNING [payments] slow query 7543ms: SELECT * FROM ledger_entries WHERE account_id = 23289 ORDER BY created_at
+2026-10-31 10:17:26 WARNING [payments] HikariPool-1 - pool usage high: active=20, idle=0, waiting=15
+2026-10-31 10:17:32 INFO [payments] charge authorised order=ord_30257 amount=332.68 EUR
+2026-10-31 10:17:34 INFO [api-gateway] POST /api/v1/cart/items -> 200 (116ms) client=203.0.113.254 req=req-48866d48
+2026-10-31 10:17:39 WARNING [payments] HikariPool-1 - pool usage high: active=20, idle=0, waiting=15
+2026-10-31 10:17:42 INFO [payments] charge authorised order=ord_56816 amount=217.53 EUR
+2026-10-31 10:17:43 INFO [orders] order ord_57681 created with 6 items
+2026-10-31 10:17:43 CRITICAL [payments] HikariPool-1 - Connection is not available, request timed out after 30000ms (total=20, active=20, idle=0, waiting=48)
+2026-10-31 10:17:44 ERROR [api-gateway] POST /api/v1/checkout -> 500 (11673ms) client=203.0.113.243 req=req-018120f8
+2026-10-31 10:17:45 ERROR [payments] Timeout acquiring DB connection after 5000ms (active=20, idle=0, waiting=37) order=ord_21860
+2026-10-31 10:17:47 WARNING [api-gateway] circuit breaker payments-svc half-open, failure rate 81%
+2026-10-31 10:17:49 ERROR [payments] Timeout acquiring DB connection after 5000ms (active=20, idle=0, waiting=33) order=ord_82292
+2026-10-31 10:17:50 ERROR [api-gateway] POST /api/v1/checkout -> 500 (17999ms) client=203.0.113.24 req=req-92a73f9d
+2026-10-31 10:17:52 CRITICAL [payments] HikariPool-1 - Connection is not available, request timed out after 30000ms (total=20, active=20, idle=0, waiting=104)
+2026-10-31 10:17:53 CRITICAL [payments] HikariPool-1 - Connection is not available, request timed out after 30000ms (total=20, active=20, idle=0, waiting=60)
+2026-10-31 10:17:54 INFO [api-gateway] GET /api/v1/products -> 200 (113ms) client=203.0.113.127 req=req-c0e908a8
+2026-10-31 10:17:57 INFO [api-gateway] GET /api/v1/products -> 200 (92ms) client=203.0.113.34 req=req-d658c99a
+2026-10-31 10:18:00 INFO [api-gateway] GET /api/v1/cart -> 200 (95ms) client=203.0.113.15 req=req-9b8e9a82
+2026-10-31 10:18:02 ERROR [orders] upstream payments returned 503 for order ord_91309 after 5176ms
+2026-10-31 10:18:05 ERROR [payments] Timeout acquiring DB connection after 5000ms (active=20, idle=0, waiting=80) order=ord_39107
+2026-10-31 10:18:07 ERROR [api-gateway] POST /api/v1/checkout -> 500 (11426ms) client=203.0.113.214 req=req-791397a3
+2026-10-31 10:18:08 ERROR [payments] Timeout acquiring DB connection after 5000ms (active=20, idle=0, waiting=55) order=ord_77881
+2026-10-31 10:18:08 CRITICAL [payments] HikariPool-1 - Connection is not available, request timed out after 30000ms (total=20, active=20, idle=0, waiting=59)
+2026-10-31 10:18:09 ERROR [api-gateway] POST /api/v1/checkout -> 500 (11310ms) client=203.0.113.12 req=req-e244d05f
+2026-10-31 10:18:11 ERROR [api-gateway] POST /api/v1/checkout -> 500 (6249ms) client=203.0.113.172 req=req-d6948ded
+2026-10-31 10:18:12 ERROR [orders] upstream payments returned 503 for order ord_69733 after 5140ms
+2026-10-31 10:18:15 ERROR [api-gateway] POST /api/v1/checkout -> 500 (26267ms) client=203.0.113.109 req=req-4ee6f4ff
+2026-10-31 10:18:17 ERROR [orders] upstream payments returned 503 for order ord_96355 after 5094ms
+2026-10-31 10:18:18 ERROR [orders] upstream payments returned 503 for order ord_13063 after 5000ms
+2026-10-31 10:18:20 ERROR [orders] upstream payments returned 503 for order ord_40834 after 5114ms
+2026-10-31 10:18:23 ERROR [api-gateway] POST /api/v1/checkout -> 500 (20017ms) client=203.0.113.216 req=req-2df83c66
+2026-10-31 10:18:25 ERROR [orders] upstream payments returned 503 for order ord_18797 after 5032ms
+2026-10-31 10:18:26 CRITICAL [payments] HikariPool-1 - Connection is not available, request timed out after 30000ms (total=20, active=20, idle=0, waiting=96)
+2026-10-31 10:18:28 ERROR [api-gateway] POST /api/v1/checkout -> 500 (6332ms) client=203.0.113.164 req=req-2159702b
+2026-10-31 10:18:29 ERROR [api-gateway] POST /api/v1/checkout -> 500 (30481ms) client=203.0.113.186 req=req-82f0779d
+2026-10-31 10:18:29 ERROR [api-gateway] POST /api/v1/checkout -> 500 (17381ms) client=203.0.113.169 req=req-f36c1575
+2026-10-31 10:18:32 ERROR [payments] Timeout acquiring DB connection after 5000ms (active=20, idle=0, waiting=34) order=ord_90494
+2026-10-31 10:18:34 ERROR [api-gateway] POST /api/v1/checkout -> 500 (11347ms) client=203.0.113.35 req=req-fb52882f
+2026-10-31 10:18:37 ERROR [payments] Timeout acquiring DB connection after 5000ms (active=20, idle=0, waiting=81) order=ord_31641
+2026-10-31 10:18:39 ERROR [api-gateway] POST /api/v1/checkout -> 500 (12245ms) client=203.0.113.18 req=req-d541da56
+2026-10-31 10:18:40 ERROR [api-gateway] POST /api/v1/checkout -> 500 (10202ms) client=203.0.113.84 req=req-e58376fb
+2026-10-31 10:18:42 WARNING [api-gateway] circuit breaker payments-svc half-open, failure rate 81%
+2026-10-31 10:18:43 ERROR [orders] upstream payments returned 503 for order ord_72928 after 5053ms
+2026-10-31 10:18:44 ERROR [api-gateway] POST /api/v1/checkout -> 500 (12779ms) client=203.0.113.83 req=req-5f4ce302
+2026-10-31 10:18:44 ERROR [payments] java.sql.SQLTransientConnectionException: HikariPool-1 - Connection is not available
+    at com.zaxxer.hikari.pool.HikariPool.createTimeoutException(HikariPool.java:696)
+    at com.shop.payments.ChargeRepository.save(ChargeRepository.java:88)
+    at com.shop.payments.ChargeService.authorise(ChargeService.java:142)
+2026-10-31 10:18:45 ERROR [payments] Timeout acquiring DB connection after 5000ms (active=20, idle=0, waiting=40) order=ord_93436
+2026-10-31 10:18:48 ERROR [api-gateway] POST /api/v1/checkout -> 500 (17348ms) client=203.0.113.45 req=req-cac8a61c
+2026-10-31 10:18:50 ERROR [payments] Timeout acquiring DB connection after 5000ms (active=20, idle=0, waiting=63) order=ord_16366
+2026-10-31 10:18:52 CRITICAL [payments] HikariPool-1 - Connection is not available, request timed out after 30000ms (total=20, active=20, idle=0, waiting=97)
+2026-10-31 10:18:54 ERROR [api-gateway] POST /api/v1/checkout -> 500 (8427ms) client=203.0.113.66 req=req-fe3245fe
+2026-10-31 10:18:56 WARNING [api-gateway] circuit breaker payments-svc half-open, failure rate 75%
+2026-10-31 10:18:57 INFO [api-gateway] POST /api/v1/cart/items -> 200 (52ms) client=203.0.113.94 req=req-54b13301
+2026-10-31 10:18:59 ERROR [orders] upstream payments returned 503 for order ord_33167 after 5157ms
+2026-10-31 10:19:01 ERROR [payments] Timeout acquiring DB connection after 5000ms (active=20, idle=0, waiting=82) order=ord_77647
+2026-10-31 10:19:02 ERROR [api-gateway] POST /api/v1/checkout -> 500 (24197ms) client=203.0.113.239 req=req-a9e82581
+2026-10-31 10:19:05 ERROR [api-gateway] POST /api/v1/checkout -> 500 (29481ms) client=203.0.113.10 req=req-38bd3c69
+2026-10-31 10:19:06 ERROR [api-gateway] POST /api/v1/checkout -> 500 (19163ms) client=203.0.113.108 req=req-833edd4b
+2026-10-31 10:19:07 ERROR [payments] Timeout acquiring DB connection after 5000ms (active=20, idle=0, waiting=61) order=ord_39787
+2026-10-31 10:19:09 ERROR [payments] Timeout acquiring DB connection after 5000ms (active=20, idle=0, waiting=33) order=ord_10342
+2026-10-31 10:19:11 CRITICAL [payments] HikariPool-1 - Connection is not available, request timed out after 30000ms (total=20, active=20, idle=0, waiting=106)
+2026-10-31 10:19:12 ERROR [payments] Timeout acquiring DB connection after 5000ms (active=20, idle=0, waiting=67) order=ord_49472
+2026-10-31 10:19:14 ERROR [payments] Timeout acquiring DB connection after 5000ms (active=20, idle=0, waiting=69) order=ord_72246
+2026-10-31 10:19:15 ERROR [payments] Timeout acquiring DB connection after 5000ms (active=20, idle=0, waiting=81) order=ord_41927
+2026-10-31 10:19:17 ERROR [orders] upstream payments returned 503 for order ord_18345 after 5163ms
+2026-10-31 10:19:18 ERROR [api-gateway] POST /api/v1/checkout -> 500 (13839ms) client=203.0.113.104 req=req-cfc31601
+2026-10-31 10:19:19 ERROR [payments] Timeout acquiring DB connection after 5000ms (active=20, idle=0, waiting=71) order=ord_83705
+2026-10-31 10:19:21 ERROR [api-gateway] POST /api/v1/checkout -> 500 (23955ms) client=203.0.113.115 req=req-9a14e75a
+2026-10-31 10:19:24 ERROR [api-gateway] POST /api/v1/checkout -> 500 (13142ms) client=203.0.113.44 req=req-e74c00f4
+2026-10-31 10:19:24 ERROR [payments] Timeout acquiring DB connection after 5000ms (active=20, idle=0, waiting=31) order=ord_63213
+2026-10-31 10:19:25 ERROR [payments] Timeout acquiring DB connection after 5000ms (active=20, idle=0, waiting=88) order=ord_23751
+2026-10-31 10:19:26 ERROR [orders] upstream payments returned 503 for order ord_35855 after 5036ms
+2026-10-31 10:19:27 ERROR [orders] upstream payments returned 503 for order ord_94239 after 5129ms
+2026-10-31 10:19:29 ERROR [orders] upstream payments returned 503 for order ord_90371 after 5044ms
+2026-10-31 10:19:31 ERROR [payments] Timeout acquiring DB connection after 5000ms (active=20, idle=0, waiting=70) order=ord_16355
+2026-10-31 10:19:34 ERROR [api-gateway] POST /api/v1/checkout -> 500 (20660ms) client=203.0.113.185 req=req-89d4ff98
+2026-10-31 10:19:34 ERROR [api-gateway] POST /api/v1/checkout -> 500 (29418ms) client=203.0.113.235 req=req-771ba4ba
+2026-10-31 10:19:35 ERROR [api-gateway] POST /api/v1/checkout -> 500 (10747ms) client=203.0.113.59 req=req-ff21dd5a
+2026-10-31 10:19:35 ERROR [payments] Timeout acquiring DB connection after 5000ms (active=20, idle=0, waiting=32) order=ord_26156
+2026-10-31 10:19:36 ERROR [api-gateway] POST /api/v1/checkout -> 500 (27777ms) client=203.0.113.243 req=req-d867c466
+2026-10-31 10:19:36 WARNING [payments] reconciliation job still running after 1500s
+2026-10-31 10:19:39 INFO [api-gateway] POST /api/v1/checkout -> 200 (123ms) client=203.0.113.177 req=req-c9d7dc2a
+2026-10-31 10:19:47 INFO [inventory] reserved 3 units of sku-4555
+2026-10-31 10:19:48 INFO [api-gateway] GET /api/v1/cart -> 200 (78ms) client=203.0.113.233 req=req-3c71a896
+2026-10-31 10:19:55 INFO [api-gateway] GET /api/v1/cart -> 200 (95ms) client=203.0.113.51 req=req-e1527ae4
+2026-10-31 10:19:59 INFO [payments] charge authorised order=ord_59735 amount=327.88 EUR
+2026-10-31 10:20:07 WARNING [api-gateway] cache miss ratio 39% above target 30% for key prefix product:
+2026-10-31 10:20:11 WARNING [api-gateway] cache miss ratio 42% above target 30% for key prefix product:
+2026-10-31 10:20:12 INFO [api-gateway] GET /api/v1/cart -> 200 (158ms) client=203.0.113.228 req=req-4ec8c223
+2026-10-31 10:20:19 INFO [api-gateway] POST /api/v1/checkout -> 200 (31ms) client=203.0.113.146 req=req-e9298400
+2026-10-31 10:20:21 INFO [api-gateway] GET /api/v1/products -> 200 (39ms) client=203.0.113.161 req=req-edcf975c
+2026-10-31 10:20:23 INFO [inventory] reserved 1 units of sku-1505
+2026-10-31 10:20:24 INFO [payments] charge authorised order=ord_93083 amount=26.89 EUR
+2026-10-31 10:20:26 INFO [api-gateway] POST /api/v1/checkout -> 200 (105ms) client=203.0.113.53 req=req-d14bb7f5
+2026-10-31 10:20:33 INFO [api-gateway] GET /api/v1/products -> 200 (110ms) client=203.0.113.29 req=req-3f1fb241
+2026-10-31 10:20:36 INFO [api-gateway] GET /api/v1/products -> 200 (174ms) client=203.0.113.24 req=req-d337264b

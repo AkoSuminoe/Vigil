@@ -1,0 +1,354 @@
+2026-10-31 02:00:10 INFO [scheduler] dispatched job export-5506 to worker-2
+2026-10-31 02:00:10 WARNING [worker] disk usage on /var/lib/batch at 79% (395 GB of 500 GB)
+2026-10-31 02:00:14 INFO [scheduler] dispatched job export-9935 to worker-1
+2026-10-31 02:00:23 INFO [scheduler] dispatched job export-2535 to worker-2
+2026-10-31 02:00:28 WARNING [storage] upload of export-4257.parquet to bucket reports-archive slow, retrying (attempt 4/5)
+2026-10-31 02:00:39 INFO [worker] job export-4611 finished in 117s (604 MB written)
+2026-10-31 02:00:44 INFO [reporting] rendered dashboard snapshot 47229389-571a-4876-ac30-7511b2b9437a
+2026-10-31 02:00:48 INFO [reporting] rendered dashboard snapshot 18c26797-6142-4a7d-97be-31111a2a73ed
+2026-10-31 02:00:55 INFO [scheduler] dispatched job export-5333 to worker-1
+2026-10-31 02:01:07 INFO [worker] job export-7201 finished in 23s (566 MB written)
+2026-10-31 02:01:12 WARNING [storage] upload of export-6925.parquet to bucket reports-archive slow, retrying (attempt 4/5)
+2026-10-31 02:01:17 INFO [scheduler] dispatched job export-4733 to worker-3
+2026-10-31 02:01:32 INFO [reporting] rendered dashboard snapshot a2bc372f-7412-4293-8729-4739614ff3d7
+2026-10-31 02:01:45 INFO [scheduler] dispatched job export-6820 to worker-2
+2026-10-31 02:01:55 DEBUG [worker] heartbeat ok load=2.45
+2026-10-31 02:01:59 DEBUG [worker] heartbeat ok load=1.91
+2026-10-31 02:02:05 INFO [reporting] rendered dashboard snapshot c4b032cc-d7c5-44a5-9304-317faf42e12f
+2026-10-31 02:02:17 INFO [scheduler] dispatched job export-1525 to worker-3
+2026-10-31 02:02:24 INFO [scheduler] dispatched job export-6155 to worker-2
+2026-10-31 02:02:35 INFO [worker] job export-8517 finished in 39s (272 MB written)
+2026-10-31 02:02:39 INFO [reporting] rendered dashboard snapshot 6dadd6c7-95a7-4d79-bf3c-4c06434308bc
+2026-10-31 02:02:52 INFO [worker] job export-4593 finished in 38s (522 MB written)
+2026-10-31 02:03:01 INFO [reporting] rendered dashboard snapshot cac5b68c-28f4-4481-a0a0-4dc427209bdf
+2026-10-31 02:03:12 INFO [worker] job export-7304 finished in 100s (611 MB written)
+2026-10-31 02:03:26 INFO [worker] job export-1188 finished in 177s (739 MB written)
+2026-10-31 02:03:30 INFO [reporting] rendered dashboard snapshot 1c8eaee9-5715-4d6f-a416-1293c4c2e2e3
+2026-10-31 02:03:36 INFO [scheduler] dispatched job export-1053 to worker-3
+2026-10-31 02:03:36 WARNING [worker] disk usage on /var/lib/batch at 82% (410 GB of 500 GB)
+2026-10-31 02:03:48 INFO [worker] job export-2743 finished in 225s (641 MB written)
+2026-10-31 02:03:54 WARNING [storage] upload of export-4258.parquet to bucket reports-archive slow, retrying (attempt 2/5)
+2026-10-31 02:04:00 INFO [scheduler] dispatched job export-9689 to worker-1
+2026-10-31 02:04:10 INFO [worker] job export-2832 finished in 240s (372 MB written)
+2026-10-31 02:04:24 INFO [reporting] rendered dashboard snapshot e0c53cb8-3da9-42a9-8ed4-2f1a3d4cbf37
+2026-10-31 02:04:33 INFO [scheduler] dispatched job export-8962 to worker-1
+2026-10-31 02:04:48 INFO [worker] job export-3060 finished in 35s (676 MB written)
+2026-10-31 02:04:56 INFO [worker] job export-5342 finished in 138s (894 MB written)
+2026-10-31 02:05:06 INFO [reporting] rendered dashboard snapshot 337ea2df-b09b-4a5c-badc-c32ac1590f53
+2026-10-31 02:05:17 INFO [worker] job export-7118 finished in 115s (530 MB written)
+2026-10-31 02:05:25 INFO [scheduler] dispatched job export-2049 to worker-3
+2026-10-31 02:05:27 INFO [worker] job export-4608 finished in 4s (73 MB written)
+2026-10-31 02:05:38 INFO [scheduler] dispatched job export-2104 to worker-1
+2026-10-31 02:05:52 INFO [scheduler] dispatched job export-4899 to worker-3
+2026-10-31 02:06:02 INFO [scheduler] dispatched job export-3167 to worker-4
+2026-10-31 02:06:07 INFO [worker] job export-7669 finished in 51s (97 MB written)
+2026-10-31 02:06:11 INFO [worker] job export-7939 finished in 108s (479 MB written)
+2026-10-31 02:06:24 INFO [scheduler] dispatched job export-2612 to worker-1
+2026-10-31 02:06:31 INFO [scheduler] dispatched job export-2790 to worker-2
+2026-10-31 02:06:36 INFO [worker] job export-3296 finished in 111s (188 MB written)
+2026-10-31 02:06:41 INFO [scheduler] dispatched job export-2235 to worker-4
+2026-10-31 02:06:54 INFO [reporting] rendered dashboard snapshot 8a63f881-ffd0-49d5-a6f2-f7b80cf35b58
+2026-10-31 02:07:07 INFO [reporting] rendered dashboard snapshot 7b3a4e3e-7c52-4a17-a80a-c07a2a935d62
+2026-10-31 02:07:11 INFO [worker] job export-1960 finished in 45s (389 MB written)
+2026-10-31 02:07:13 INFO [worker] job export-8454 finished in 76s (434 MB written)
+2026-10-31 02:07:13 WARNING [worker] disk usage on /var/lib/batch at 85% (425 GB of 500 GB)
+2026-10-31 02:07:28 INFO [reporting] rendered dashboard snapshot 37bb3eec-4bf5-4b52-b09d-258c27a0c3d7
+2026-10-31 02:07:43 INFO [worker] job export-9883 finished in 18s (766 MB written)
+2026-10-31 02:07:49 INFO [scheduler] dispatched job export-8811 to worker-2
+2026-10-31 02:07:51 INFO [worker] job export-4044 finished in 20s (610 MB written)
+2026-10-31 02:07:54 INFO [reporting] rendered dashboard snapshot 91d63f78-e3e9-4e99-b10c-718b1eb0e38a
+2026-10-31 02:07:59 INFO [worker] job export-2343 finished in 110s (674 MB written)
+2026-10-31 02:08:09 INFO [worker] job export-5272 finished in 55s (686 MB written)
+2026-10-31 02:08:20 INFO [scheduler] dispatched job export-7484 to worker-2
+2026-10-31 02:08:31 INFO [scheduler] dispatched job export-6180 to worker-1
+2026-10-31 02:08:33 WARNING [storage] upload of export-2638.parquet to bucket reports-archive slow, retrying (attempt 2/5)
+2026-10-31 02:08:33 ERROR [reporting] unhandled exception while rendering weekly summary
+Traceback (most recent call last):
+  File "/srv/reporting/render.py", line 211, in render_weekly
+    totals = sum(row.value for row in rows)
+TypeError: unsupported operand type(s) for +: 'int' and 'NoneType'
+2026-10-31 02:08:42 INFO [worker] job export-3170 finished in 92s (71 MB written)
+2026-10-31 02:08:56 INFO [worker] job export-3584 finished in 115s (854 MB written)
+2026-10-31 02:09:05 INFO [scheduler] dispatched job export-9666 to worker-1
+2026-10-31 02:09:15 INFO [worker] job export-2697 finished in 227s (138 MB written)
+2026-10-31 02:09:21 INFO [reporting] rendered dashboard snapshot 35ebd32d-9ad6-40ab-8821-2ddb45b89cd9
+2026-10-31 02:09:32 INFO [scheduler] dispatched job export-5325 to worker-4
+2026-10-31 02:09:37 INFO [reporting] rendered dashboard snapshot d450281c-6c6f-4633-a260-772317a0df49
+2026-10-31 02:09:43 INFO [scheduler] dispatched job export-3143 to worker-3
+2026-10-31 02:09:47 INFO [worker] job export-8007 finished in 146s (10 MB written)
+2026-10-31 02:09:51 INFO [reporting] rendered dashboard snapshot 5e84f058-d5a8-44eb-8939-23de8babce3b
+2026-10-31 02:10:00 INFO [scheduler] dispatched job export-3088 to worker-1
+2026-10-31 02:10:06 INFO [reporting] rendered dashboard snapshot ae9bec36-35c7-436c-9b99-62c6e61fecc0
+2026-10-31 02:10:11 INFO [scheduler] dispatched job export-7658 to worker-2
+2026-10-31 02:10:25 INFO [scheduler] dispatched job export-3662 to worker-2
+2026-10-31 02:10:39 INFO [scheduler] dispatched job export-6442 to worker-4
+2026-10-31 02:10:39 WARNING [worker] disk usage on /var/lib/batch at 88% (440 GB of 500 GB)
+2026-10-31 02:10:52 INFO [reporting] rendered dashboard snapshot 1bac27a7-b386-47a4-8991-603f28c13091
+2026-10-31 02:10:59 INFO [scheduler] dispatched job export-8711 to worker-2
+2026-10-31 02:11:04 INFO [reporting] rendered dashboard snapshot df0f06cb-cb9b-4326-920e-ac174e20fd1a
+2026-10-31 02:11:09 INFO [scheduler] dispatched job export-4164 to worker-4
+2026-10-31 02:11:15 INFO [reporting] rendered dashboard snapshot 6651529e-8268-490b-a438-25b559e4b671
+2026-10-31 02:11:26 INFO [reporting] rendered dashboard snapshot e08596db-1d87-4966-8710-d430f071d879
+2026-10-31 02:11:40 INFO [scheduler] dispatched job export-5349 to worker-1
+2026-10-31 02:11:44 INFO [worker] job export-6139 finished in 114s (621 MB written)
+2026-10-31 02:11:59 INFO [scheduler] dispatched job export-4114 to worker-3
+2026-10-31 02:12:01 INFO [worker] job export-9518 finished in 239s (826 MB written)
+2026-10-31 02:12:10 DEBUG [worker] heartbeat ok load=1.55
+2026-10-31 02:12:13 WARNING [storage] upload of export-6409.parquet to bucket reports-archive slow, retrying (attempt 4/5)
+2026-10-31 02:12:19 INFO [reporting] rendered dashboard snapshot 688c7015-aab9-4e49-8f2d-479681d2c7de
+2026-10-31 02:12:25 DEBUG [worker] heartbeat ok load=0.91
+2026-10-31 02:12:36 INFO [worker] job export-3851 finished in 160s (583 MB written)
+2026-10-31 02:12:42 INFO [worker] job export-1006 finished in 80s (294 MB written)
+2026-10-31 02:12:47 INFO [reporting] rendered dashboard snapshot acf5e81e-7131-4269-b118-e36477097749
+2026-10-31 02:12:51 INFO [worker] job export-3780 finished in 171s (87 MB written)
+2026-10-31 02:12:57 WARNING [storage] upload of export-6491.parquet to bucket reports-archive slow, retrying (attempt 2/5)
+2026-10-31 02:13:10 INFO [reporting] rendered dashboard snapshot 25b8fd4b-32fa-4de8-8e7a-e7f639820cff
+2026-10-31 02:13:12 INFO [scheduler] dispatched job export-8784 to worker-1
+2026-10-31 02:13:20 INFO [reporting] rendered dashboard snapshot 7e8f8095-624c-49b6-b244-45a7b7e58481
+2026-10-31 02:13:27 INFO [scheduler] dispatched job export-1090 to worker-1
+2026-10-31 02:13:39 INFO [scheduler] dispatched job export-9486 to worker-4
+2026-10-31 02:13:42 INFO [scheduler] dispatched job export-2988 to worker-4
+2026-10-31 02:13:42 WARNING [worker] disk usage on /var/lib/batch at 89% (445 GB of 500 GB)
+2026-10-31 02:13:54 WARNING [storage] upload of export-6198.parquet to bucket reports-archive slow, retrying (attempt 3/5)
+2026-10-31 02:14:04 DEBUG [worker] heartbeat ok load=1.78
+2026-10-31 02:14:18 INFO [worker] job export-3607 finished in 193s (883 MB written)
+2026-10-31 02:14:26 INFO [scheduler] dispatched job export-5050 to worker-3
+2026-10-31 02:14:38 INFO [worker] job export-4919 finished in 73s (451 MB written)
+2026-10-31 02:14:41 INFO [scheduler] dispatched job export-5451 to worker-3
+2026-10-31 02:14:47 INFO [worker] job export-3267 finished in 41s (237 MB written)
+2026-10-31 02:14:54 INFO [scheduler] dispatched job export-4505 to worker-1
+2026-10-31 02:15:02 INFO [scheduler] dispatched job export-8633 to worker-4
+2026-10-31 02:15:05 INFO [reporting] rendered dashboard snapshot f2311f17-9586-4a76-8511-55ffe7a37e81
+2026-10-31 02:15:16 INFO [reporting] rendered dashboard snapshot 5a0cdd7c-f157-4470-8182-67c47a1b5806
+2026-10-31 02:15:21 INFO [worker] job export-7865 finished in 140s (766 MB written)
+2026-10-31 02:15:33 INFO [reporting] rendered dashboard snapshot 6f92f25e-45df-46b6-b82c-043f7cfc9b79
+2026-10-31 02:15:41 INFO [worker] job export-7624 finished in 188s (170 MB written)
+2026-10-31 02:15:54 INFO [reporting] rendered dashboard snapshot 978648f8-64de-42e6-a82c-7d7b06e745f9
+2026-10-31 02:16:04 INFO [scheduler] dispatched job export-8022 to worker-2
+2026-10-31 02:16:17 INFO [scheduler] dispatched job export-5262 to worker-4
+2026-10-31 02:16:23 INFO [worker] job export-6529 finished in 197s (389 MB written)
+2026-10-31 02:16:29 INFO [reporting] rendered dashboard snapshot 78660765-14f7-4e8d-95bc-b8d04094dded
+2026-10-31 02:16:31 INFO [worker] job export-6733 finished in 60s (666 MB written)
+2026-10-31 02:16:34 INFO [reporting] rendered dashboard snapshot 3f4df561-f319-4125-87f1-94f9c1156d6d
+2026-10-31 02:16:38 INFO [scheduler] dispatched job export-3496 to worker-2
+2026-10-31 02:16:42 WARNING [storage] upload of export-4571.parquet to bucket reports-archive slow, retrying (attempt 3/5)
+2026-10-31 02:16:53 INFO [reporting] rendered dashboard snapshot bf780e3f-f6b7-41f7-9b74-92459b1bc895
+2026-10-31 02:17:05 INFO [reporting] rendered dashboard snapshot 9424aed5-1bac-4c15-8fa0-3f26f6f7f0cc
+2026-10-31 02:17:05 WARNING [worker] disk usage on /var/lib/batch at 90% (450 GB of 500 GB)
+2026-10-31 02:17:19 INFO [worker] job export-7149 finished in 104s (733 MB written)
+2026-10-31 02:17:23 INFO [worker] job export-4978 finished in 29s (714 MB written)
+2026-10-31 02:17:35 INFO [reporting] rendered dashboard snapshot c85aca46-90e0-44a0-bbdd-3933cbd58bf6
+2026-10-31 02:17:38 INFO [worker] job export-7071 finished in 20s (519 MB written)
+2026-10-31 02:17:48 INFO [scheduler] dispatched job export-7882 to worker-4
+2026-10-31 02:17:52 INFO [reporting] rendered dashboard snapshot 2d174fc9-6f7c-45ea-a72a-6d8eb5122df8
+2026-10-31 02:18:03 INFO [reporting] rendered dashboard snapshot 89c5b31a-eb6c-4016-8ee6-24d09dac6e83
+2026-10-31 02:18:15 INFO [worker] job export-5397 finished in 85s (873 MB written)
+2026-10-31 02:18:20 INFO [reporting] rendered dashboard snapshot c01f36bf-3e6d-458b-b367-c28de1b294de
+2026-10-31 02:18:28 WARNING [storage] upload of export-7209.parquet to bucket reports-archive slow, retrying (attempt 3/5)
+2026-10-31 02:18:31 INFO [reporting] rendered dashboard snapshot cc3ebdde-5ad5-4f06-b64d-7c877cd0129d
+2026-10-31 02:18:36 INFO [scheduler] dispatched job export-5526 to worker-1
+2026-10-31 02:18:45 INFO [scheduler] dispatched job export-4954 to worker-4
+2026-10-31 02:18:53 INFO [reporting] rendered dashboard snapshot 72bb912d-7da6-4785-b63b-4dc3a559e463
+2026-10-31 02:19:06 INFO [scheduler] dispatched job export-4630 to worker-4
+2026-10-31 02:19:17 INFO [scheduler] dispatched job export-7046 to worker-4
+2026-10-31 02:19:26 INFO [scheduler] dispatched job export-6419 to worker-3
+2026-10-31 02:19:37 INFO [scheduler] dispatched job export-5118 to worker-2
+2026-10-31 02:19:40 INFO [scheduler] dispatched job export-2958 to worker-2
+2026-10-31 02:19:45 DEBUG [worker] heartbeat ok load=2.88
+2026-10-31 02:20:00 INFO [worker] job export-5636 finished in 28s (853 MB written)
+2026-10-31 02:20:04 INFO [scheduler] dispatched job export-3939 to worker-3
+2026-10-31 02:20:06 INFO [worker] job export-5494 finished in 14s (56 MB written)
+2026-10-31 02:20:16 DEBUG [worker] heartbeat ok load=2.56
+2026-10-31 02:20:27 INFO [scheduler] dispatched job export-1200 to worker-3
+2026-10-31 02:20:27 WARNING [worker] disk usage on /var/lib/batch at 92% (460 GB of 500 GB)
+2026-10-31 02:20:36 INFO [scheduler] dispatched job export-1841 to worker-3
+2026-10-31 02:20:50 INFO [worker] job export-2070 finished in 105s (504 MB written)
+2026-10-31 02:20:53 WARNING [storage] upload of export-1878.parquet to bucket reports-archive slow, retrying (attempt 2/5)
+2026-10-31 02:20:57 INFO [worker] job export-5978 finished in 24s (255 MB written)
+2026-10-31 02:21:00 INFO [reporting] rendered dashboard snapshot 7354ea6f-6160-4459-85c7-504bc693da11
+2026-10-31 02:21:14 INFO [scheduler] dispatched job export-8025 to worker-3
+2026-10-31 02:21:23 INFO [scheduler] dispatched job export-2625 to worker-2
+2026-10-31 02:21:34 INFO [scheduler] dispatched job export-2330 to worker-2
+2026-10-31 02:21:39 INFO [worker] job export-3564 finished in 3s (419 MB written)
+2026-10-31 02:21:47 INFO [worker] job export-5771 finished in 11s (238 MB written)
+2026-10-31 02:21:52 INFO [scheduler] dispatched job export-8438 to worker-1
+2026-10-31 02:22:03 INFO [reporting] rendered dashboard snapshot 398d1ca6-8b68-40b5-9d61-fac36cd5e859
+2026-10-31 02:22:14 INFO [reporting] rendered dashboard snapshot cae9b4a7-2a79-4a68-8f44-704f1247ea4e
+2026-10-31 02:22:20 INFO [reporting] rendered dashboard snapshot b04d3376-77fc-4703-9fd5-a423706c5c56
+2026-10-31 02:22:26 INFO [worker] job export-5460 finished in 131s (553 MB written)
+2026-10-31 02:22:34 INFO [scheduler] dispatched job export-1653 to worker-4
+2026-10-31 02:22:46 WARNING [storage] upload of export-1423.parquet to bucket reports-archive slow, retrying (attempt 2/5)
+2026-10-31 02:22:51 WARNING [storage] upload of export-1339.parquet to bucket reports-archive slow, retrying (attempt 4/5)
+2026-10-31 02:23:03 INFO [worker] job export-3870 finished in 123s (532 MB written)
+2026-10-31 02:23:14 INFO [reporting] rendered dashboard snapshot a2814044-6f96-4882-95d8-2980ff37d19c
+2026-10-31 02:23:26 INFO [reporting] rendered dashboard snapshot 5230dfbd-5553-42fe-a889-803e5913f9d3
+2026-10-31 02:23:37 INFO [reporting] rendered dashboard snapshot 49c8a43f-7ed7-4ed7-b194-990b6961929e
+2026-10-31 02:23:48 INFO [worker] job export-1601 finished in 119s (91 MB written)
+2026-10-31 02:23:54 INFO [scheduler] dispatched job export-7622 to worker-1
+2026-10-31 02:24:04 INFO [worker] job export-7770 finished in 16s (193 MB written)
+2026-10-31 02:24:04 ERROR [worker] disk usage on /var/lib/batch at 95% (475 GB of 500 GB)
+2026-10-31 02:24:16 WARNING [storage] upload of export-1845.parquet to bucket reports-archive slow, retrying (attempt 2/5)
+2026-10-31 02:24:20 INFO [scheduler] dispatched job export-8941 to worker-1
+2026-10-31 02:24:20 ERROR [worker] job export-8941 failed: OSError [Errno 28] No space left on device: '/var/lib/batch/tmp/export-8941.part'
+2026-10-31 02:24:30 INFO [reporting] rendered dashboard snapshot 8d605936-0380-4b70-8d03-c91e4f8d5238
+2026-10-31 02:24:35 INFO [reporting] rendered dashboard snapshot a5d04d53-1e12-42e3-b272-92b6762172ed
+2026-10-31 02:24:43 DEBUG [worker] heartbeat ok load=2.81
+2026-10-31 02:24:52 INFO [worker] job export-8483 finished in 144s (149 MB written)
+2026-10-31 02:25:06 INFO [worker] job export-3236 finished in 224s (72 MB written)
+2026-10-31 02:25:18 INFO [worker] job export-9318 finished in 71s (841 MB written)
+2026-10-31 02:25:18 ERROR [worker] job export-9318 failed: OSError [Errno 28] No space left on device: '/var/lib/batch/tmp/export-9318.part'
+2026-10-31 02:25:29 INFO [reporting] rendered dashboard snapshot 89e06ab3-7250-4e18-a60a-5962dd81b7f5
+2026-10-31 02:25:36 INFO [reporting] rendered dashboard snapshot de9e3757-5260-401e-aecf-67d2749176f4
+2026-10-31 02:25:36 ERROR [worker] job export-7180 failed: OSError [Errno 28] No space left on device: '/var/lib/batch/tmp/export-7180.part'
+2026-10-31 02:25:47 INFO [worker] job export-4826 finished in 222s (795 MB written)
+2026-10-31 02:25:53 INFO [worker] job export-7246 finished in 101s (680 MB written)
+2026-10-31 02:26:03 INFO [scheduler] dispatched job export-1606 to worker-2
+2026-10-31 02:26:13 INFO [reporting] rendered dashboard snapshot 74f93d17-e912-44bf-86a4-bae41986b4b2
+2026-10-31 02:26:13 ERROR [worker] job export-8213 failed: OSError [Errno 28] No space left on device: '/var/lib/batch/tmp/export-8213.part'
+2026-10-31 02:26:17 INFO [reporting] rendered dashboard snapshot f81dbaa1-c812-4a8e-b830-89301327f1bc
+2026-10-31 02:26:17 ERROR [reporting] unhandled exception while rendering weekly summary
+Traceback (most recent call last):
+  File "/srv/reporting/render.py", line 211, in render_weekly
+    totals = sum(row.value for row in rows)
+TypeError: unsupported operand type(s) for +: 'int' and 'NoneType'
+2026-10-31 02:26:27 INFO [worker] job export-2315 finished in 221s (337 MB written)
+2026-10-31 02:26:40 INFO [worker] job export-6188 finished in 163s (736 MB written)
+2026-10-31 02:26:48 INFO [worker] job export-2121 finished in 63s (647 MB written)
+2026-10-31 02:26:54 INFO [scheduler] dispatched job export-2480 to worker-4
+2026-10-31 02:27:06 DEBUG [worker] heartbeat ok load=1.84
+2026-10-31 02:27:20 INFO [scheduler] dispatched job export-1919 to worker-3
+2026-10-31 02:27:27 INFO [scheduler] dispatched job export-7751 to worker-2
+2026-10-31 02:27:27 ERROR [worker] job export-7751 failed: OSError [Errno 28] No space left on device: '/var/lib/batch/tmp/export-7751.part'
+2026-10-31 02:27:30 INFO [reporting] rendered dashboard snapshot 24a35cf2-9549-4931-a9af-299d7f671eec
+2026-10-31 02:27:41 INFO [worker] job export-1153 finished in 233s (824 MB written)
+2026-10-31 02:27:46 INFO [worker] job export-2210 finished in 116s (354 MB written)
+2026-10-31 02:27:46 ERROR [worker] disk usage on /var/lib/batch at 98% (490 GB of 500 GB)
+2026-10-31 02:28:01 DEBUG [worker] heartbeat ok load=3.33
+2026-10-31 02:28:01 ERROR [worker] job export-8484 failed: OSError [Errno 28] No space left on device: '/var/lib/batch/tmp/export-8484.part'
+2026-10-31 02:28:08 INFO [worker] job export-4886 finished in 100s (586 MB written)
+2026-10-31 02:28:14 DEBUG [worker] heartbeat ok load=3.82
+2026-10-31 02:28:19 INFO [worker] job export-1803 finished in 236s (621 MB written)
+2026-10-31 02:28:32 INFO [reporting] rendered dashboard snapshot 3810ae66-5a31-44cc-8d4b-69a99b689c88
+2026-10-31 02:28:42 WARNING [storage] upload of export-3240.parquet to bucket reports-archive slow, retrying (attempt 4/5)
+2026-10-31 02:28:42 ERROR [worker] job export-3240 failed: OSError [Errno 28] No space left on device: '/var/lib/batch/tmp/export-3240.part'
+2026-10-31 02:28:52 INFO [scheduler] dispatched job export-8222 to worker-1
+2026-10-31 02:29:04 INFO [scheduler] dispatched job export-5835 to worker-3
+2026-10-31 02:29:08 INFO [scheduler] dispatched job export-9837 to worker-3
+2026-10-31 02:29:22 INFO [reporting] rendered dashboard snapshot 7b5a611a-f1b6-4afe-931e-df1ae9ff1cae
+2026-10-31 02:29:28 INFO [reporting] rendered dashboard snapshot 2408a6dc-1346-41a9-b680-2cdb77e490c7
+2026-10-31 02:29:33 WARNING [storage] upload of export-7511.parquet to bucket reports-archive slow, retrying (attempt 4/5)
+2026-10-31 02:29:45 INFO [scheduler] dispatched job export-9791 to worker-1
+2026-10-31 02:29:56 WARNING [storage] upload of export-7242.parquet to bucket reports-archive slow, retrying (attempt 4/5)
+2026-10-31 02:29:59 INFO [scheduler] dispatched job export-1410 to worker-3
+2026-10-31 02:30:04 INFO [scheduler] dispatched job export-8606 to worker-3
+2026-10-31 02:30:08 INFO [scheduler] dispatched job export-1609 to worker-3
+2026-10-31 02:30:11 INFO [scheduler] dispatched job export-9807 to worker-2
+2026-10-31 02:30:18 INFO [reporting] rendered dashboard snapshot ba0266ef-be05-4787-965b-efdf6b4be411
+2026-10-31 02:30:18 ERROR [worker] job export-9850 failed: OSError [Errno 28] No space left on device: '/var/lib/batch/tmp/export-9850.part'
+2026-10-31 02:30:25 INFO [scheduler] dispatched job export-9017 to worker-4
+2026-10-31 02:30:31 DEBUG [worker] heartbeat ok load=1.84
+2026-10-31 02:30:44 INFO [scheduler] dispatched job export-7018 to worker-3
+2026-10-31 02:30:44 ERROR [worker] job export-7018 failed: OSError [Errno 28] No space left on device: '/var/lib/batch/tmp/export-7018.part'
+2026-10-31 02:30:50 INFO [reporting] rendered dashboard snapshot a446be72-364c-411a-a9ab-364a1777e8cb
+2026-10-31 02:31:04 INFO [scheduler] dispatched job export-6464 to worker-2
+2026-10-31 02:31:17 INFO [scheduler] dispatched job export-4394 to worker-2
+2026-10-31 02:31:17 ERROR [worker] disk usage on /var/lib/batch at 99% (495 GB of 500 GB)
+2026-10-31 02:31:21 INFO [reporting] rendered dashboard snapshot 250a4578-fbe9-4499-9bc0-80fd46fb7bf3
+2026-10-31 02:31:30 INFO [reporting] rendered dashboard snapshot 21bddb41-0699-4731-9dcf-8766a93b12cd
+2026-10-31 02:31:30 ERROR [worker] job export-2801 failed: OSError [Errno 28] No space left on device: '/var/lib/batch/tmp/export-2801.part'
+2026-10-31 02:31:42 INFO [scheduler] dispatched job export-6304 to worker-1
+2026-10-31 02:31:42 ERROR [worker] job export-6304 failed: OSError [Errno 28] No space left on device: '/var/lib/batch/tmp/export-6304.part'
+2026-10-31 02:31:45 INFO [reporting] rendered dashboard snapshot 79eb4168-1045-46e5-bee3-eb791d181ee9
+2026-10-31 02:31:51 INFO [worker] job export-8405 finished in 131s (227 MB written)
+2026-10-31 02:31:54 INFO [reporting] rendered dashboard snapshot f6ca6b8b-a4b1-4991-b542-46464d37a539
+2026-10-31 02:31:54 ERROR [worker] job export-9543 failed: OSError [Errno 28] No space left on device: '/var/lib/batch/tmp/export-9543.part'
+2026-10-31 02:32:09 INFO [reporting] rendered dashboard snapshot b65feea9-7d82-4264-9ba3-62e7afa415e5
+2026-10-31 02:32:12 INFO [scheduler] dispatched job export-3430 to worker-1
+2026-10-31 02:32:12 ERROR [worker] job export-3430 failed: OSError [Errno 28] No space left on device: '/var/lib/batch/tmp/export-3430.part'
+2026-10-31 02:32:22 INFO [worker] job export-6327 finished in 100s (612 MB written)
+2026-10-31 02:32:30 WARNING [storage] upload of export-2624.parquet to bucket reports-archive slow, retrying (attempt 4/5)
+2026-10-31 02:32:30 ERROR [worker] job export-2624 failed: OSError [Errno 28] No space left on device: '/var/lib/batch/tmp/export-2624.part'
+2026-10-31 02:32:40 INFO [reporting] rendered dashboard snapshot 3a7e8e14-e359-4ee1-b399-1a476e191042
+2026-10-31 02:32:53 INFO [worker] job export-2557 finished in 83s (438 MB written)
+2026-10-31 02:32:58 INFO [reporting] rendered dashboard snapshot 15da705c-d4ef-40aa-975a-81ec112fa612
+2026-10-31 02:32:58 ERROR [worker] job export-8770 failed: OSError [Errno 28] No space left on device: '/var/lib/batch/tmp/export-8770.part'
+2026-10-31 02:33:02 DEBUG [worker] heartbeat ok load=2.26
+2026-10-31 02:33:11 INFO [scheduler] dispatched job export-3002 to worker-4
+2026-10-31 02:33:22 INFO [reporting] rendered dashboard snapshot 4ffca6b1-99b4-49d4-89a2-14aef7e8f8e5
+2026-10-31 02:33:31 INFO [scheduler] dispatched job export-8900 to worker-2
+2026-10-31 02:33:38 INFO [worker] job export-2882 finished in 198s (286 MB written)
+2026-10-31 02:33:50 INFO [reporting] rendered dashboard snapshot d4578ad9-a867-4096-add8-77c89be71737
+2026-10-31 02:33:52 INFO [scheduler] dispatched job export-6062 to worker-3
+2026-10-31 02:33:57 INFO [scheduler] dispatched job export-7566 to worker-1
+2026-10-31 02:33:57 ERROR [worker] job export-7566 failed: OSError [Errno 28] No space left on device: '/var/lib/batch/tmp/export-7566.part'
+2026-10-31 02:34:07 INFO [scheduler] dispatched job export-9691 to worker-2
+2026-10-31 02:34:15 INFO [scheduler] dispatched job export-6105 to worker-3
+2026-10-31 02:34:24 INFO [scheduler] dispatched job export-1861 to worker-2
+2026-10-31 02:34:24 ERROR [worker] job export-1861 failed: OSError [Errno 28] No space left on device: '/var/lib/batch/tmp/export-1861.part'
+2026-10-31 02:34:34 WARNING [storage] upload of export-5458.parquet to bucket reports-archive slow, retrying (attempt 3/5)
+2026-10-31 02:34:34 ERROR [worker] disk usage on /var/lib/batch at 99% (495 GB of 500 GB)
+2026-10-31 02:34:44 INFO [worker] job export-4531 finished in 196s (525 MB written)
+2026-10-31 02:34:44 ERROR [worker] job export-4531 failed: OSError [Errno 28] No space left on device: '/var/lib/batch/tmp/export-4531.part'
+2026-10-31 02:34:52 INFO [scheduler] dispatched job export-8972 to worker-3
+2026-10-31 02:34:52 ERROR [worker] job export-8972 failed: OSError [Errno 28] No space left on device: '/var/lib/batch/tmp/export-8972.part'
+2026-10-31 02:34:59 INFO [worker] job export-1125 finished in 55s (309 MB written)
+2026-10-31 02:35:11 INFO [reporting] rendered dashboard snapshot 7f54a511-01fa-464e-9eb7-4b5653ffd3a2
+2026-10-31 02:35:15 INFO [worker] job export-4770 finished in 131s (573 MB written)
+2026-10-31 02:35:28 INFO [scheduler] dispatched job export-1693 to worker-4
+2026-10-31 02:35:28 ERROR [worker] job export-1693 failed: OSError [Errno 28] No space left on device: '/var/lib/batch/tmp/export-1693.part'
+2026-10-31 02:35:42 INFO [reporting] rendered dashboard snapshot a3e05309-b5a1-4949-a788-420992ca525a
+2026-10-31 02:35:45 INFO [scheduler] dispatched job export-6321 to worker-2
+2026-10-31 02:35:55 INFO [reporting] rendered dashboard snapshot 1b19d8b8-d830-4081-afcc-57dd168fae12
+2026-10-31 02:36:05 INFO [worker] job export-7484 finished in 225s (318 MB written)
+2026-10-31 02:36:10 INFO [reporting] rendered dashboard snapshot 87d5b7be-1d30-4990-a21b-030782af085c
+2026-10-31 02:36:24 INFO [scheduler] dispatched job export-3419 to worker-2
+2026-10-31 02:36:24 ERROR [worker] job export-3419 failed: OSError [Errno 28] No space left on device: '/var/lib/batch/tmp/export-3419.part'
+2026-10-31 02:36:29 INFO [scheduler] dispatched job export-3504 to worker-1
+2026-10-31 02:36:29 ERROR [worker] job export-3504 failed: OSError [Errno 28] No space left on device: '/var/lib/batch/tmp/export-3504.part'
+2026-10-31 02:36:41 INFO [worker] job export-8354 finished in 177s (579 MB written)
+2026-10-31 02:36:56 INFO [scheduler] dispatched job export-6179 to worker-2
+2026-10-31 02:37:04 WARNING [storage] upload of export-5500.parquet to bucket reports-archive slow, retrying (attempt 4/5)
+2026-10-31 02:37:04 ERROR [worker] job export-5500 failed: OSError [Errno 28] No space left on device: '/var/lib/batch/tmp/export-5500.part'
+2026-10-31 02:37:12 INFO [scheduler] dispatched job export-8404 to worker-1
+2026-10-31 02:37:12 ERROR [worker] job export-8404 failed: OSError [Errno 28] No space left on device: '/var/lib/batch/tmp/export-8404.part'
+2026-10-31 02:37:25 INFO [scheduler] dispatched job export-2479 to worker-4
+2026-10-31 02:37:34 INFO [reporting] rendered dashboard snapshot 925817b7-cf50-4889-a8b7-7f7b7321bf6b
+2026-10-31 02:37:41 INFO [worker] job export-3471 finished in 18s (462 MB written)
+2026-10-31 02:37:41 ERROR [worker] job export-3471 failed: OSError [Errno 28] No space left on device: '/var/lib/batch/tmp/export-3471.part'
+2026-10-31 02:37:54 INFO [scheduler] dispatched job export-2381 to worker-2
+2026-10-31 02:37:54 ERROR [worker] job export-2381 failed: OSError [Errno 28] No space left on device: '/var/lib/batch/tmp/export-2381.part'
+2026-10-31 02:38:06 INFO [reporting] rendered dashboard snapshot 5d286aa4-28a3-4779-9c1c-351785d2d0a6
+2026-10-31 02:38:11 INFO [worker] job export-6543 finished in 176s (613 MB written)
+2026-10-31 02:38:11 ERROR [worker] job export-6543 failed: OSError [Errno 28] No space left on device: '/var/lib/batch/tmp/export-6543.part'
+2026-10-31 02:38:21 INFO [scheduler] dispatched job export-6401 to worker-1
+2026-10-31 02:38:28 INFO [scheduler] dispatched job export-3463 to worker-3
+2026-10-31 02:38:28 ERROR [worker] disk usage on /var/lib/batch at 99% (495 GB of 500 GB)
+2026-10-31 02:38:32 INFO [scheduler] dispatched job export-7421 to worker-2
+2026-10-31 02:38:46 INFO [scheduler] dispatched job export-7171 to worker-3
+2026-10-31 02:38:57 INFO [reporting] rendered dashboard snapshot 6c645c15-aba3-41cb-a561-e1e917ec889c
+2026-10-31 02:38:59 INFO [scheduler] dispatched job export-4509 to worker-3
+2026-10-31 02:39:08 INFO [scheduler] dispatched job export-3253 to worker-2
+2026-10-31 02:39:08 ERROR [worker] job export-3253 failed: OSError [Errno 28] No space left on device: '/var/lib/batch/tmp/export-3253.part'
+2026-10-31 02:39:21 INFO [scheduler] dispatched job export-9843 to worker-1
+2026-10-31 02:39:34 WARNING [storage] upload of export-7172.parquet to bucket reports-archive slow, retrying (attempt 2/5)
+2026-10-31 02:39:34 ERROR [worker] job export-7172 failed: OSError [Errno 28] No space left on device: '/var/lib/batch/tmp/export-7172.part'
+2026-10-31 02:39:47 INFO [reporting] rendered dashboard snapshot 692e07b6-0b2f-4d5c-b00b-5d5fb89f72f3
+2026-10-31 02:39:58 INFO [reporting] rendered dashboard snapshot 72ecf16e-c8a7-43e9-bfa0-16c2c09cb506
+2026-10-31 02:40:03 INFO [reporting] rendered dashboard snapshot 5e2ad32d-31ab-4b56-95c9-fdc7e76adca9
+2026-10-31 02:40:13 INFO [worker] job export-5616 finished in 202s (392 MB written)
+2026-10-31 02:40:20 INFO [scheduler] dispatched job export-4271 to worker-2
+2026-10-31 02:40:23 INFO [worker] job export-7081 finished in 144s (106 MB written)
+2026-10-31 02:40:32 INFO [scheduler] dispatched job export-2374 to worker-2
+2026-10-31 02:40:45 INFO [scheduler] dispatched job export-8167 to worker-1
+2026-10-31 02:40:50 INFO [worker] job export-6727 finished in 9s (425 MB written)
+2026-10-31 02:40:50 ERROR [worker] job export-6727 failed: OSError [Errno 28] No space left on device: '/var/lib/batch/tmp/export-6727.part'
+2026-10-31 02:40:59 INFO [scheduler] dispatched job export-2337 to worker-3
+2026-10-31 02:41:05 INFO [scheduler] dispatched job export-6493 to worker-2
+2026-10-31 02:41:05 ERROR [worker] job export-6493 failed: OSError [Errno 28] No space left on device: '/var/lib/batch/tmp/export-6493.part'
+2026-10-31 02:41:11 INFO [reporting] rendered dashboard snapshot 72d78bdd-7817-49ff-b49e-04ccc24369e7
+2026-10-31 02:41:24 INFO [scheduler] dispatched job export-4533 to worker-2
+2026-10-31 02:41:36 INFO [worker] job export-2821 finished in 201s (296 MB written)
+2026-10-31 02:41:40 INFO [scheduler] dispatched job export-8489 to worker-1
+2026-10-31 02:41:40 ERROR [worker] job export-8489 failed: OSError [Errno 28] No space left on device: '/var/lib/batch/tmp/export-8489.part'
+2026-10-31 02:41:53 INFO [worker] job export-1269 finished in 164s (528 MB written)
+2026-10-31 02:42:05 INFO [scheduler] dispatched job export-1025 to worker-3
