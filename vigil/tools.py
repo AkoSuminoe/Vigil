@@ -303,6 +303,8 @@ def read_logs(path: str, tool_context: ToolContext) -> dict:
         return {"status": "error", "error_message": f"Log file is larger than {MAX_LOG_BYTES} bytes."}
 
     entries, unparsed = parse_log_file(log_path)
+    if not entries and unparsed:
+        return {"status": "error", "error_message": f"No lines matched a supported log format. Expected {SUPPORTED_FORMATS}."}
     summary = {"source": log_path.name, **summarise_entries(entries, unparsed)}
     tool_context.state[STATE_SUMMARY] = summary
     tool_context.state[STATE_GROUPS] = analyse_entries(entries)

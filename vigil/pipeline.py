@@ -20,6 +20,7 @@ from .tools import (
     MAX_TOOL_CALLS,
     STATE_GROUPS,
     STATE_SUMMARY,
+    SUPPORTED_FORMATS,
     analyse_entries,
     parse_log_text,
     summarise_entries,
@@ -176,6 +177,9 @@ async def analyze(
         result.update(status="error", error_kind=kind, error=message)
         return finish()
 
+    if not entries and any(line.strip() for line in log_lines):
+        # Zero parsed lines means "format not recognised", not "all clear".
+        return fail("unsupported_format", f"No lines matched a supported log format. Expected {SUPPORTED_FORMATS}.")
     if not groups:
         result["summary"] = "No warnings or errors found in this log."
         return finish()

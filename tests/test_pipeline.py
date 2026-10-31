@@ -121,6 +121,25 @@ def test_missing_api_key_is_a_config_error(monkeypatch):
     assert "GOOGLE_API_KEY" in result["error"]
 
 
+def test_unrecognised_format_is_an_error_not_an_all_clear():
+    result = asyncio.run(analyze("<14>Oct 31 10:00:00 host sshd[42]: Failed password\nanother line\n", "syslog.log"))
+    assert result["status"] == "error"
+    assert result["error_kind"] == "unsupported_format"
+    assert "JSON lines" in result["error"]
+    assert result["metrics"]["attempts"] == 0
+
+
+def test_read_logs_rejects_unrecognised_format(tmp_path):
+    from test_tools import FakeToolContext
+
+    path = tmp_path / "nginx.log"
+    path.write_text('203.0.113.9 - - [31/Oct/2026:10:00:00 +0000] "GET / HTTP/1.1" 200 512\n', encoding="utf-8")
+    from vigil.tools import read_logs
+
+    result = read_logs(str(path), FakeToolContext())
+    assert result["status"] == "error" and "supported log format" in result["error_message"]
+
+
 def test_log_without_issues_skips_the_model():
     result = asyncio.run(analyze("2026-10-31 10:00:00 INFO [api] ok\n", "quiet.log"))
     assert result["status"] == "ok"

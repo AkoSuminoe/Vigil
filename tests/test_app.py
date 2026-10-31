@@ -111,6 +111,15 @@ def test_pipeline_errors_map_to_status_codes(client, monkeypatch):
     assert "timed out" in response.json()["error"]
 
 
+def test_unrecognised_format_returns_422(client, monkeypatch):
+    from vigil.pipeline import analyze as real_analyze
+
+    monkeypatch.setattr(main, "analyze", real_analyze)
+    response = upload(client, "access.log", b'203.0.113.9 - - [31/Oct/2026:10:00:00 +0000] "GET / HTTP/1.1" 200 512\n')
+    assert response.status_code == 422
+    assert "supported log format" in response.json()["error"]
+
+
 def test_api_key_never_reaches_the_browser(client):
     bodies = [
         client.get("/").text,

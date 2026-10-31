@@ -181,5 +181,5 @@ async def analyze_endpoint(request: Request) -> JSONResponse:
 
     async with analysis_slots:
         result = await analyze(text, source)
-    status = {None: 200, "config": 503, "timeout": 504}.get(result["error_kind"], 502)
+    status = {None: 200, "unsupported_format": 422, "config": 503, "timeout": 504}.get(result["error_kind"], 502)
     return JSONResponse(result, status_code=status)
