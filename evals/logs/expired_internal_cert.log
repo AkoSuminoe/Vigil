@@ -1,0 +1,238 @@
+2026-10-31 23:30:04 INFO [accounts] GET /api/v1/cart -> 200 (58ms) req=req-ad3c3ba1
+2026-10-31 23:30:07 INFO [api-gateway] GET /api/v1/orders -> 200 (17ms) req=req-e62db17f
+2026-10-31 23:30:11 INFO [api-gateway] GET /api/v1/cart -> 200 (110ms) req=req-53a7cfa0
+2026-10-31 23:30:14 INFO [checkout] GET /api/v1/items -> 200 (141ms) req=req-3fa26170
+2026-10-31 23:30:19 INFO [checkout] GET /api/v1/orders -> 200 (77ms) req=req-f7cbf929
+2026-10-31 23:30:20 WARNING [api-gateway] slow handler 902ms for GET /api/v1/items
+2026-10-31 23:30:22 INFO [checkout] GET /api/v1/cart -> 200 (59ms) req=req-1ff15662
+2026-10-31 23:30:24 INFO [api-gateway] GET /api/v1/cart -> 200 (119ms) req=req-fbbe8450
+2026-10-31 23:30:26 INFO [accounts] GET /api/v1/me -> 200 (82ms) req=req-561ff1fd
+2026-10-31 23:30:32 WARNING [api-gateway] slow handler 858ms for GET /api/v1/items
+2026-10-31 23:30:36 INFO [checkout] GET /api/v1/me -> 200 (97ms) req=req-68cc270c
+2026-10-31 23:30:38 WARNING [accounts] slow handler 1153ms for GET /api/v1/items
+2026-10-31 23:30:39 INFO [api-gateway] GET /api/v1/items -> 200 (28ms) req=req-f50342f4
+2026-10-31 23:30:44 INFO [accounts] GET /api/v1/me -> 200 (34ms) req=req-49b4ecef
+2026-10-31 23:30:49 INFO [api-gateway] GET /api/v1/orders -> 200 (85ms) req=req-fd9970a8
+2026-10-31 23:30:53 INFO [api-gateway] GET /api/v1/orders -> 200 (42ms) req=req-7090ea5f
+2026-10-31 23:30:55 INFO [api-gateway] GET /api/v1/orders -> 200 (127ms) req=req-bf57cd23
+2026-10-31 23:30:59 INFO [api-gateway] GET /api/v1/cart -> 200 (152ms) req=req-ce190dc7
+2026-10-31 23:31:01 WARNING [api-gateway] slow handler 1467ms for GET /api/v1/items
+2026-10-31 23:31:06 INFO [api-gateway] GET /api/v1/items -> 200 (101ms) req=req-31dd10f5
+2026-10-31 23:31:09 DEBUG [accounts] gc pause 15ms heap=622MB
+2026-10-31 23:31:13 WARNING [api-gateway] slow handler 1060ms for GET /api/v1/items
+2026-10-31 23:31:18 INFO [checkout] GET /api/v1/cart -> 200 (128ms) req=req-f0e872dd
+2026-10-31 23:31:22 INFO [api-gateway] GET /api/v1/orders -> 200 (67ms) req=req-1533ad62
+2026-10-31 23:31:25 INFO [api-gateway] GET /api/v1/items -> 200 (88ms) req=req-8192cb21
+2026-10-31 23:31:29 INFO [accounts] GET /api/v1/orders -> 200 (108ms) req=req-9077cf98
+2026-10-31 23:31:35 INFO [checkout] GET /api/v1/cart -> 200 (56ms) req=req-199f0125
+2026-10-31 23:31:39 DEBUG [accounts] gc pause 37ms heap=659MB
+2026-10-31 23:31:42 INFO [accounts] GET /api/v1/me -> 200 (70ms) req=req-a2a11b7d
+2026-10-31 23:31:48 INFO [accounts] GET /api/v1/items -> 200 (79ms) req=req-ce80b8ad
+2026-10-31 23:31:50 INFO [accounts] GET /api/v1/orders -> 200 (46ms) req=req-0d540613
+2026-10-31 23:31:56 INFO [accounts] GET /api/v1/orders -> 200 (95ms) req=req-57756c79
+2026-10-31 23:32:02 INFO [accounts] GET /api/v1/cart -> 200 (66ms) req=req-15201403
+2026-10-31 23:32:07 INFO [accounts] GET /api/v1/cart -> 200 (58ms) req=req-4d34bf6b
+2026-10-31 23:32:09 INFO [checkout] GET /api/v1/items -> 200 (95ms) req=req-cfeedbe4
+2026-10-31 23:32:15 INFO [checkout] GET /api/v1/cart -> 200 (109ms) req=req-03ac4ad9
+2026-10-31 23:32:16 WARNING [checkout] slow handler 1215ms for GET /api/v1/items
+2026-10-31 23:32:18 INFO [accounts] GET /api/v1/items -> 200 (154ms) req=req-7364016c
+2026-10-31 23:32:21 WARNING [accounts] slow handler 1090ms for GET /api/v1/items
+2026-10-31 23:32:24 INFO [checkout] GET /api/v1/cart -> 200 (74ms) req=req-cd513176
+2026-10-31 23:32:28 INFO [accounts] GET /api/v1/me -> 200 (123ms) req=req-eba3aa68
+2026-10-31 23:32:32 INFO [api-gateway] GET /api/v1/items -> 200 (140ms) req=req-dd33aa85
+2026-10-31 23:32:36 WARNING [api-gateway] slow handler 1356ms for GET /api/v1/items
+2026-10-31 23:32:37 DEBUG [checkout] gc pause 6ms heap=737MB
+2026-10-31 23:32:41 INFO [accounts] GET /api/v1/me -> 200 (59ms) req=req-5d843656
+2026-10-31 23:32:45 DEBUG [api-gateway] gc pause 39ms heap=590MB
+2026-10-31 23:32:48 INFO [checkout] GET /api/v1/cart -> 200 (27ms) req=req-bfaf60e1
+2026-10-31 23:32:50 DEBUG [api-gateway] gc pause 16ms heap=881MB
+2026-10-31 23:32:54 INFO [accounts] GET /api/v1/cart -> 200 (115ms) req=req-95a18054
+2026-10-31 23:32:56 INFO [api-gateway] GET /api/v1/items -> 200 (31ms) req=req-7f1e71ca
+2026-10-31 23:32:58 DEBUG [api-gateway] gc pause 22ms heap=586MB
+2026-10-31 23:33:00 INFO [checkout] GET /api/v1/me -> 200 (13ms) req=req-ba8b6463
+2026-10-31 23:33:03 DEBUG [accounts] gc pause 5ms heap=404MB
+2026-10-31 23:33:06 DEBUG [checkout] gc pause 14ms heap=722MB
+2026-10-31 23:33:09 INFO [api-gateway] GET /api/v1/orders -> 200 (12ms) req=req-81214550
+2026-10-31 23:33:10 INFO [api-gateway] GET /api/v1/cart -> 200 (119ms) req=req-d69b8ce7
+2026-10-31 23:33:14 INFO [accounts] GET /api/v1/me -> 200 (84ms) req=req-acb3673e
+2026-10-31 23:33:17 INFO [api-gateway] GET /api/v1/me -> 200 (155ms) req=req-359efa9a
+2026-10-31 23:33:20 INFO [api-gateway] GET /api/v1/orders -> 200 (130ms) req=req-79d265bc
+2026-10-31 23:33:22 WARNING [api-gateway] slow handler 931ms for GET /api/v1/items
+2026-10-31 23:33:25 INFO [checkout] GET /api/v1/me -> 200 (19ms) req=req-99ea35e4
+2026-10-31 23:33:26 INFO [checkout] GET /api/v1/me -> 200 (53ms) req=req-2a2a0862
+2026-10-31 23:33:28 DEBUG [accounts] gc pause 6ms heap=560MB
+2026-10-31 23:33:34 DEBUG [api-gateway] gc pause 6ms heap=759MB
+2026-10-31 23:33:36 WARNING [checkout] slow handler 1099ms for GET /api/v1/items
+2026-10-31 23:33:41 INFO [accounts] GET /api/v1/items -> 200 (115ms) req=req-df853f12
+2026-10-31 23:33:46 INFO [api-gateway] GET /api/v1/orders -> 200 (69ms) req=req-62a8a668
+2026-10-31 23:33:48 INFO [accounts] GET /api/v1/me -> 200 (112ms) req=req-c939ae2a
+2026-10-31 23:33:50 INFO [checkout] GET /api/v1/cart -> 200 (159ms) req=req-5a09d489
+2026-10-31 23:33:56 INFO [api-gateway] GET /api/v1/items -> 200 (42ms) req=req-e67e15dc
+2026-10-31 23:33:58 INFO [api-gateway] GET /api/v1/me -> 200 (159ms) req=req-ec45e3bd
+2026-10-31 23:34:02 INFO [api-gateway] GET /api/v1/cart -> 200 (31ms) req=req-71f2bb79
+2026-10-31 23:34:07 INFO [checkout] GET /api/v1/items -> 200 (120ms) req=req-8c234f14
+2026-10-31 23:34:13 INFO [accounts] GET /api/v1/items -> 200 (99ms) req=req-ad225cbd
+2026-10-31 23:34:14 INFO [api-gateway] GET /api/v1/orders -> 200 (45ms) req=req-4f107728
+2026-10-31 23:34:17 INFO [checkout] GET /api/v1/orders -> 200 (147ms) req=req-1daa703c
+2026-10-31 23:34:21 INFO [api-gateway] GET /api/v1/cart -> 200 (77ms) req=req-2bfdc058
+2026-10-31 23:34:24 INFO [checkout] GET /api/v1/me -> 200 (53ms) req=req-c2afe656
+2026-10-31 23:34:29 WARNING [accounts] slow handler 1226ms for GET /api/v1/items
+2026-10-31 23:34:35 INFO [checkout] GET /api/v1/cart -> 200 (118ms) req=req-b81cb472
+2026-10-31 23:34:38 INFO [accounts] GET /api/v1/items -> 200 (82ms) req=req-9715a473
+2026-10-31 23:34:42 INFO [api-gateway] GET /api/v1/cart -> 200 (97ms) req=req-df8f5d83
+2026-10-31 23:34:45 INFO [accounts] GET /api/v1/orders -> 200 (35ms) req=req-2b52e190
+2026-10-31 23:34:47 INFO [checkout] GET /api/v1/cart -> 200 (155ms) req=req-794cd6b6
+2026-10-31 23:34:50 INFO [api-gateway] GET /api/v1/orders -> 200 (108ms) req=req-37dc191d
+2026-10-31 23:34:55 INFO [api-gateway] GET /api/v1/orders -> 200 (149ms) req=req-ff799ab6
+2026-10-31 23:34:58 INFO [api-gateway] GET /api/v1/orders -> 200 (107ms) req=req-e2b45022
+2026-10-31 23:35:01 INFO [accounts] GET /api/v1/items -> 200 (32ms) req=req-9915b523
+2026-10-31 23:35:06 INFO [accounts] GET /api/v1/orders -> 200 (152ms) req=req-283e65e3
+2026-10-31 23:35:07 INFO [accounts] GET /api/v1/orders -> 200 (55ms) req=req-725e0240
+2026-10-31 23:35:07 WARNING [cert-manager] certificate internal-mtls expires in 25m, renewal pending
+2026-10-31 23:36:18 ERROR [cert-manager] failed to renew certificate internal-mtls: ACME order failed: 429 rateLimited, retry in 3600s
+2026-10-31 23:36:20 INFO [checkout] GET /api/v1/orders -> 200 (18ms) req=req-f5bf0748
+2026-10-31 23:36:22 INFO [checkout] GET /api/v1/me -> 200 (90ms) req=req-b5fdc066
+2026-10-31 23:36:24 INFO [accounts] GET /api/v1/cart -> 200 (60ms) req=req-5d514483
+2026-10-31 23:36:26 INFO [checkout] GET /api/v1/items -> 200 (48ms) req=req-9a95e4d3
+2026-10-31 23:36:29 INFO [checkout] GET /api/v1/cart -> 200 (105ms) req=req-fa94aee7
+2026-10-31 23:36:35 INFO [api-gateway] GET /api/v1/me -> 200 (87ms) req=req-2fe1bed2
+2026-10-31 23:36:38 INFO [api-gateway] GET /api/v1/me -> 200 (155ms) req=req-3997d997
+2026-10-31 23:36:42 WARNING [checkout] slow handler 836ms for GET /api/v1/items
+2026-10-31 23:38:08 ERROR [cert-manager] failed to renew certificate internal-mtls: ACME order failed: 429 rateLimited, retry in 3600s
+2026-10-31 23:38:11 INFO [accounts] GET /api/v1/cart -> 200 (150ms) req=req-cc795d67
+2026-10-31 23:38:14 INFO [checkout] GET /api/v1/orders -> 200 (147ms) req=req-7f345d15
+2026-10-31 23:38:19 INFO [api-gateway] GET /api/v1/orders -> 200 (146ms) req=req-473f9406
+2026-10-31 23:38:23 INFO [api-gateway] GET /api/v1/me -> 200 (95ms) req=req-d81eff70
+2026-10-31 23:38:25 INFO [accounts] GET /api/v1/me -> 200 (63ms) req=req-784b0392
+2026-10-31 23:38:27 DEBUG [api-gateway] gc pause 37ms heap=217MB
+2026-10-31 23:38:28 INFO [api-gateway] GET /api/v1/items -> 200 (10ms) req=req-972b38c8
+2026-10-31 23:38:32 DEBUG [api-gateway] gc pause 19ms heap=453MB
+2026-10-31 23:39:55 ERROR [cert-manager] failed to renew certificate internal-mtls: ACME order failed: 429 rateLimited, retry in 3600s
+2026-10-31 23:39:57 INFO [api-gateway] GET /api/v1/cart -> 200 (64ms) req=req-c9328af3
+2026-10-31 23:40:00 WARNING [api-gateway] slow handler 1287ms for GET /api/v1/items
+2026-10-31 23:40:05 INFO [api-gateway] GET /api/v1/me -> 200 (36ms) req=req-333177f9
+2026-10-31 23:40:07 INFO [checkout] GET /api/v1/cart -> 200 (67ms) req=req-406b539e
+2026-10-31 23:40:09 INFO [api-gateway] GET /api/v1/me -> 200 (149ms) req=req-f4e87978
+2026-10-31 23:40:10 DEBUG [checkout] gc pause 26ms heap=585MB
+2026-10-31 23:40:12 INFO [api-gateway] GET /api/v1/me -> 200 (23ms) req=req-c81afdc4
+2026-10-31 23:40:15 INFO [checkout] GET /api/v1/cart -> 200 (21ms) req=req-80377e6a
+2026-10-31 23:40:16 INFO [api-gateway] GET /healthz -> 200 (1ms)
+2026-10-31 23:40:17 ERROR [checkout] rpc to accounts.internal:8443 failed: tls handshake error, connection reset (attempt 2/3)
+2026-10-31 23:40:19 ERROR [checkout] rpc to accounts.internal:8443 failed: tls handshake error, connection reset (attempt 3/3)
+2026-10-31 23:40:21 ERROR [accounts] rejected client connection from 203.0.113.5: remote error: tls: bad certificate
+2026-10-31 23:40:23 ERROR [accounts] rejected client connection from 203.0.113.64: remote error: tls: bad certificate
+2026-10-31 23:40:25 ERROR [accounts] rejected client connection from 203.0.113.27: remote error: tls: bad certificate
+2026-10-31 23:40:26 ERROR [api-gateway] POST /api/v1/login -> 502 bad gateway req=req-7d659e64
+2026-10-31 23:40:27 ERROR [checkout] rpc to accounts.internal:8443 failed: tls handshake error, connection reset (attempt 2/3)
+2026-10-31 23:40:28 ERROR [checkout] rpc to accounts.internal:8443 failed: tls handshake error, connection reset (attempt 2/3)
+2026-10-31 23:40:30 INFO [api-gateway] GET /healthz -> 200 (3ms)
+2026-10-31 23:40:31 INFO [api-gateway] GET /healthz -> 200 (4ms)
+2026-10-31 23:40:33 ERROR [accounts] rejected client connection from 203.0.113.34: remote error: tls: bad certificate
+2026-10-31 23:40:34 ERROR [checkout] rpc to accounts.internal:8443 failed: tls handshake error, connection reset (attempt 2/3)
+2026-10-31 23:40:36 ERROR [checkout] rpc to accounts.internal:8443 failed: tls handshake error, connection reset (attempt 3/3)
+2026-10-31 23:40:37 ERROR [api-gateway] POST /api/v1/login -> 502 bad gateway req=req-ce3bae56
+2026-10-31 23:40:38 ERROR [checkout] rpc to accounts.internal:8443 failed: tls handshake error, connection reset (attempt 1/3)
+2026-10-31 23:40:39 ERROR [accounts] rejected client connection from 203.0.113.154: remote error: tls: bad certificate
+2026-10-31 23:40:40 ERROR [api-gateway] POST /api/v1/checkout -> 502 bad gateway req=req-ff405f22
+2026-10-31 23:40:41 ERROR [api-gateway] POST /api/v1/cart -> 502 bad gateway req=req-dce59e1f
+2026-10-31 23:40:44 ERROR [checkout] rpc to accounts.internal:8443 failed: tls handshake error, connection reset (attempt 3/3)
+2026-10-31 23:40:45 ERROR [api-gateway] POST /api/v1/cart -> 502 bad gateway req=req-1c5d6965
+2026-10-31 23:40:47 ERROR [accounts] rejected client connection from 203.0.113.148: remote error: tls: bad certificate
+2026-10-31 23:40:48 ERROR [api-gateway] POST /api/v1/checkout -> 502 bad gateway req=req-49c15f9b
+2026-10-31 23:40:49 INFO [api-gateway] GET /healthz -> 200 (4ms)
+2026-10-31 23:40:50 ERROR [checkout] rpc to accounts.internal:8443 failed: tls handshake error, connection reset (attempt 3/3)
+2026-10-31 23:40:50 ERROR [api-gateway] POST /api/v1/login -> 502 bad gateway req=req-d8389800
+2026-10-31 23:40:52 ERROR [checkout] rpc to accounts.internal:8443 failed: tls handshake error, connection reset (attempt 2/3)
+2026-10-31 23:40:53 ERROR [checkout] rpc to accounts.internal:8443 failed: tls handshake error, connection reset (attempt 1/3)
+2026-10-31 23:40:55 INFO [api-gateway] GET /healthz -> 200 (4ms)
+2026-10-31 23:40:56 ERROR [api-gateway] POST /api/v1/cart -> 502 bad gateway req=req-55c6bf61
+2026-10-31 23:40:57 ERROR [api-gateway] POST /api/v1/cart -> 502 bad gateway req=req-057a44a7
+2026-10-31 23:40:59 ERROR [checkout] rpc to accounts.internal:8443 failed: tls handshake error, connection reset (attempt 2/3)
+2026-10-31 23:41:00 ERROR [api-gateway] POST /api/v1/cart -> 502 bad gateway req=req-b8a351d9
+2026-10-31 23:41:01 ERROR [checkout] rpc to accounts.internal:8443 failed: tls handshake error, connection reset (attempt 2/3)
+2026-10-31 23:41:04 ERROR [api-gateway] POST /api/v1/login -> 502 bad gateway req=req-b9896ffb
+2026-10-31 23:41:06 ERROR [api-gateway] POST /api/v1/login -> 502 bad gateway req=req-34ad0828
+2026-10-31 23:41:07 ERROR [api-gateway] POST /api/v1/login -> 502 bad gateway req=req-72fe643a
+2026-10-31 23:41:08 ERROR [api-gateway] POST /api/v1/checkout -> 502 bad gateway req=req-ac8daf18
+2026-10-31 23:41:09 ERROR [api-gateway] POST /api/v1/login -> 502 bad gateway req=req-3cf0e185
+2026-10-31 23:41:11 ERROR [api-gateway] POST /api/v1/cart -> 502 bad gateway req=req-27d9690a
+2026-10-31 23:41:12 ERROR [api-gateway] POST /api/v1/cart -> 502 bad gateway req=req-67cf668f
+2026-10-31 23:41:14 ERROR [accounts] rejected client connection from 203.0.113.206: remote error: tls: bad certificate
+2026-10-31 23:41:14 ERROR [checkout] rpc to accounts.internal:8443 failed: tls handshake error, connection reset (attempt 1/3)
+2026-10-31 23:41:16 ERROR [accounts] rejected client connection from 203.0.113.93: remote error: tls: bad certificate
+2026-10-31 23:41:17 ERROR [api-gateway] POST /api/v1/cart -> 502 bad gateway req=req-2beda105
+2026-10-31 23:41:18 INFO [api-gateway] GET /healthz -> 200 (5ms)
+2026-10-31 23:41:20 ERROR [checkout] rpc to accounts.internal:8443 failed: tls handshake error, connection reset (attempt 2/3)
+2026-10-31 23:41:21 ERROR [api-gateway] POST /api/v1/login -> 502 bad gateway req=req-01b93d73
+2026-10-31 23:41:22 ERROR [api-gateway] POST /api/v1/login -> 502 bad gateway req=req-5abcd8e7
+2026-10-31 23:41:23 ERROR [accounts] rejected client connection from 203.0.113.191: remote error: tls: bad certificate
+2026-10-31 23:41:24 ERROR [api-gateway] POST /api/v1/login -> 502 bad gateway req=req-790c6c14
+2026-10-31 23:41:26 ERROR [checkout] rpc to accounts.internal:8443 failed: tls handshake error, connection reset (attempt 3/3)
+2026-10-31 23:41:28 ERROR [api-gateway] POST /api/v1/login -> 502 bad gateway req=req-d93efaa5
+2026-10-31 23:41:30 ERROR [checkout] rpc to accounts.internal:8443 failed: tls handshake error, connection reset (attempt 2/3)
+2026-10-31 23:41:31 ERROR [api-gateway] POST /api/v1/checkout -> 502 bad gateway req=req-dd9625b9
+2026-10-31 23:41:33 ERROR [accounts] rejected client connection from 203.0.113.252: remote error: tls: bad certificate
+2026-10-31 23:41:33 ERROR [checkout] rpc to accounts.internal:8443 failed: tls handshake error, connection reset (attempt 2/3)
+2026-10-31 23:41:35 ERROR [api-gateway] POST /api/v1/cart -> 502 bad gateway req=req-3b2d6381
+2026-10-31 23:41:37 ERROR [accounts] rejected client connection from 203.0.113.151: remote error: tls: bad certificate
+2026-10-31 23:41:39 ERROR [api-gateway] POST /api/v1/login -> 502 bad gateway req=req-0287719e
+2026-10-31 23:41:41 INFO [api-gateway] GET /healthz -> 200 (3ms)
+2026-10-31 23:41:42 ERROR [api-gateway] POST /api/v1/cart -> 502 bad gateway req=req-1276cd5a
+2026-10-31 23:41:44 ERROR [api-gateway] POST /api/v1/cart -> 502 bad gateway req=req-45e49ea7
+2026-10-31 23:41:45 ERROR [api-gateway] POST /api/v1/checkout -> 502 bad gateway req=req-f0b63ae0
+2026-10-31 23:41:46 ERROR [api-gateway] POST /api/v1/login -> 502 bad gateway req=req-fd14041a
+2026-10-31 23:41:47 ERROR [checkout] rpc to accounts.internal:8443 failed: tls handshake error, connection reset (attempt 2/3)
+2026-10-31 23:41:49 ERROR [checkout] rpc to accounts.internal:8443 failed: tls handshake error, connection reset (attempt 1/3)
+2026-10-31 23:41:51 INFO [api-gateway] GET /healthz -> 200 (2ms)
+2026-10-31 23:41:53 ERROR [accounts] rejected client connection from 203.0.113.109: remote error: tls: bad certificate
+2026-10-31 23:41:54 ERROR [checkout] rpc to accounts.internal:8443 failed: tls handshake error, connection reset (attempt 2/3)
+2026-10-31 23:41:56 ERROR [checkout] rpc to accounts.internal:8443 failed: tls handshake error, connection reset (attempt 1/3)
+2026-10-31 23:41:57 ERROR [api-gateway] POST /api/v1/cart -> 502 bad gateway req=req-19767127
+2026-10-31 23:41:59 ERROR [api-gateway] POST /api/v1/checkout -> 502 bad gateway req=req-dfe12587
+2026-10-31 23:42:00 ERROR [api-gateway] POST /api/v1/login -> 502 bad gateway req=req-3e01195e
+2026-10-31 23:42:00 ERROR [accounts] rejected client connection from 203.0.113.39: remote error: tls: bad certificate
+2026-10-31 23:42:02 ERROR [api-gateway] POST /api/v1/login -> 502 bad gateway req=req-d2e1ca83
+2026-10-31 23:42:03 ERROR [accounts] rejected client connection from 203.0.113.246: remote error: tls: bad certificate
+2026-10-31 23:42:04 ERROR [api-gateway] POST /api/v1/cart -> 502 bad gateway req=req-7f4ce896
+2026-10-31 23:42:05 ERROR [checkout] rpc to accounts.internal:8443 failed: tls handshake error, connection reset (attempt 2/3)
+2026-10-31 23:42:06 ERROR [api-gateway] POST /api/v1/login -> 502 bad gateway req=req-5d4ce5ee
+2026-10-31 23:42:07 INFO [api-gateway] GET /healthz -> 200 (4ms)
+2026-10-31 23:42:07 ERROR [accounts] rejected client connection from 203.0.113.32: remote error: tls: bad certificate
+2026-10-31 23:42:08 ERROR [api-gateway] POST /api/v1/login -> 502 bad gateway req=req-506d2fba
+2026-10-31 23:42:09 ERROR [api-gateway] POST /api/v1/cart -> 502 bad gateway req=req-906909ec
+2026-10-31 23:42:10 ERROR [checkout] rpc to accounts.internal:8443 failed: tls handshake error, connection reset (attempt 3/3)
+2026-10-31 23:42:11 ERROR [accounts] rejected client connection from 203.0.113.42: remote error: tls: bad certificate
+2026-10-31 23:42:13 ERROR [api-gateway] POST /api/v1/checkout -> 502 bad gateway req=req-11529c2b
+2026-10-31 23:42:15 ERROR [api-gateway] POST /api/v1/login -> 502 bad gateway req=req-2fa05f90
+2026-10-31 23:42:17 ERROR [api-gateway] POST /api/v1/checkout -> 502 bad gateway req=req-a3ed070b
+2026-10-31 23:42:17 INFO [api-gateway] GET /healthz -> 200 (3ms)
+2026-10-31 23:42:19 ERROR [accounts] rejected client connection from 203.0.113.133: remote error: tls: bad certificate
+2026-10-31 23:42:20 ERROR [accounts] rejected client connection from 203.0.113.119: remote error: tls: bad certificate
+2026-10-31 23:42:22 ERROR [checkout] rpc to accounts.internal:8443 failed: tls handshake error, connection reset (attempt 1/3)
+2026-10-31 23:42:22 ERROR [api-gateway] POST /api/v1/checkout -> 502 bad gateway req=req-7535e770
+2026-10-31 23:42:24 ERROR [api-gateway] POST /api/v1/cart -> 502 bad gateway req=req-b95e736f
+2026-10-31 23:42:25 ERROR [api-gateway] POST /api/v1/checkout -> 502 bad gateway req=req-5160d855
+2026-10-31 23:42:26 ERROR [api-gateway] POST /api/v1/login -> 502 bad gateway req=req-b2ab762d
+2026-10-31 23:42:27 ERROR [accounts] rejected client connection from 203.0.113.102: remote error: tls: bad certificate
+2026-10-31 23:42:29 ERROR [api-gateway] POST /api/v1/checkout -> 502 bad gateway req=req-daf14e25
+2026-10-31 23:42:29 ERROR [checkout] rpc to accounts.internal:8443 failed: tls handshake error, connection reset (attempt 1/3)
+2026-10-31 23:42:31 ERROR [api-gateway] POST /api/v1/login -> 502 bad gateway req=req-a0e925b7
+2026-10-31 23:42:32 INFO [api-gateway] GET /healthz -> 200 (2ms)
+2026-10-31 23:42:34 ERROR [checkout] rpc to accounts.internal:8443 failed: tls handshake error, connection reset (attempt 1/3)
+2026-10-31 23:42:35 ERROR [checkout] rpc to accounts.internal:8443 failed: tls handshake error, connection reset (attempt 1/3)
+2026-10-31 23:42:37 ERROR [api-gateway] POST /api/v1/login -> 502 bad gateway req=req-2e2ae327
+2026-10-31 23:42:39 ERROR [api-gateway] POST /api/v1/checkout -> 502 bad gateway req=req-94a8824b
+2026-10-31 23:42:40 ERROR [api-gateway] POST /api/v1/cart -> 502 bad gateway req=req-6376f6e7
+2026-10-31 23:42:40 ERROR [checkout] rpc to accounts.internal:8443 failed: tls handshake error, connection reset (attempt 2/3)
+2026-10-31 23:42:41 INFO [api-gateway] GET /healthz -> 200 (3ms)
+2026-10-31 23:42:43 ERROR [api-gateway] POST /api/v1/login -> 502 bad gateway req=req-211aacb9
+2026-10-31 23:42:45 INFO [api-gateway] GET /healthz -> 200 (5ms)
+2026-10-31 23:42:46 ERROR [api-gateway] POST /api/v1/cart -> 502 bad gateway req=req-6a32636d
+2026-10-31 23:42:46 ERROR [api-gateway] POST /api/v1/checkout -> 502 bad gateway req=req-87b23fb9
+2026-10-31 23:42:47 ERROR [api-gateway] POST /api/v1/checkout -> 502 bad gateway req=req-fa902fb6
+2026-10-31 23:42:48 INFO [api-gateway] GET /healthz -> 200 (4ms)
+2026-10-31 23:42:50 ERROR [api-gateway] POST /api/v1/cart -> 502 bad gateway req=req-e7d56c9f
+2026-10-31 23:42:53 ERROR [api-gateway] POST /api/v1/login -> 502 bad gateway req=req-07b9553f
+2026-10-31 23:42:53 ERROR [checkout] rpc to accounts.internal:8443 failed: tls handshake error, connection reset (attempt 3/3)
+2026-10-31 23:42:55 ERROR [api-gateway] POST /api/v1/cart -> 502 bad gateway req=req-35d611af
+2026-10-31 23:42:56 ERROR [accounts] rejected client connection from 203.0.113.222: remote error: tls: bad certificate

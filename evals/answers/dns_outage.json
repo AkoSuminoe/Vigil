@@ -1,0 +1,5 @@
+{
+  "log": "dns_outage.log",
+  "description": "CoreDNS has no healthy upstreams; services see generic timeouts and 503s.",
+  "root_cause": {"service": "coredns"}
+}

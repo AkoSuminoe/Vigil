@@ -1,0 +1,268 @@
+2026-10-31 14:00:03 WARNING [orders] slow handler 1352ms for GET /api/v1/items
+2026-10-31 14:00:09 INFO [search] GET /api/v1/cart -> 200 (64ms) req=req-eae3732d
+2026-10-31 14:00:11 INFO [orders] GET /api/v1/orders -> 200 (26ms) req=req-41578916
+2026-10-31 14:00:13 INFO [api-gateway] GET /api/v1/me -> 200 (57ms) req=req-78c02b33
+2026-10-31 14:00:18 INFO [orders] GET /api/v1/orders -> 200 (116ms) req=req-3551084a
+2026-10-31 14:00:20 INFO [search] GET /api/v1/items -> 200 (92ms) req=req-aa2fc00e
+2026-10-31 14:00:25 INFO [inventory] GET /api/v1/orders -> 200 (66ms) req=req-6c47914d
+2026-10-31 14:00:26 INFO [search] GET /api/v1/orders -> 200 (63ms) req=req-88fb3cb3
+2026-10-31 14:00:28 INFO [api-gateway] GET /api/v1/me -> 200 (10ms) req=req-4316b723
+2026-10-31 14:00:32 WARNING [orders] slow handler 1242ms for GET /api/v1/items
+2026-10-31 14:00:34 DEBUG [api-gateway] gc pause 27ms heap=571MB
+2026-10-31 14:00:39 INFO [search] GET /api/v1/me -> 200 (54ms) req=req-b0eaa33a
+2026-10-31 14:00:43 WARNING [api-gateway] slow handler 867ms for GET /api/v1/items
+2026-10-31 14:00:44 INFO [inventory] GET /api/v1/orders -> 200 (38ms) req=req-ad02f17e
+2026-10-31 14:00:48 DEBUG [search] gc pause 10ms heap=383MB
+2026-10-31 14:00:54 DEBUG [orders] gc pause 37ms heap=657MB
+2026-10-31 14:01:00 INFO [orders] GET /api/v1/cart -> 200 (87ms) req=req-566a1c17
+2026-10-31 14:01:03 INFO [api-gateway] GET /api/v1/me -> 200 (126ms) req=req-0eb7e20b
+2026-10-31 14:01:05 INFO [inventory] GET /api/v1/cart -> 200 (72ms) req=req-7753a287
+2026-10-31 14:01:07 INFO [api-gateway] GET /api/v1/me -> 200 (70ms) req=req-187ae085
+2026-10-31 14:01:09 INFO [orders] GET /api/v1/orders -> 200 (125ms) req=req-a7ebb023
+2026-10-31 14:01:13 INFO [inventory] GET /api/v1/me -> 200 (128ms) req=req-a9108154
+2026-10-31 14:01:15 INFO [inventory] GET /api/v1/cart -> 200 (81ms) req=req-587597c9
+2026-10-31 14:01:19 INFO [search] GET /api/v1/items -> 200 (64ms) req=req-842fbe3a
+2026-10-31 14:01:21 INFO [orders] GET /api/v1/cart -> 200 (95ms) req=req-1f15a2f0
+2026-10-31 14:01:24 WARNING [search] slow handler 1007ms for GET /api/v1/items
+2026-10-31 14:01:28 INFO [inventory] GET /api/v1/cart -> 200 (40ms) req=req-75590d2c
+2026-10-31 14:01:32 INFO [inventory] GET /api/v1/me -> 200 (73ms) req=req-3d9ffbd6
+2026-10-31 14:01:37 INFO [orders] GET /api/v1/me -> 200 (18ms) req=req-3efeecf3
+2026-10-31 14:01:38 DEBUG [inventory] gc pause 30ms heap=649MB
+2026-10-31 14:01:43 INFO [inventory] GET /api/v1/cart -> 200 (16ms) req=req-c5f16e37
+2026-10-31 14:01:48 INFO [api-gateway] GET /api/v1/orders -> 200 (78ms) req=req-c521913b
+2026-10-31 14:01:52 INFO [orders] GET /api/v1/items -> 200 (17ms) req=req-b12e21ab
+2026-10-31 14:01:58 INFO [api-gateway] GET /api/v1/orders -> 200 (94ms) req=req-853b96cb
+2026-10-31 14:02:02 INFO [orders] GET /api/v1/orders -> 200 (35ms) req=req-43e2d105
+2026-10-31 14:02:03 INFO [inventory] GET /api/v1/items -> 200 (67ms) req=req-bbc8f16f
+2026-10-31 14:02:05 INFO [orders] GET /api/v1/cart -> 200 (122ms) req=req-231103a2
+2026-10-31 14:02:06 WARNING [orders] slow handler 1499ms for GET /api/v1/items
+2026-10-31 14:02:10 INFO [orders] GET /api/v1/items -> 200 (93ms) req=req-e6d2a5b5
+2026-10-31 14:02:16 INFO [orders] GET /api/v1/orders -> 200 (40ms) req=req-1c143f71
+2026-10-31 14:02:17 INFO [api-gateway] GET /api/v1/items -> 200 (78ms) req=req-67256908
+2026-10-31 14:02:22 INFO [api-gateway] GET /api/v1/items -> 200 (32ms) req=req-4c17098b
+2026-10-31 14:02:24 DEBUG [orders] gc pause 26ms heap=871MB
+2026-10-31 14:02:28 DEBUG [orders] gc pause 23ms heap=233MB
+2026-10-31 14:02:30 WARNING [search] slow handler 1280ms for GET /api/v1/items
+2026-10-31 14:02:33 INFO [search] GET /api/v1/cart -> 200 (134ms) req=req-706455d1
+2026-10-31 14:02:36 WARNING [orders] slow handler 827ms for GET /api/v1/items
+2026-10-31 14:02:41 INFO [orders] GET /api/v1/items -> 200 (65ms) req=req-4fcc7785
+2026-10-31 14:02:44 DEBUG [api-gateway] gc pause 26ms heap=331MB
+2026-10-31 14:02:47 DEBUG [inventory] gc pause 31ms heap=831MB
+2026-10-31 14:02:52 DEBUG [inventory] gc pause 5ms heap=664MB
+2026-10-31 14:02:57 INFO [api-gateway] GET /api/v1/items -> 200 (103ms) req=req-7b7f14a7
+2026-10-31 14:03:02 WARNING [api-gateway] slow handler 1193ms for GET /api/v1/items
+2026-10-31 14:03:03 INFO [api-gateway] GET /api/v1/orders -> 200 (40ms) req=req-7d2771c6
+2026-10-31 14:03:09 WARNING [api-gateway] slow handler 990ms for GET /api/v1/items
+2026-10-31 14:03:12 INFO [search] GET /api/v1/cart -> 200 (160ms) req=req-48d7d56f
+2026-10-31 14:03:18 DEBUG [orders] gc pause 35ms heap=879MB
+2026-10-31 14:03:21 INFO [orders] GET /api/v1/items -> 200 (21ms) req=req-87cbcfdd
+2026-10-31 14:03:23 DEBUG [api-gateway] gc pause 33ms heap=492MB
+2026-10-31 14:03:26 INFO [inventory] GET /api/v1/cart -> 200 (101ms) req=req-f19afcab
+2026-10-31 14:03:29 DEBUG [orders] gc pause 6ms heap=597MB
+2026-10-31 14:03:31 INFO [search] GET /api/v1/items -> 200 (124ms) req=req-45a127ee
+2026-10-31 14:03:36 INFO [search] GET /api/v1/items -> 200 (150ms) req=req-c8c226c9
+2026-10-31 14:03:38 DEBUG [search] gc pause 13ms heap=255MB
+2026-10-31 14:03:41 INFO [api-gateway] GET /api/v1/me -> 200 (48ms) req=req-8773c3fc
+2026-10-31 14:03:42 INFO [inventory] GET /api/v1/cart -> 200 (149ms) req=req-902d37c4
+2026-10-31 14:03:47 INFO [api-gateway] GET /api/v1/items -> 200 (151ms) req=req-300ddc66
+2026-10-31 14:03:52 INFO [api-gateway] GET /api/v1/orders -> 200 (135ms) req=req-f86d6480
+2026-10-31 14:03:55 INFO [orders] GET /api/v1/orders -> 200 (116ms) req=req-7b20764b
+2026-10-31 14:04:00 INFO [orders] GET /api/v1/items -> 200 (153ms) req=req-403532ed
+2026-10-31 14:04:02 INFO [api-gateway] GET /api/v1/me -> 200 (17ms) req=req-278af350
+2026-10-31 14:04:04 WARNING [orders] slow handler 1219ms for GET /api/v1/items
+2026-10-31 14:04:06 INFO [orders] GET /api/v1/me -> 200 (97ms) req=req-f0966cf1
+2026-10-31 14:04:12 INFO [search] GET /api/v1/me -> 200 (83ms) req=req-f50223c5
+2026-10-31 14:04:14 WARNING [search] slow handler 961ms for GET /api/v1/items
+2026-10-31 14:04:18 DEBUG [orders] gc pause 2ms heap=586MB
+2026-10-31 14:04:20 DEBUG [search] gc pause 13ms heap=456MB
+2026-10-31 14:04:22 WARNING [search] slow handler 1014ms for GET /api/v1/items
+2026-10-31 14:04:24 INFO [api-gateway] GET /api/v1/orders -> 200 (10ms) req=req-4d9e23e1
+2026-10-31 14:04:25 INFO [orders] GET /api/v1/orders -> 200 (23ms) req=req-ec22a35c
+2026-10-31 14:04:30 INFO [inventory] GET /api/v1/cart -> 200 (60ms) req=req-c9ee9fc1
+2026-10-31 14:04:35 DEBUG [inventory] gc pause 13ms heap=254MB
+2026-10-31 14:04:38 DEBUG [orders] gc pause 35ms heap=695MB
+2026-10-31 14:04:43 DEBUG [orders] gc pause 13ms heap=212MB
+2026-10-31 14:04:46 INFO [orders] GET /api/v1/orders -> 200 (90ms) req=req-11b467ea
+2026-10-31 14:04:49 INFO [search] GET /api/v1/items -> 200 (97ms) req=req-7cd9199a
+2026-10-31 14:04:51 INFO [api-gateway] GET /api/v1/me -> 200 (25ms) req=req-0eeca5e1
+2026-10-31 14:04:52 INFO [search] GET /api/v1/cart -> 200 (78ms) req=req-cc675a2a
+2026-10-31 14:04:54 WARNING [orders] slow handler 938ms for GET /api/v1/items
+2026-10-31 14:04:58 INFO [inventory] GET /api/v1/items -> 200 (44ms) req=req-5b4f977e
+2026-10-31 14:05:02 WARNING [api-gateway] slow handler 1425ms for GET /api/v1/items
+2026-10-31 14:05:05 INFO [inventory] GET /api/v1/me -> 200 (153ms) req=req-564c7789
+2026-10-31 14:05:10 INFO [search] GET /api/v1/cart -> 200 (119ms) req=req-ff75acb5
+2026-10-31 14:05:11 INFO [inventory] GET /api/v1/cart -> 200 (68ms) req=req-c2e392cf
+2026-10-31 14:05:14 INFO [orders] GET /api/v1/me -> 200 (28ms) req=req-4ec18901
+2026-10-31 14:05:18 INFO [orders] GET /api/v1/cart -> 200 (69ms) req=req-b3e470c3
+2026-10-31 14:05:19 INFO [api-gateway] GET /api/v1/orders -> 200 (29ms) req=req-75c54b23
+2026-10-31 14:05:22 INFO [api-gateway] GET /api/v1/orders -> 200 (107ms) req=req-b72dc6c5
+2026-10-31 14:05:27 INFO [search] GET /api/v1/items -> 200 (74ms) req=req-4e97f0df
+2026-10-31 14:05:31 INFO [api-gateway] GET /api/v1/cart -> 200 (13ms) req=req-39af9d5e
+2026-10-31 14:05:34 INFO [api-gateway] GET /api/v1/cart -> 200 (142ms) req=req-97b6aa0a
+2026-10-31 14:05:37 DEBUG [search] gc pause 31ms heap=277MB
+2026-10-31 14:05:42 INFO [inventory] GET /api/v1/cart -> 200 (30ms) req=req-c07088c6
+2026-10-31 14:05:44 INFO [inventory] GET /api/v1/cart -> 200 (97ms) req=req-f74247a1
+2026-10-31 14:05:48 INFO [api-gateway] GET /api/v1/cart -> 200 (115ms) req=req-a98398c6
+2026-10-31 14:05:52 WARNING [api-gateway] slow handler 1009ms for GET /api/v1/items
+2026-10-31 14:05:54 INFO [search] GET /api/v1/orders -> 200 (46ms) req=req-6c65e502
+2026-10-31 14:05:56 DEBUG [inventory] gc pause 7ms heap=300MB
+2026-10-31 14:05:59 INFO [search] GET /api/v1/orders -> 200 (48ms) req=req-ad0fc0d1
+2026-10-31 14:06:04 DEBUG [search] gc pause 13ms heap=308MB
+2026-10-31 14:06:08 WARNING [orders] slow handler 1029ms for GET /api/v1/items
+2026-10-31 14:06:09 INFO [api-gateway] GET /api/v1/cart -> 200 (93ms) req=req-3ccdff97
+2026-10-31 14:06:13 INFO [api-gateway] GET /api/v1/cart -> 200 (71ms) req=req-7e8e176f
+2026-10-31 14:06:18 INFO [search] GET /api/v1/me -> 200 (24ms) req=req-3e03fda6
+2026-10-31 14:06:21 INFO [orders] GET /api/v1/orders -> 200 (54ms) req=req-efc377b0
+2026-10-31 14:06:23 DEBUG [api-gateway] gc pause 4ms heap=323MB
+2026-10-31 14:06:28 WARNING [api-gateway] slow handler 1442ms for GET /api/v1/items
+2026-10-31 14:06:32 WARNING [search] slow handler 1091ms for GET /api/v1/items
+2026-10-31 14:06:36 WARNING [api-gateway] slow handler 931ms for GET /api/v1/items
+2026-10-31 14:06:41 INFO [api-gateway] GET /api/v1/me -> 200 (36ms) req=req-c6f6677a
+2026-10-31 14:06:41 WARNING [coredns] plugin/forward: upstream 10.0.0.2:53 slow to respond (2100ms)
+2026-10-31 14:06:42 ERROR [coredns] plugin/forward: no healthy upstreams for zone svc.cluster.local.
+2026-10-31 14:06:42 ERROR [search] index refresh failed: request to elastic timed out after 5091ms
+2026-10-31 14:06:44 ERROR [orders] call to inventory timed out after 3000ms order=ord_89386
+2026-10-31 14:06:46 ERROR [api-gateway] GET /api/v1/orders -> 503 upstream connect error (3018ms) req=req-2ead03e8
+2026-10-31 14:06:48 ERROR [orders] call to inventory timed out after 3000ms order=ord_42919
+2026-10-31 14:06:50 ERROR [orders] call to inventory timed out after 3000ms order=ord_39924
+2026-10-31 14:06:51 ERROR [search] index refresh failed: request to elastic timed out after 5023ms
+2026-10-31 14:06:53 ERROR [api-gateway] GET /api/v1/orders -> 503 upstream connect error (3037ms) req=req-1cb220fe
+2026-10-31 14:06:55 INFO [inventory] GET /api/v1/me -> 200 (25ms) req=req-40d13e19
+2026-10-31 14:06:57 ERROR [orders] call to inventory timed out after 3000ms order=ord_37067
+2026-10-31 14:06:58 ERROR [api-gateway] GET /api/v1/items -> 503 upstream connect error (3067ms) req=req-2e28c3d1
+2026-10-31 14:07:00 ERROR [api-gateway] GET /api/v1/orders -> 503 upstream connect error (3067ms) req=req-b164ed40
+2026-10-31 14:07:02 ERROR [orders] call to inventory timed out after 3000ms order=ord_33304
+2026-10-31 14:07:05 INFO [inventory] GET /api/v1/me -> 200 (24ms) req=req-3cb611a6
+2026-10-31 14:07:08 ERROR [api-gateway] GET /api/v1/orders -> 503 upstream connect error (3046ms) req=req-ece0d6e5
+2026-10-31 14:07:09 ERROR [orders] call to inventory timed out after 3000ms order=ord_24259
+2026-10-31 14:07:10 INFO [orders] GET /api/v1/me -> 200 (37ms) req=req-02491d54
+2026-10-31 14:07:12 ERROR [api-gateway] GET /api/v1/orders -> 503 upstream connect error (3050ms) req=req-cea505fc
+2026-10-31 14:07:14 INFO [inventory] GET /api/v1/me -> 200 (42ms) req=req-10f74c40
+2026-10-31 14:07:16 ERROR [coredns] plugin/forward: no healthy upstreams for zone svc.cluster.local.
+2026-10-31 14:07:16 ERROR [search] index refresh failed: request to elastic timed out after 5091ms
+2026-10-31 14:07:16 ERROR [orders] call to inventory timed out after 3000ms order=ord_10523
+2026-10-31 14:07:17 ERROR [orders] call to inventory timed out after 3000ms order=ord_42350
+2026-10-31 14:07:20 ERROR [api-gateway] GET /api/v1/search -> 503 upstream connect error (3100ms) req=req-b018250d
+2026-10-31 14:07:23 ERROR [orders] call to inventory timed out after 3000ms order=ord_39581
+2026-10-31 14:07:25 ERROR [orders] call to inventory timed out after 3000ms order=ord_92298
+2026-10-31 14:07:26 ERROR [api-gateway] GET /api/v1/search -> 503 upstream connect error (3069ms) req=req-941abb8c
+2026-10-31 14:07:29 ERROR [orders] call to inventory timed out after 3000ms order=ord_93929
+2026-10-31 14:07:32 ERROR [orders] call to inventory timed out after 3000ms order=ord_54698
+2026-10-31 14:07:34 INFO [search] GET /api/v1/me -> 200 (39ms) req=req-ac7062f2
+2026-10-31 14:07:35 INFO [inventory] GET /api/v1/me -> 200 (32ms) req=req-822db992
+2026-10-31 14:07:36 INFO [api-gateway] GET /api/v1/me -> 200 (25ms) req=req-6eb3756a
+2026-10-31 14:07:38 INFO [inventory] GET /api/v1/me -> 200 (52ms) req=req-fdf79110
+2026-10-31 14:07:40 ERROR [orders] call to inventory timed out after 3000ms order=ord_33436
+2026-10-31 14:07:42 ERROR [api-gateway] GET /api/v1/orders -> 503 upstream connect error (3075ms) req=req-c377af50
+2026-10-31 14:07:43 ERROR [api-gateway] GET /api/v1/orders -> 503 upstream connect error (3071ms) req=req-ed69fe4f
+2026-10-31 14:07:45 INFO [search] GET /api/v1/me -> 200 (55ms) req=req-c313b9df
+2026-10-31 14:07:47 ERROR [api-gateway] GET /api/v1/orders -> 503 upstream connect error (3015ms) req=req-8b3d0b4e
+2026-10-31 14:07:47 ERROR [coredns] plugin/forward: no healthy upstreams for zone svc.cluster.local.
+2026-10-31 14:07:47 ERROR [api-gateway] GET /api/v1/search -> 503 upstream connect error (3041ms) req=req-9e13b307
+2026-10-31 14:07:50 ERROR [api-gateway] GET /api/v1/search -> 503 upstream connect error (3032ms) req=req-e5ac9c84
+2026-10-31 14:07:52 ERROR [api-gateway] GET /api/v1/search -> 503 upstream connect error (3090ms) req=req-8b20cd69
+2026-10-31 14:07:55 ERROR [search] index refresh failed: request to elastic timed out after 5007ms
+2026-10-31 14:07:57 ERROR [orders] call to inventory timed out after 3000ms order=ord_59296
+2026-10-31 14:07:59 ERROR [api-gateway] GET /api/v1/search -> 503 upstream connect error (3046ms) req=req-2a97079e
+2026-10-31 14:08:01 ERROR [orders] call to inventory timed out after 3000ms order=ord_74987
+2026-10-31 14:08:02 ERROR [orders] call to inventory timed out after 3000ms order=ord_90747
+2026-10-31 14:08:05 ERROR [orders] call to inventory timed out after 3000ms order=ord_20357
+2026-10-31 14:08:07 ERROR [api-gateway] GET /api/v1/items -> 503 upstream connect error (3012ms) req=req-3959e588
+2026-10-31 14:08:09 ERROR [api-gateway] GET /api/v1/items -> 503 upstream connect error (3007ms) req=req-01e23012
+2026-10-31 14:08:11 ERROR [api-gateway] GET /api/v1/items -> 503 upstream connect error (3080ms) req=req-46534353
+2026-10-31 14:08:14 ERROR [api-gateway] GET /api/v1/orders -> 503 upstream connect error (3032ms) req=req-e2456966
+2026-10-31 14:08:17 ERROR [api-gateway] GET /api/v1/search -> 503 upstream connect error (3004ms) req=req-22ead4c6
+2026-10-31 14:08:19 ERROR [search] index refresh failed: request to elastic timed out after 5063ms
+2026-10-31 14:08:20 ERROR [orders] call to inventory timed out after 3000ms order=ord_18876
+2026-10-31 14:08:22 ERROR [orders] call to inventory timed out after 3000ms order=ord_27673
+2026-10-31 14:08:24 ERROR [api-gateway] GET /api/v1/items -> 503 upstream connect error (3078ms) req=req-2b8f10f2
+2026-10-31 14:08:25 ERROR [coredns] plugin/forward: no healthy upstreams for zone svc.cluster.local.
+2026-10-31 14:08:25 ERROR [api-gateway] GET /api/v1/search -> 503 upstream connect error (3064ms) req=req-8c1b5e69
+2026-10-31 14:08:28 ERROR [search] index refresh failed: request to elastic timed out after 5100ms
+2026-10-31 14:08:29 ERROR [orders] call to inventory timed out after 3000ms order=ord_32912
+2026-10-31 14:08:30 ERROR [api-gateway] GET /api/v1/search -> 503 upstream connect error (3077ms) req=req-a1b64e29
+2026-10-31 14:08:30 ERROR [orders] call to inventory timed out after 3000ms order=ord_58293
+2026-10-31 14:08:32 ERROR [search] index refresh failed: request to elastic timed out after 5070ms
+2026-10-31 14:08:34 ERROR [orders] call to inventory timed out after 3000ms order=ord_46625
+2026-10-31 14:08:35 ERROR [orders] call to inventory timed out after 3000ms order=ord_77663
+2026-10-31 14:08:37 ERROR [orders] call to inventory timed out after 3000ms order=ord_79715
+2026-10-31 14:08:38 ERROR [orders] call to inventory timed out after 3000ms order=ord_63770
+2026-10-31 14:08:40 ERROR [orders] call to inventory timed out after 3000ms order=ord_11235
+2026-10-31 14:08:43 ERROR [search] index refresh failed: request to elastic timed out after 5096ms
+2026-10-31 14:08:45 ERROR [api-gateway] GET /api/v1/items -> 503 upstream connect error (3035ms) req=req-06e124cc
+2026-10-31 14:08:46 ERROR [api-gateway] GET /api/v1/search -> 503 upstream connect error (3025ms) req=req-36600290
+2026-10-31 14:08:49 INFO [search] GET /api/v1/me -> 200 (46ms) req=req-f6da944b
+2026-10-31 14:08:51 INFO [orders] GET /api/v1/me -> 200 (40ms) req=req-97d9f3a9
+2026-10-31 14:08:54 INFO [inventory] GET /api/v1/me -> 200 (38ms) req=req-b9262ba3
+2026-10-31 14:08:56 ERROR [search] index refresh failed: request to elastic timed out after 5084ms
+2026-10-31 14:08:58 ERROR [coredns] plugin/forward: no healthy upstreams for zone svc.cluster.local.
+2026-10-31 14:08:58 ERROR [api-gateway] GET /api/v1/items -> 503 upstream connect error (3046ms) req=req-ff7bc6e8
+2026-10-31 14:08:59 ERROR [api-gateway] GET /api/v1/search -> 503 upstream connect error (3015ms) req=req-18ae5c7c
+2026-10-31 14:09:00 ERROR [orders] call to inventory timed out after 3000ms order=ord_26862
+2026-10-31 14:09:01 ERROR [search] index refresh failed: request to elastic timed out after 5052ms
+2026-10-31 14:09:02 ERROR [search] index refresh failed: request to elastic timed out after 5081ms
+2026-10-31 14:09:03 ERROR [orders] call to inventory timed out after 3000ms order=ord_12251
+2026-10-31 14:09:06 INFO [search] GET /api/v1/me -> 200 (59ms) req=req-856736b4
+2026-10-31 14:09:07 ERROR [orders] call to inventory timed out after 3000ms order=ord_65797
+2026-10-31 14:09:09 ERROR [search] index refresh failed: request to elastic timed out after 5058ms
+2026-10-31 14:09:12 INFO [api-gateway] GET /api/v1/me -> 200 (14ms) req=req-927ab4f5
+2026-10-31 14:09:12 ERROR [search] index refresh failed: request to elastic timed out after 5094ms
+2026-10-31 14:09:15 INFO [orders] GET /api/v1/me -> 200 (47ms) req=req-53213574
+2026-10-31 14:09:16 ERROR [api-gateway] GET /api/v1/orders -> 503 upstream connect error (3091ms) req=req-d264af05
+2026-10-31 14:09:18 ERROR [search] index refresh failed: request to elastic timed out after 5005ms
+2026-10-31 14:09:18 INFO [orders] GET /api/v1/me -> 200 (34ms) req=req-d2071a19
+2026-10-31 14:09:21 ERROR [api-gateway] GET /api/v1/orders -> 503 upstream connect error (3008ms) req=req-3a3a1515
+2026-10-31 14:09:21 ERROR [search] index refresh failed: request to elastic timed out after 5015ms
+2026-10-31 14:09:22 ERROR [api-gateway] GET /api/v1/orders -> 503 upstream connect error (3096ms) req=req-193cfd93
+2026-10-31 14:09:23 ERROR [coredns] plugin/forward: no healthy upstreams for zone svc.cluster.local.
+2026-10-31 14:09:23 ERROR [orders] call to inventory timed out after 3000ms order=ord_55025
+2026-10-31 14:09:25 ERROR [api-gateway] GET /api/v1/items -> 503 upstream connect error (3098ms) req=req-d932bcb3
+2026-10-31 14:09:26 ERROR [search] index refresh failed: request to elastic timed out after 5090ms
+2026-10-31 14:09:26 ERROR [search] index refresh failed: request to elastic timed out after 5096ms
+2026-10-31 14:09:28 ERROR [api-gateway] GET /api/v1/orders -> 503 upstream connect error (3081ms) req=req-cb88a02b
+2026-10-31 14:09:30 ERROR [api-gateway] GET /api/v1/search -> 503 upstream connect error (3045ms) req=req-fadf2ceb
+2026-10-31 14:09:33 ERROR [search] index refresh failed: request to elastic timed out after 5099ms
+2026-10-31 14:09:35 ERROR [search] index refresh failed: request to elastic timed out after 5078ms
+2026-10-31 14:09:37 ERROR [api-gateway] GET /api/v1/search -> 503 upstream connect error (3031ms) req=req-23c753aa
+2026-10-31 14:09:38 ERROR [orders] call to inventory timed out after 3000ms order=ord_69191
+2026-10-31 14:09:38 ERROR [api-gateway] GET /api/v1/orders -> 503 upstream connect error (3014ms) req=req-adafcf39
+2026-10-31 14:09:40 ERROR [api-gateway] GET /api/v1/search -> 503 upstream connect error (3084ms) req=req-f831ffa6
+2026-10-31 14:09:43 ERROR [orders] call to inventory timed out after 3000ms order=ord_55809
+2026-10-31 14:09:44 INFO [search] GET /api/v1/me -> 200 (52ms) req=req-ba39b15c
+2026-10-31 14:09:46 ERROR [api-gateway] GET /api/v1/orders -> 503 upstream connect error (3096ms) req=req-7badb78b
+2026-10-31 14:09:47 ERROR [search] index refresh failed: request to elastic timed out after 5010ms
+2026-10-31 14:09:48 INFO [orders] GET /api/v1/me -> 200 (8ms) req=req-509da0f2
+2026-10-31 14:09:49 ERROR [orders] call to inventory timed out after 3000ms order=ord_39578
+2026-10-31 14:09:51 ERROR [coredns] plugin/forward: no healthy upstreams for zone svc.cluster.local.
+2026-10-31 14:09:51 ERROR [search] index refresh failed: request to elastic timed out after 5048ms
+2026-10-31 14:09:52 ERROR [api-gateway] GET /api/v1/search -> 503 upstream connect error (3067ms) req=req-dbbd0cc2
+2026-10-31 14:09:56 INFO [inventory] GET /api/v1/orders -> 200 (66ms) req=req-53ec74f8
+2026-10-31 14:09:59 INFO [inventory] GET /api/v1/orders -> 200 (43ms) req=req-1ed197e1
+2026-10-31 14:10:02 INFO [search] GET /api/v1/me -> 200 (46ms) req=req-76ce0d2d
+2026-10-31 14:10:03 INFO [search] GET /api/v1/items -> 200 (143ms) req=req-12108047
+2026-10-31 14:10:04 INFO [inventory] GET /api/v1/me -> 200 (12ms) req=req-2f314f3b
+2026-10-31 14:10:05 INFO [api-gateway] GET /api/v1/orders -> 200 (158ms) req=req-305e9e79
+2026-10-31 14:10:09 DEBUG [orders] gc pause 4ms heap=462MB
+2026-10-31 14:10:11 WARNING [api-gateway] slow handler 1051ms for GET /api/v1/items
+2026-10-31 14:10:16 INFO [inventory] GET /api/v1/me -> 200 (112ms) req=req-e56793d1
+2026-10-31 14:10:21 DEBUG [api-gateway] gc pause 10ms heap=489MB
+2026-10-31 14:10:26 INFO [inventory] GET /api/v1/orders -> 200 (49ms) req=req-d14e4310
+2026-10-31 14:10:30 INFO [inventory] GET /api/v1/orders -> 200 (138ms) req=req-828fa34f
+2026-10-31 14:10:31 INFO [inventory] GET /api/v1/items -> 200 (32ms) req=req-3810973b
+2026-10-31 14:10:34 INFO [inventory] GET /api/v1/orders -> 200 (140ms) req=req-58bb8a2d
+2026-10-31 14:10:39 DEBUG [inventory] gc pause 33ms heap=891MB
+2026-10-31 14:10:45 INFO [orders] GET /api/v1/cart -> 200 (110ms) req=req-7ab827d3
+2026-10-31 14:10:46 WARNING [orders] slow handler 1131ms for GET /api/v1/items
+2026-10-31 14:10:50 INFO [api-gateway] GET /api/v1/items -> 200 (27ms) req=req-f2ae55f1
+2026-10-31 14:10:53 INFO [api-gateway] GET /api/v1/me -> 200 (155ms) req=req-677bbb9e
+2026-10-31 14:10:57 DEBUG [api-gateway] gc pause 11ms heap=317MB
+2026-10-31 14:10:59 INFO [orders] GET /api/v1/orders -> 200 (150ms) req=req-10d9a27e
+2026-10-31 14:11:02 INFO [inventory] GET /api/v1/orders -> 200 (93ms) req=req-15ade6d8
+2026-10-31 14:11:08 INFO [api-gateway] GET /api/v1/me -> 200 (50ms) req=req-e3e2651f
+2026-10-31 14:11:13 INFO [api-gateway] GET /api/v1/items -> 200 (122ms) req=req-ba1e8906
+2026-10-31 14:11:15 INFO [api-gateway] GET /api/v1/orders -> 200 (78ms) req=req-a9ed355d
+2026-10-31 14:11:17 WARNING [orders] slow handler 1225ms for GET /api/v1/items
+2026-10-31 14:11:19 DEBUG [search] gc pause 7ms heap=562MB
+2026-10-31 14:11:21 INFO [inventory] GET /api/v1/cart -> 200 (48ms) req=req-d6154577
+2026-10-31 14:11:24 INFO [search] GET /api/v1/me -> 200 (94ms) req=req-efb88d55
+2026-10-31 14:11:28 INFO [inventory] GET /api/v1/items -> 200 (96ms) req=req-f6bda50b

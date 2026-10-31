@@ -1,0 +1,5 @@
+{
+  "log": "redis_maxmemory.log",
+  "description": "Redis reached maxmemory with noeviction; session and cart writes fail, users get 401s.",
+  "root_cause": {"service": "redis"}
+}

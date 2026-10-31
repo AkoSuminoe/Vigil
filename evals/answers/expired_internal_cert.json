@@ -1,0 +1,5 @@
+{
+  "log": "expired_internal_cert.log",
+  "description": "cert-manager failed to renew the internal mTLS certificate (ACME rate limit); internal TLS then fails everywhere.",
+  "root_cause": {"service": "cert-manager"}
+}

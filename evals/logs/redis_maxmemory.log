@@ -1,0 +1,224 @@
+2026-10-31 09:00:01 INFO [cart] GET /api/v1/me -> 200 (153ms) req=req-842a0944
+2026-10-31 09:00:07 INFO [api-gateway] GET /api/v1/items -> 200 (73ms) req=req-874ea8e9
+2026-10-31 09:00:10 INFO [cart] GET /api/v1/items -> 200 (108ms) req=req-235c9308
+2026-10-31 09:00:14 DEBUG [api-gateway] gc pause 28ms heap=486MB
+2026-10-31 09:00:18 INFO [api-gateway] GET /api/v1/me -> 200 (46ms) req=req-282ee83d
+2026-10-31 09:00:20 DEBUG [auth] gc pause 17ms heap=736MB
+2026-10-31 09:00:25 INFO [auth] GET /api/v1/cart -> 200 (13ms) req=req-e2305c0b
+2026-10-31 09:00:27 DEBUG [auth] gc pause 10ms heap=560MB
+2026-10-31 09:00:28 INFO [auth] GET /api/v1/cart -> 200 (39ms) req=req-d7419d45
+2026-10-31 09:00:33 WARNING [cart] slow handler 978ms for GET /api/v1/items
+2026-10-31 09:00:36 WARNING [api-gateway] slow handler 1184ms for GET /api/v1/items
+2026-10-31 09:00:37 INFO [cart] GET /api/v1/cart -> 200 (50ms) req=req-f681caa8
+2026-10-31 09:00:42 DEBUG [api-gateway] gc pause 2ms heap=309MB
+2026-10-31 09:00:44 INFO [api-gateway] GET /api/v1/items -> 200 (139ms) req=req-a155df01
+2026-10-31 09:00:45 DEBUG [cart] gc pause 6ms heap=459MB
+2026-10-31 09:00:47 WARNING [cart] slow handler 1491ms for GET /api/v1/items
+2026-10-31 09:00:50 WARNING [auth] slow handler 957ms for GET /api/v1/items
+2026-10-31 09:00:54 INFO [cart] GET /api/v1/items -> 200 (132ms) req=req-69344899
+2026-10-31 09:00:56 INFO [cart] GET /api/v1/me -> 200 (136ms) req=req-6bbff85e
+2026-10-31 09:01:01 INFO [api-gateway] GET /api/v1/orders -> 200 (115ms) req=req-06830674
+2026-10-31 09:01:05 WARNING [auth] slow handler 1243ms for GET /api/v1/items
+2026-10-31 09:01:06 WARNING [auth] slow handler 963ms for GET /api/v1/items
+2026-10-31 09:01:12 INFO [cart] GET /api/v1/orders -> 200 (145ms) req=req-a18e3d65
+2026-10-31 09:01:13 DEBUG [cart] gc pause 11ms heap=548MB
+2026-10-31 09:01:18 INFO [cart] GET /api/v1/cart -> 200 (100ms) req=req-76d73f4b
+2026-10-31 09:01:23 INFO [auth] GET /api/v1/me -> 200 (64ms) req=req-558c679d
+2026-10-31 09:01:29 INFO [auth] GET /api/v1/me -> 200 (73ms) req=req-6499ab4a
+2026-10-31 09:01:33 INFO [api-gateway] GET /api/v1/items -> 200 (73ms) req=req-a75b673e
+2026-10-31 09:01:35 INFO [api-gateway] GET /api/v1/cart -> 200 (18ms) req=req-4d205865
+2026-10-31 09:01:41 WARNING [auth] slow handler 981ms for GET /api/v1/items
+2026-10-31 09:01:44 INFO [api-gateway] GET /api/v1/orders -> 200 (78ms) req=req-810f6bb9
+2026-10-31 09:01:50 INFO [cart] GET /api/v1/orders -> 200 (95ms) req=req-8c9ef449
+2026-10-31 09:01:52 WARNING [cart] slow handler 872ms for GET /api/v1/items
+2026-10-31 09:01:53 INFO [api-gateway] GET /api/v1/me -> 200 (104ms) req=req-c2fd6b56
+2026-10-31 09:01:57 INFO [cart] GET /api/v1/items -> 200 (126ms) req=req-4f9069a7
+2026-10-31 09:02:02 INFO [api-gateway] GET /api/v1/orders -> 200 (124ms) req=req-81ff14aa
+2026-10-31 09:02:07 INFO [cart] GET /api/v1/cart -> 200 (10ms) req=req-b405f483
+2026-10-31 09:02:13 WARNING [cart] slow handler 1305ms for GET /api/v1/items
+2026-10-31 09:02:15 INFO [api-gateway] GET /api/v1/orders -> 200 (94ms) req=req-0166a244
+2026-10-31 09:02:21 INFO [api-gateway] GET /api/v1/cart -> 200 (28ms) req=req-67b917a0
+2026-10-31 09:02:25 DEBUG [cart] gc pause 3ms heap=726MB
+2026-10-31 09:02:30 INFO [api-gateway] GET /api/v1/orders -> 200 (95ms) req=req-a4fb6591
+2026-10-31 09:02:31 INFO [cart] GET /api/v1/items -> 200 (91ms) req=req-2452e091
+2026-10-31 09:02:33 INFO [cart] GET /api/v1/cart -> 200 (60ms) req=req-18f15436
+2026-10-31 09:02:34 INFO [auth] GET /api/v1/me -> 200 (116ms) req=req-9811df1c
+2026-10-31 09:02:37 INFO [api-gateway] GET /api/v1/me -> 200 (131ms) req=req-61f4411b
+2026-10-31 09:02:42 DEBUG [cart] gc pause 30ms heap=612MB
+2026-10-31 09:02:45 INFO [auth] GET /api/v1/me -> 200 (82ms) req=req-5a04fffa
+2026-10-31 09:02:48 WARNING [api-gateway] slow handler 1457ms for GET /api/v1/items
+2026-10-31 09:02:51 WARNING [auth] slow handler 1191ms for GET /api/v1/items
+2026-10-31 09:02:55 WARNING [api-gateway] slow handler 1075ms for GET /api/v1/items
+2026-10-31 09:03:00 INFO [cart] GET /api/v1/cart -> 200 (159ms) req=req-a7b2a97b
+2026-10-31 09:03:06 INFO [api-gateway] GET /api/v1/cart -> 200 (138ms) req=req-a270d70f
+2026-10-31 09:03:11 INFO [api-gateway] GET /api/v1/orders -> 200 (35ms) req=req-f3f059ce
+2026-10-31 09:03:15 INFO [auth] GET /api/v1/me -> 200 (31ms) req=req-baf9bddd
+2026-10-31 09:03:17 INFO [cart] GET /api/v1/items -> 200 (65ms) req=req-f384a312
+2026-10-31 09:03:19 INFO [auth] GET /api/v1/cart -> 200 (131ms) req=req-82e33ecd
+2026-10-31 09:03:23 WARNING [auth] slow handler 977ms for GET /api/v1/items
+2026-10-31 09:03:27 WARNING [auth] slow handler 1475ms for GET /api/v1/items
+2026-10-31 09:03:33 WARNING [api-gateway] slow handler 1191ms for GET /api/v1/items
+2026-10-31 09:03:34 INFO [cart] GET /api/v1/cart -> 200 (78ms) req=req-2e8a4e3c
+2026-10-31 09:03:39 DEBUG [cart] gc pause 2ms heap=722MB
+2026-10-31 09:03:43 INFO [api-gateway] GET /api/v1/orders -> 200 (12ms) req=req-d5d6bcf8
+2026-10-31 09:03:44 DEBUG [api-gateway] gc pause 2ms heap=882MB
+2026-10-31 09:03:48 INFO [auth] GET /api/v1/items -> 200 (15ms) req=req-3478f25e
+2026-10-31 09:03:52 DEBUG [auth] gc pause 13ms heap=595MB
+2026-10-31 09:03:55 INFO [cart] GET /api/v1/cart -> 200 (72ms) req=req-3e87d549
+2026-10-31 09:03:58 DEBUG [auth] gc pause 28ms heap=748MB
+2026-10-31 09:04:03 WARNING [cart] slow handler 1143ms for GET /api/v1/items
+2026-10-31 09:04:06 WARNING [api-gateway] slow handler 1280ms for GET /api/v1/items
+2026-10-31 09:04:11 DEBUG [cart] gc pause 5ms heap=509MB
+2026-10-31 09:04:13 INFO [cart] GET /api/v1/items -> 200 (98ms) req=req-774b854a
+2026-10-31 09:04:14 INFO [cart] GET /api/v1/items -> 200 (150ms) req=req-552de561
+2026-10-31 09:04:19 INFO [api-gateway] GET /api/v1/me -> 200 (112ms) req=req-91e71a32
+2026-10-31 09:04:23 WARNING [cart] slow handler 1442ms for GET /api/v1/items
+2026-10-31 09:04:27 INFO [api-gateway] GET /api/v1/me -> 200 (140ms) req=req-78dcd363
+2026-10-31 09:04:28 DEBUG [auth] gc pause 12ms heap=874MB
+2026-10-31 09:04:32 INFO [auth] GET /api/v1/items -> 200 (101ms) req=req-445bc105
+2026-10-31 09:04:33 INFO [auth] GET /api/v1/orders -> 200 (26ms) req=req-b63c8f77
+2026-10-31 09:04:38 DEBUG [cart] gc pause 23ms heap=353MB
+2026-10-31 09:04:39 INFO [api-gateway] GET /api/v1/items -> 200 (130ms) req=req-961127b4
+2026-10-31 09:04:44 WARNING [cart] slow handler 1103ms for GET /api/v1/items
+2026-10-31 09:04:48 INFO [cart] GET /api/v1/orders -> 200 (124ms) req=req-904bbc31
+2026-10-31 09:04:53 INFO [api-gateway] GET /api/v1/me -> 200 (103ms) req=req-db97cf13
+2026-10-31 09:04:55 INFO [cart] GET /api/v1/items -> 200 (30ms) req=req-2f8fa748
+2026-10-31 09:05:00 INFO [api-gateway] GET /api/v1/items -> 200 (8ms) req=req-6c4cdb19
+2026-10-31 09:05:05 INFO [auth] GET /api/v1/me -> 200 (97ms) req=req-c4f39f29
+2026-10-31 09:05:09 DEBUG [cart] gc pause 19ms heap=543MB
+2026-10-31 09:05:11 WARNING [auth] slow handler 912ms for GET /api/v1/items
+2026-10-31 09:05:17 DEBUG [cart] gc pause 37ms heap=288MB
+2026-10-31 09:05:18 DEBUG [api-gateway] gc pause 11ms heap=788MB
+2026-10-31 09:05:22 DEBUG [auth] gc pause 6ms heap=831MB
+2026-10-31 09:05:25 INFO [api-gateway] GET /api/v1/cart -> 200 (121ms) req=req-d62270bb
+2026-10-31 09:05:28 WARNING [auth] slow handler 1432ms for GET /api/v1/items
+2026-10-31 09:05:33 INFO [cart] GET /api/v1/me -> 200 (52ms) req=req-44231449
+2026-10-31 09:05:38 INFO [cart] GET /api/v1/cart -> 200 (152ms) req=req-fcd3c1e3
+2026-10-31 09:05:41 INFO [cart] GET /api/v1/cart -> 200 (8ms) req=req-06dfcbab
+2026-10-31 09:05:44 INFO [cart] GET /api/v1/orders -> 200 (45ms) req=req-6c266535
+2026-10-31 09:05:49 INFO [auth] GET /api/v1/cart -> 200 (69ms) req=req-ce1a32cd
+2026-10-31 09:05:53 WARNING [api-gateway] slow handler 1051ms for GET /api/v1/items
+2026-10-31 09:06:26 WARNING [redis] used_memory at 88% of maxmemory (policy=noeviction)
+2026-10-31 09:07:07 WARNING [redis] used_memory at 93% of maxmemory (policy=noeviction)
+2026-10-31 09:07:50 WARNING [redis] used_memory at 97% of maxmemory (policy=noeviction)
+2026-10-31 09:07:52 ERROR [redis] OOM command not allowed when used memory > 'maxmemory'
+2026-10-31 09:07:52 ERROR [auth] failed to persist session 50229564-28ba-4bd3-8323-51a529325ba4: write failed, returning 500
+2026-10-31 09:07:53 ERROR [api-gateway] GET /api/v1/cart -> 401 unauthorized req=req-fbd5f55d
+2026-10-31 09:07:53 ERROR [cart] could not save cart for session 939a273f-ca88-49b8-aa7c-04827bd983b2, request aborted
+2026-10-31 09:07:55 ERROR [auth] failed to persist session 2036793f-831c-43d3-869d-50daf5b1a863: write failed, returning 500
+2026-10-31 09:07:56 ERROR [cart] could not save cart for session a9a9a0c7-6c78-4c52-97d6-3dc24dd72431, request aborted
+2026-10-31 09:07:58 ERROR [auth] failed to persist session f507528a-38a3-4e01-8a52-bb962e708021: write failed, returning 500
+2026-10-31 09:08:01 ERROR [auth] failed to persist session d41a66de-04d7-4913-94ff-e328eb6ea66a: write failed, returning 500
+2026-10-31 09:08:01 ERROR [auth] failed to persist session c6945f54-d189-42a0-93cc-8f6ec439e069: write failed, returning 500
+2026-10-31 09:08:02 INFO [auth] login succeeded user=a115a07e-483d-43bf-8e09-e7d027b9b190 method=password
+2026-10-31 09:08:03 ERROR [auth] failed to persist session 591b6910-3501-4fe4-afca-79297694095f: write failed, returning 500
+2026-10-31 09:08:04 ERROR [auth] failed to persist session 44dbdfda-4377-418d-8bd1-be06fde56cd2: write failed, returning 500
+2026-10-31 09:08:06 ERROR [api-gateway] GET /api/v1/orders -> 401 unauthorized req=req-c7f9c19c
+2026-10-31 09:08:08 ERROR [auth] failed to persist session 5f402692-1898-4eab-8b7b-d3a49b26ca99: write failed, returning 500
+2026-10-31 09:08:10 ERROR [api-gateway] GET /api/v1/cart -> 401 unauthorized req=req-75b3e83b
+2026-10-31 09:08:11 ERROR [cart] could not save cart for session 6017228f-5f20-4db0-81d2-2db4d23212ff, request aborted
+2026-10-31 09:08:12 ERROR [cart] could not save cart for session 4e5277ef-8d0e-4970-b0f7-78a9aba170bf, request aborted
+2026-10-31 09:08:14 ERROR [api-gateway] GET /api/v1/cart -> 401 unauthorized req=req-caf113eb
+2026-10-31 09:08:14 ERROR [cart] could not save cart for session 2ba21ad7-b28f-451a-91e9-dfff3c2e3acf, request aborted
+2026-10-31 09:08:15 ERROR [api-gateway] GET /api/v1/cart -> 401 unauthorized req=req-e3ca33c8
+2026-10-31 09:08:16 INFO [auth] login succeeded user=1d0b326f-2fd0-47ce-b40a-32e2b4210d74 method=password
+2026-10-31 09:08:18 ERROR [redis] OOM command not allowed when used memory > 'maxmemory'
+2026-10-31 09:08:18 ERROR [auth] failed to persist session a3bdad34-b2e4-4785-bdeb-44c12be96e0a: write failed, returning 500
+2026-10-31 09:08:19 INFO [auth] login succeeded user=350c2ff2-3782-4338-99a9-0692b764be4a method=password
+2026-10-31 09:08:20 ERROR [cart] could not save cart for session fb08bdfd-669d-4480-a26c-ac1c9060d50a, request aborted
+2026-10-31 09:08:20 INFO [auth] login succeeded user=1913bf86-2e58-47aa-90e7-51cbf8b61283 method=password
+2026-10-31 09:08:22 ERROR [api-gateway] GET /api/v1/me -> 401 unauthorized req=req-a26e0460
+2026-10-31 09:08:23 ERROR [cart] could not save cart for session 98706ec0-e3d7-4aa2-b5ba-df222f4e613c, request aborted
+2026-10-31 09:08:25 ERROR [auth] failed to persist session 2088a24a-7994-465a-8976-3921f1412e27: write failed, returning 500
+2026-10-31 09:08:25 ERROR [auth] failed to persist session d561fccd-895f-448f-8cab-7884d2f98903: write failed, returning 500
+2026-10-31 09:08:26 ERROR [cart] could not save cart for session d5713ffb-db18-440d-ac5d-da698b5c44cd, request aborted
+2026-10-31 09:08:28 ERROR [auth] failed to persist session 2288f7c5-5208-40ab-9d22-8d4fd9a46b53: write failed, returning 500
+2026-10-31 09:08:30 ERROR [auth] failed to persist session 66603060-c662-420a-9725-eb85e20188f8: write failed, returning 500
+2026-10-31 09:08:30 ERROR [cart] could not save cart for session 6af5a5fe-c7d4-4309-b9ba-010d976c231b, request aborted
+2026-10-31 09:08:33 ERROR [auth] failed to persist session d1497c6d-cba9-4d9a-bf5f-1f059757fbfc: write failed, returning 500
+2026-10-31 09:08:35 ERROR [api-gateway] GET /api/v1/me -> 401 unauthorized req=req-88918fe4
+2026-10-31 09:08:37 ERROR [cart] could not save cart for session 5480196e-97f3-4c09-a167-936542ca68c6, request aborted
+2026-10-31 09:08:38 ERROR [auth] failed to persist session b70f2dbc-a54a-49fc-a4be-2536ea613e77: write failed, returning 500
+2026-10-31 09:08:40 ERROR [cart] could not save cart for session 8054b4da-10d5-4a06-ad45-c94d33d4753a, request aborted
+2026-10-31 09:08:41 ERROR [cart] could not save cart for session 0299ff91-dc53-49b3-8465-99b0a33de054, request aborted
+2026-10-31 09:08:43 ERROR [cart] could not save cart for session 43c20c62-c3dc-4add-80e3-543c0ff7eeaa, request aborted
+2026-10-31 09:08:44 ERROR [api-gateway] GET /api/v1/me -> 401 unauthorized req=req-c2a44760
+2026-10-31 09:08:46 ERROR [redis] OOM command not allowed when used memory > 'maxmemory'
+2026-10-31 09:08:46 INFO [auth] login succeeded user=9964d5e1-fbe2-46c4-a251-d03a07bcb900 method=password
+2026-10-31 09:08:47 ERROR [api-gateway] GET /api/v1/cart -> 401 unauthorized req=req-7ec49eae
+2026-10-31 09:08:49 ERROR [api-gateway] GET /api/v1/orders -> 401 unauthorized req=req-d1f2661d
+2026-10-31 09:08:52 ERROR [api-gateway] GET /api/v1/cart -> 401 unauthorized req=req-3f39cbd6
+2026-10-31 09:08:53 ERROR [auth] failed to persist session 2fc1505c-49f3-4817-b17b-bba196786a8a: write failed, returning 500
+2026-10-31 09:08:54 ERROR [auth] failed to persist session 42e1d4f5-5b61-46e5-81c1-6a45876f8841: write failed, returning 500
+2026-10-31 09:08:55 ERROR [auth] failed to persist session 6cb127cd-2b89-4279-9a01-4957f3bbf9c4: write failed, returning 500
+2026-10-31 09:08:57 ERROR [auth] failed to persist session fac134f3-a609-435a-8f28-274e63490fc2: write failed, returning 500
+2026-10-31 09:08:58 ERROR [api-gateway] GET /api/v1/cart -> 401 unauthorized req=req-c5c041de
+2026-10-31 09:08:59 ERROR [auth] failed to persist session 555f1775-17af-44cc-9b53-35e75e5dd4b4: write failed, returning 500
+2026-10-31 09:09:00 ERROR [api-gateway] GET /api/v1/me -> 401 unauthorized req=req-a79e1506
+2026-10-31 09:09:02 ERROR [api-gateway] GET /api/v1/cart -> 401 unauthorized req=req-2ef33ec0
+2026-10-31 09:09:04 ERROR [auth] failed to persist session 2014ba6a-723d-4ba2-a344-805fcdb2d0bc: write failed, returning 500
+2026-10-31 09:09:05 ERROR [api-gateway] GET /api/v1/me -> 401 unauthorized req=req-850936a9
+2026-10-31 09:09:08 ERROR [auth] failed to persist session 20a9b50c-ae6f-41f7-b361-aa57206d18d0: write failed, returning 500
+2026-10-31 09:09:10 ERROR [api-gateway] GET /api/v1/cart -> 401 unauthorized req=req-e4ae00fe
+2026-10-31 09:09:12 ERROR [api-gateway] GET /api/v1/me -> 401 unauthorized req=req-d2b406f9
+2026-10-31 09:09:12 ERROR [api-gateway] GET /api/v1/me -> 401 unauthorized req=req-806c512f
+2026-10-31 09:09:14 ERROR [api-gateway] GET /api/v1/me -> 401 unauthorized req=req-b7ccf76b
+2026-10-31 09:09:16 ERROR [api-gateway] GET /api/v1/orders -> 401 unauthorized req=req-206e82ff
+2026-10-31 09:09:17 ERROR [redis] OOM command not allowed when used memory > 'maxmemory'
+2026-10-31 09:09:17 ERROR [api-gateway] GET /api/v1/orders -> 401 unauthorized req=req-b86625f4
+2026-10-31 09:09:19 INFO [auth] login succeeded user=2c6e04f9-f09f-44c1-888a-2f44e00a6e6c method=password
+2026-10-31 09:09:20 ERROR [api-gateway] GET /api/v1/cart -> 401 unauthorized req=req-2bd8f8a5
+2026-10-31 09:09:22 ERROR [api-gateway] GET /api/v1/cart -> 401 unauthorized req=req-b2187413
+2026-10-31 09:09:24 ERROR [cart] could not save cart for session b8cd2242-e7d8-4bfe-bc2b-da5258d7175b, request aborted
+2026-10-31 09:09:27 ERROR [auth] failed to persist session 268b8a6a-1893-4c70-a6f3-c1e8f0255979: write failed, returning 500
+2026-10-31 09:09:27 ERROR [api-gateway] GET /api/v1/me -> 401 unauthorized req=req-1e19dafc
+2026-10-31 09:09:28 ERROR [auth] failed to persist session 3ad6f911-23ef-43e1-ad72-c79a7321bd83: write failed, returning 500
+2026-10-31 09:09:30 ERROR [cart] could not save cart for session e0cb62a1-68db-4fb7-9687-b6abac375366, request aborted
+2026-10-31 09:09:32 ERROR [api-gateway] GET /api/v1/orders -> 401 unauthorized req=req-fedb7add
+2026-10-31 09:09:32 ERROR [cart] could not save cart for session e5aabe30-5522-4d6c-92df-90d445157951, request aborted
+2026-10-31 09:09:35 ERROR [cart] could not save cart for session 87e1d521-3d70-455c-afe6-3d6e887c7cf6, request aborted
+2026-10-31 09:09:36 ERROR [api-gateway] GET /api/v1/orders -> 401 unauthorized req=req-4550e9af
+2026-10-31 09:09:37 ERROR [api-gateway] GET /api/v1/cart -> 401 unauthorized req=req-5a621065
+2026-10-31 09:09:37 ERROR [cart] could not save cart for session 433dbfcb-43a6-431b-8c48-bd96529c43a1, request aborted
+2026-10-31 09:09:39 ERROR [cart] could not save cart for session b1496a32-ab47-4702-89d9-8251226895b7, request aborted
+2026-10-31 09:09:41 ERROR [auth] failed to persist session d56ea35b-6e97-4009-9088-905ea1ff5889: write failed, returning 500
+2026-10-31 09:09:41 ERROR [auth] failed to persist session 36bc24ca-c3d6-4880-8af0-9d24482080f3: write failed, returning 500
+2026-10-31 09:09:43 ERROR [api-gateway] GET /api/v1/orders -> 401 unauthorized req=req-b336564c
+2026-10-31 09:09:45 ERROR [api-gateway] GET /api/v1/me -> 401 unauthorized req=req-eb8270d6
+2026-10-31 09:09:47 ERROR [redis] OOM command not allowed when used memory > 'maxmemory'
+2026-10-31 09:09:47 ERROR [cart] could not save cart for session 656789a7-255a-4361-b183-d1555612526b, request aborted
+2026-10-31 09:09:47 ERROR [auth] failed to persist session 5e55a838-ea5d-4a60-8ad2-dc2eb97aa43a: write failed, returning 500
+2026-10-31 09:09:49 ERROR [auth] failed to persist session 54e05848-7671-45b3-a017-0e351d989c77: write failed, returning 500
+2026-10-31 09:09:52 INFO [auth] login succeeded user=f99bb6e7-4983-40eb-b61a-bd156b044bb4 method=password
+2026-10-31 09:09:54 ERROR [auth] failed to persist session 5aaec301-cd5e-4667-8f9b-94d40c93adf4: write failed, returning 500
+2026-10-31 09:09:55 ERROR [cart] could not save cart for session 56598ffa-e244-4a48-933b-7d4abbaac72e, request aborted
+2026-10-31 09:09:56 ERROR [api-gateway] GET /api/v1/cart -> 401 unauthorized req=req-6ca13281
+2026-10-31 09:09:56 ERROR [api-gateway] GET /api/v1/orders -> 401 unauthorized req=req-2ef8bf62
+2026-10-31 09:09:58 ERROR [api-gateway] GET /api/v1/cart -> 401 unauthorized req=req-0c055668
+2026-10-31 09:10:00 ERROR [auth] failed to persist session 40317aa2-a7b4-49f3-b79b-6bc6e300276a: write failed, returning 500
+2026-10-31 09:10:02 ERROR [auth] failed to persist session 84d96946-d15f-4cab-84ce-932281951d1b: write failed, returning 500
+2026-10-31 09:10:04 ERROR [api-gateway] GET /api/v1/orders -> 401 unauthorized req=req-a1a248c4
+2026-10-31 09:10:06 ERROR [auth] failed to persist session 59f333e4-adc7-4b49-8a9d-4a8ff1d3bab8: write failed, returning 500
+2026-10-31 09:10:07 INFO [auth] login succeeded user=18cc0dd7-18fd-4ed6-83ba-cfe37c269045 method=password
+2026-10-31 09:10:08 ERROR [auth] failed to persist session 7c4b14b6-aafa-4f4d-9a27-f6b23adb02b0: write failed, returning 500
+2026-10-31 09:10:09 ERROR [api-gateway] GET /api/v1/orders -> 401 unauthorized req=req-4cd82886
+2026-10-31 09:10:11 ERROR [auth] failed to persist session 775d6f2e-c217-47d7-ad55-0e3f7d98a956: write failed, returning 500
+2026-10-31 09:10:13 ERROR [auth] failed to persist session 2caa9d06-7b73-4bf1-b166-dd2b2b1d9c05: write failed, returning 500
+2026-10-31 09:10:15 ERROR [api-gateway] GET /api/v1/cart -> 401 unauthorized req=req-e454b958
+2026-10-31 09:10:15 ERROR [api-gateway] GET /api/v1/orders -> 401 unauthorized req=req-23dd06c3
+2026-10-31 09:10:18 ERROR [redis] OOM command not allowed when used memory > 'maxmemory'
+2026-10-31 09:10:18 ERROR [api-gateway] GET /api/v1/cart -> 401 unauthorized req=req-7eaa3318
+2026-10-31 09:10:20 INFO [auth] login succeeded user=b6874f90-a0f4-4ea5-906c-7a1f25d4ec05 method=password
+2026-10-31 09:10:20 ERROR [api-gateway] GET /api/v1/orders -> 401 unauthorized req=req-5601af95
+2026-10-31 09:10:22 ERROR [auth] failed to persist session a86d7aae-df4d-4a99-a97f-1e55118be071: write failed, returning 500
+2026-10-31 09:10:22 ERROR [api-gateway] GET /api/v1/orders -> 401 unauthorized req=req-62aa1c34
+2026-10-31 09:10:23 ERROR [auth] failed to persist session a7a54306-0f90-4318-a128-9243ef12e1f8: write failed, returning 500
+2026-10-31 09:10:24 ERROR [cart] could not save cart for session 4e383768-49b0-4a0b-809d-57c8661f6954, request aborted
+2026-10-31 09:10:25 ERROR [api-gateway] GET /api/v1/cart -> 401 unauthorized req=req-4e535ea8
+2026-10-31 09:10:26 INFO [auth] login succeeded user=e9509a1b-158c-4c50-8328-f9f2dad57df9 method=password
+2026-10-31 09:10:28 ERROR [api-gateway] GET /api/v1/orders -> 401 unauthorized req=req-2e7831e5
+2026-10-31 09:10:29 INFO [auth] login succeeded user=01eb147e-1bb6-461e-90a1-143fdd87c059 method=password
+2026-10-31 09:10:30 ERROR [cart] could not save cart for session 8e8d5ac9-e85b-4375-94ef-871070b519f3, request aborted
+2026-10-31 09:10:32 ERROR [api-gateway] GET /api/v1/me -> 401 unauthorized req=req-65f53ac9
+2026-10-31 09:10:34 INFO [auth] login succeeded user=79ce01d1-fadb-4f36-8757-e5ddf450f8cb method=password
+2026-10-31 09:10:36 ERROR [api-gateway] GET /api/v1/orders -> 401 unauthorized req=req-7206f682

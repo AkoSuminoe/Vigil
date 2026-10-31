@@ -40,9 +40,24 @@ class Log:
     def client_ip(self) -> str:
         return f"203.0.113.{self.rng.randint(2, 254)}"
 
-    def write(self, name: str) -> None:
-        (OUT_DIR / name).write_text("\n".join(self.lines) + "\n", encoding="utf-8")
-        print(f"{name}: {len(self.lines)} lines")
+    def write(self, name: str, out_dir: Path = OUT_DIR) -> None:
+        out_dir.mkdir(parents=True, exist_ok=True)
+        (out_dir / name).write_text("\n".join(self.lines) + "\n", encoding="utf-8")
+        print(f"{out_dir.name}/{name}: {len(self.lines)} lines")
+
+    def noise(self, n: int, services: list[str]) -> None:
+        """Healthy background traffic."""
+        r = self.rng
+        for _ in range(n):
+            self.tick(1, 6)
+            svc = r.choice(services)
+            roll = r.random()
+            if roll < 0.7:
+                self.emit("INFO", svc, f"GET /api/v1/{r.choice(['items', 'cart', 'me', 'orders'])} -> 200 ({r.randint(8, 160)}ms) req={self.req()}")
+            elif roll < 0.85:
+                self.emit("DEBUG", svc, f"gc pause {r.randint(2, 40)}ms heap={r.randint(200, 900)}MB")
+            else:
+                self.emit("WARNING", svc, f"slow handler {r.randint(800, 1500)}ms for GET /api/v1/items")
 
 
 def payments_incident() -> None:
@@ -189,8 +204,91 @@ def batch_worker() -> None:
     log.write("batch_worker.log")
 
 
+# --- Eval scenarios: a known root cause that is outnumbered by its symptoms. ---
+# The answers live in evals/answers/<name>.json.
+
+EVAL_DIR = Path(__file__).resolve().parent.parent / "evals" / "logs"
+
+
+def eval_dns_outage() -> None:
+    """CoreDNS loses its upstreams; every service sees generic timeouts and 503s."""
+    log = Log(seed=101, start="2026-10-31 14:00:00")
+    r = log.rng
+    services = ["api-gateway", "orders", "inventory", "search"]
+    log.noise(120, services)
+    log.emit("WARNING", "coredns", "plugin/forward: upstream 10.0.0.2:53 slow to respond (2100ms)")
+    for i in range(110):
+        log.tick(0.4, 3)
+        if i % 18 == 0:
+            log.emit("ERROR", "coredns", "plugin/forward: no healthy upstreams for zone svc.cluster.local.")
+        roll = r.random()
+        if roll < 0.40:
+            log.emit("ERROR", "api-gateway", f"GET /api/v1/{r.choice(['items', 'search', 'orders'])} -> 503 upstream connect error ({r.randint(3000, 3100)}ms) req={log.req()}")
+        elif roll < 0.65:
+            log.emit("ERROR", "orders", f"call to inventory timed out after 3000ms order=ord_{r.randint(10000, 99999)}")
+        elif roll < 0.85:
+            log.emit("ERROR", "search", f"index refresh failed: request to elastic timed out after {r.randint(5000, 5100)}ms")
+        else:
+            log.emit("INFO", r.choice(services), f"GET /api/v1/me -> 200 ({r.randint(8, 60)}ms) req={log.req()}")
+    log.noise(30, services)
+    log.write("dns_outage.log", EVAL_DIR)
+
+
+def eval_expired_internal_cert() -> None:
+    """cert-manager fails to renew the internal mTLS cert; then every internal call fails TLS."""
+    log = Log(seed=202, start="2026-10-31 23:30:00")
+    r = log.rng
+    services = ["api-gateway", "checkout", "accounts"]
+    log.noise(90, services)
+    log.emit("WARNING", "cert-manager", "certificate internal-mtls expires in 25m, renewal pending")
+    for _ in range(3):
+        log.tick(30, 90)
+        log.emit("ERROR", "cert-manager", "failed to renew certificate internal-mtls: ACME order failed: 429 rateLimited, retry in 3600s")
+        log.noise(8, services)
+    for _ in range(120):
+        log.tick(0.3, 2.5)
+        roll = r.random()
+        if roll < 0.45:
+            log.emit("ERROR", "api-gateway", f"POST /api/v1/{r.choice(['checkout', 'login', 'cart'])} -> 502 bad gateway req={log.req()}")
+        elif roll < 0.75:
+            log.emit("ERROR", "checkout", f"rpc to accounts.internal:8443 failed: tls handshake error, connection reset (attempt {r.randint(1, 3)}/3)")
+        elif roll < 0.92:
+            log.emit("ERROR", "accounts", f"rejected client connection from {log.client_ip()}: remote error: tls: bad certificate")
+        else:
+            log.emit("INFO", "api-gateway", f"GET /healthz -> 200 ({r.randint(1, 5)}ms)")
+    log.write("expired_internal_cert.log", EVAL_DIR)
+
+
+def eval_redis_maxmemory() -> None:
+    """Redis hits maxmemory with noeviction; session writes fail and users get logged out."""
+    log = Log(seed=303, start="2026-10-31 09:00:00")
+    r = log.rng
+    services = ["api-gateway", "auth", "cart"]
+    log.noise(100, services)
+    for used in (88, 93, 97):
+        log.tick(20, 60)
+        log.emit("WARNING", "redis", f"used_memory at {used}% of maxmemory (policy=noeviction)")
+    for i in range(115):
+        log.tick(0.3, 2.5)
+        if i % 20 == 0:
+            log.emit("ERROR", "redis", "OOM command not allowed when used memory > 'maxmemory'")
+        roll = r.random()
+        if roll < 0.40:
+            log.emit("ERROR", "api-gateway", f"GET /api/v1/{r.choice(['cart', 'me', 'orders'])} -> 401 unauthorized req={log.req()}")
+        elif roll < 0.70:
+            log.emit("ERROR", "auth", f"failed to persist session {log.uid()}: write failed, returning 500")
+        elif roll < 0.88:
+            log.emit("ERROR", "cart", f"could not save cart for session {log.uid()}, request aborted")
+        else:
+            log.emit("INFO", "auth", f"login succeeded user={log.uid()} method=password")
+    log.write("redis_maxmemory.log", EVAL_DIR)
+
+
 if __name__ == "__main__":
     OUT_DIR.mkdir(exist_ok=True)
     payments_incident()
     auth_service()
     batch_worker()
+    eval_dns_outage()
+    eval_expired_internal_cert()
+    eval_redis_maxmemory()
