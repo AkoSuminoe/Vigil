@@ -6,10 +6,15 @@
 [![Google ADK](https://img.shields.io/badge/Google%20ADK-2.13-4285F4?logo=google&logoColor=white)](https://google.github.io/adk-docs/)
 [![Gemini](https://img.shields.io/badge/Gemini-flash-8E75B2?logo=googlegemini&logoColor=white)](https://ai.google.dev/)
 [![FastAPI](https://img.shields.io/badge/FastAPI-009688?logo=fastapi&logoColor=white)](https://fastapi.tiangolo.com/)
-[![Tests](https://img.shields.io/badge/tests-76%20passing-2ea44f)](#results)
+[![Tests](https://github.com/AkoSuminoe/Vigil/actions/workflows/tests.yml/badge.svg)](https://github.com/AkoSuminoe/Vigil/actions/workflows/tests.yml)
 [![License: MIT](https://img.shields.io/badge/license-MIT-blue)](LICENSE)
 
-**Live demo:** https://vigil.berktan.dev
+> **Built solo during the [GDG London](https://gdg.community.dev/gdg-london/) Agentic Hackathon (AI DevCamp 2026) on 31 October 2026.**
+> Everything in this repository was built that day: the agent, the guardrails, the web app, the evals and
+> the tests. The [commit history](https://github.com/AkoSuminoe/Vigil/commits/main) runs from 09:34 to the
+> final submission.
+
+**Live demo:** https://vigil.berktan.dev · **Repo:** https://github.com/AkoSuminoe/Vigil
 
 ![vigil demo: pick a sample, analyze, baseline vs Vigil rank, finding cards](docs/assets/demo.gif)
 
@@ -88,7 +93,9 @@ Baseline #1 was the root cause: 0/3
 ```
 
 Each case takes about 28–32 s and 10–21k tokens. The suite has **76 tests**, covering parsing,
-ranking, validation, verification, pipeline guardrails and the web API; none of them needs an API key.
+ranking, validation, verification, pipeline guardrails and the web API. They need no API key.
+[GitHub Actions](https://github.com/AkoSuminoe/Vigil/actions/workflows/tests.yml) runs them on
+Python 3.11 and 3.13 on every push.
 
 ## Screenshots
 
@@ -177,12 +184,12 @@ trailing `\r`.
 - A canonical, timezone-aware timestamp per entry, for logs that mix formats.
 - Multi-line entries, so stack traces attach to the line that raised them.
 - More formats: syslog, nginx/Apache access logs, logfmt.
-- CI running the tests on every push, plus a nightly eval run.
+- A nightly real-model eval run in CI, next to the unit tests.
 - Streaming progress in the UI while the agent works.
 
 ---
 
-Built solo at the GDG London Agentic Hackathon (AI DevCamp 2026), 31 Oct 2026.
+**Built solo at the GDG London Agentic Hackathon (AI DevCamp 2026), 31 Oct 2026.**
 
 ## Acknowledgements
 
