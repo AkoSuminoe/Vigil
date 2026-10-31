@@ -43,6 +43,53 @@ def test_parse_line_normalises_level_aliases_and_rejects_garbage():
     assert parse_line("    at com.example.Foo.bar(Foo.java:12)") is None
 
 
+SLOG_LINE = (
+    '{"time":"2024-06-07T22:23:18.5130148+05:00","level":"ERROR","msg":"request failed",'
+    '"component":"middleware/logger","request_id":"LAPTOP-TN2607IT/oFXwmM7Ri6-000001",'
+    '"remote_addr":"127.0.0.1:64609","user_agent":"Mozilla/5.0","err":"dial tcp 10.0.0.5:5432: connection refused"}'
+)
+
+
+def test_parse_json_line_slog_style():
+    entry = parse_line(SLOG_LINE, 7)
+    assert entry["timestamp"] == "2024-06-07T22:23:18.5130148+05:00"
+    assert entry["level"] == "ERROR"
+    assert entry["service"] == "middleware/logger"
+    assert entry["message"] == "request failed | error: dial tcp 10.0.0.5:5432: connection refused"
+    # Request ids, client address and user agent stay out of the message (grouping + privacy).
+    assert "Mozilla" not in entry["message"] and "64609" not in entry["message"]
+    assert entry["raw"] == SLOG_LINE and entry["line_no"] == 7
+
+
+def test_parse_json_line_pino_numeric_level_and_epoch_ms():
+    entry = parse_line('{"level":50,"time":1793442902000,"msg":"db down","app":"api"}')
+    assert entry["level"] == "ERROR"
+    assert entry["timestamp"] == "2026-10-31 10:35:02"
+    assert entry["service"] == "api"
+    assert parse_line('{"level":60,"time":1793442902,"msg":"x"}')["level"] == "CRITICAL"
+
+
+def test_parse_json_line_rejects_incomplete_or_non_object_records():
+    assert parse_line('{"time":"2024-06-07T22:23:18","level":"INFO"}') is None  # no msg
+    assert parse_line('{"time":"2024-06-07T22:23:18","msg":"x"}') is None  # no level
+    assert parse_line("{not json") is None
+    assert parse_line('{"time":"2024-06-07T22:23:18","level":true,"msg":"x"}') is None
+
+
+def test_parse_plain_line_without_service():
+    entry = parse_line("2024-06-08 10:00:00 - ERROR: Database connection failed")
+    assert (entry["level"], entry["service"], entry["message"]) == ("ERROR", "app", "Database connection failed")
+    assert parse_line("2024-06-08 10:00:00 WARN disk almost full")["level"] == "WARNING"
+    assert parse_line("2024-06-08 10:00:00 - BANANA: x") is None
+    assert parse_line("2024-06-08 10:00:00 Starting up") is None
+
+
+def test_more_level_aliases():
+    expected = {"PANIC": "CRITICAL", "alert": "CRITICAL", "EMERG": "CRITICAL", "Severe": "ERROR", "NOTICE": "INFO", "TRACE": "DEBUG"}
+    for alias, level in expected.items():
+        assert parse_line(f"2026-10-31 10:00:00 {alias} [svc] x")["level"] == level
+
+
 def test_parse_log_text_keeps_real_line_numbers():
     entries, unparsed = parse_log_text(
         "2026-10-31 10:00:00 INFO [api] started\n"
@@ -94,6 +141,25 @@ def test_normalise_message_strips_volatile_tokens():
     )
     assert a == b
     assert "<IP>" in a and "<UUID>" in a and "<ID>" in a
+
+
+def test_normalise_emails_and_random_base62_ids():
+    assert normalise_message("password reset failed for alice.smith+test@example.co.uk") == "password reset failed for <EMAIL>"
+    assert normalise_message("req LAPTOP-TN2607IT/oFXwmM7Ri6-000001 done") == "req <ID>/<ID>-<N> done"
+    # Ordinary words with digits are not ids.
+    assert normalise_message("sha256sum utf8mb4 HikariPool-1 x86_64") == "sha<N>sum utf<N>mb<N> HikariPool-<N> x<N>_<N>"
+
+
+def test_json_lines_group_across_request_ids():
+    lines = [SLOG_LINE.replace("oFXwmM7Ri6-000001", rid).replace("64609", port) for rid, port in [
+        ("oFXwmM7Ri6-000001", "64609"),
+        ("Qz8pLk2NvB-000002", "51123"),
+        ("aB3dE5fG7h-000143", "60001"),
+    ]]
+    entries, unparsed = parse_log_text("\n".join(lines))
+    groups = analyse_entries(entries)
+    assert unparsed == 0
+    assert [(g["service"], g["count"]) for g in groups] == [("middleware/logger", 3)]
 
 
 def test_groups_cluster_by_service_and_normalised_message():

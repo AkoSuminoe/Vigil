@@ -8,8 +8,9 @@ markdown report under ``reports/``.
 
 from __future__ import annotations
 
+import json
 import re
-from datetime import datetime
+from datetime import datetime, timezone
 from pathlib import Path
 from typing import Any
 
@@ -33,29 +34,61 @@ STATE_GROUPS = "vigil_groups"
 # temp: state lives for one invocation, so the cap applies per user turn.
 STATE_TOOL_CALLS = "temp:vigil_tool_calls"
 
+_TIMESTAMP = r"\d{4}-\d{2}-\d{2}[ T]\d{2}:\d{2}:\d{2}(?:[.,]\d+)?(?:Z|[+-]\d{2}:?\d{2})?"
+
 # "2026-10-31 10:15:02 ERROR [payments] message"
 # Also tolerates a 'T' separator, fractional seconds and a trailing timezone.
 LINE_RE = re.compile(
-    r"^(?P<timestamp>\d{4}-\d{2}-\d{2}[ T]\d{2}:\d{2}:\d{2}(?:[.,]\d+)?(?:Z|[+-]\d{2}:?\d{2})?)"
+    rf"^(?P<timestamp>{_TIMESTAMP})"
     r"\s+(?P<level>[A-Za-z]+)"
     r"\s+\[(?P<service>[^\]]+)\]"
     r"\s*(?P<message>.*)$"
 )
+# No service: "2024-06-08 10:00:00 - ERROR: message" or "2024-06-08 10:00:00 ERROR message".
+PLAIN_LINE_RE = re.compile(rf"^(?P<timestamp>{_TIMESTAMP})\s+(?:-\s+)?(?P<level>[A-Za-z]+):?\s+(?:-\s+)?(?P<message>.*)$")
+DEFAULT_SERVICE = "app"
 
 LEVEL_ALIASES = {
     "WARN": "WARNING",
     "ERR": "ERROR",
+    "SEVERE": "ERROR",
     "FATAL": "CRITICAL",
     "CRIT": "CRITICAL",
+    "PANIC": "CRITICAL",
+    "ALERT": "CRITICAL",
+    "EMERG": "CRITICAL",
+    "EMERGENCY": "CRITICAL",
+    "NOTICE": "INFO",
+    "TRACE": "DEBUG",
 }
+# pino-style numeric levels.
+NUMERIC_LEVELS = {10: "DEBUG", 20: "DEBUG", 30: "INFO", 40: "WARNING", 50: "ERROR", 60: "CRITICAL"}
 LEVEL_RANK = {"DEBUG": 0, "INFO": 1, "WARNING": 2, "ERROR": 3, "CRITICAL": 4}
 ISSUE_LEVELS = {"WARNING", "ERROR", "CRITICAL"}
+
+# JSON-lines field names, first match wins. Other fields (request ids, user agents,
+# client addresses...) are deliberately left out of the message: they would split
+# every request into its own group and send personal data to the model.
+JSON_TIME_KEYS = ("time", "timestamp", "ts", "@timestamp")
+JSON_LEVEL_KEYS = ("level", "lvl", "severity", "levelname")
+JSON_MESSAGE_KEYS = ("msg", "message", "event")
+JSON_SERVICE_KEYS = ("service", "component", "logger", "app")
+JSON_ERROR_KEYS = ("error", "err")
+
+SUPPORTED_FORMATS = (
+    "'2026-10-31 10:15:02 ERROR [service] message', "
+    "'2026-10-31 10:15:02 - ERROR: message', "
+    "or JSON lines with time/level/msg fields"
+)
 
 # Order matters: the most specific patterns run first so a UUID is not eaten
 # by the hex rule and an IP:port is not split into numbers.
 _NORMALISERS: list[tuple[re.Pattern[str], str]] = [
+    (re.compile(r"\b[\w.+-]+@[\w-]+(?:\.[\w-]+)+\b"), "<EMAIL>"),
     (re.compile(r"\b[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}\b"), "<UUID>"),
     (re.compile(r"\b(?:\d{1,3}\.){3}\d{1,3}(?::\d{1,5})?\b"), "<IP>"),
+    # Random base62 ids (mixed case + digit), e.g. "oFXwmM7Ri6"; leaves sha256sum, utf8mb4 alone.
+    (re.compile(r"\b(?=[A-Za-z0-9]*\d)(?=[A-Za-z0-9]*[a-z])(?=[A-Za-z0-9]*[A-Z])[A-Za-z0-9]{8,}\b"), "<ID>"),
     (re.compile(r"\b[A-Za-z]+[-_](?=[A-Za-z0-9]*\d)[A-Za-z0-9]{4,}\b"), "<ID>"),
     (re.compile(r"\b0x[0-9a-fA-F]+\b"), "<HEX>"),
     (re.compile(r"\b(?=[0-9a-fA-F]*\d)[0-9a-fA-F]{8,}\b"), "<HEX>"),
@@ -72,21 +105,77 @@ def normalise_message(message: str) -> str:
     return _WHITESPACE.sub(" ", text).strip()
 
 
-def parse_line(line: str, line_no: int = 0) -> dict[str, Any] | None:
-    """Parse one log line into {timestamp, level, service, message}, or None if it doesn't match."""
-    match = LINE_RE.match(line.rstrip("\r\n"))
-    if not match:
+def _normalise_level(level: Any) -> str | None:
+    if isinstance(level, bool):
         return None
-    level = match["level"].upper()
-    level = LEVEL_ALIASES.get(level, level)
+    if isinstance(level, (int, float)):
+        return NUMERIC_LEVELS.get(int(level))
+    if not isinstance(level, str) or not level.strip():
+        return None
+    upper = level.strip().upper()
+    return LEVEL_ALIASES.get(upper, upper)
+
+
+def _entry(timestamp: str, level: str, service: str, message: str, line_no: int, raw: str) -> dict[str, Any]:
     return {
-        "timestamp": match["timestamp"],
+        "timestamp": timestamp,
         "level": level,
-        "service": match["service"].strip(),
-        "message": match["message"].strip(),
+        "service": service.strip() or DEFAULT_SERVICE,
+        "message": message.strip(),
         "line_no": line_no,
-        "raw": line.rstrip("\r\n"),
+        "raw": raw,
     }
+
+
+def _first(record: dict[str, Any], keys: tuple[str, ...]) -> Any:
+    return next((record[k] for k in keys if record.get(k) not in (None, "")), None)
+
+
+def parse_json_line(line: str, line_no: int = 0) -> dict[str, Any] | None:
+    """Parse a JSON-lines record (slog, pino, structlog...) or return None."""
+    raw = line.rstrip("\r\n")
+    try:
+        record = json.loads(raw)
+    except ValueError:
+        return None
+    if not isinstance(record, dict):
+        return None
+
+    timestamp, level, message = (
+        _first(record, JSON_TIME_KEYS),
+        _normalise_level(_first(record, JSON_LEVEL_KEYS)),
+        _first(record, JSON_MESSAGE_KEYS),
+    )
+    if isinstance(timestamp, (int, float)) and not isinstance(timestamp, bool):
+        seconds = timestamp / 1000 if timestamp > 1e11 else timestamp  # epoch ms or s
+        try:
+            timestamp = datetime.fromtimestamp(seconds, tz=timezone.utc).strftime("%Y-%m-%d %H:%M:%S")
+        except (OverflowError, OSError, ValueError):
+            return None
+    if not isinstance(timestamp, str) or not level or not isinstance(message, str):
+        return None
+
+    error = _first(record, JSON_ERROR_KEYS)
+    if isinstance(error, str):
+        message = f"{message} | error: {error}"
+    service = _first(record, JSON_SERVICE_KEYS)
+    return _entry(timestamp, level, service if isinstance(service, str) else DEFAULT_SERVICE, message, line_no, raw)
+
+
+def parse_line(line: str, line_no: int = 0) -> dict[str, Any] | None:
+    """Parse one log line into {timestamp, level, service, message}, or None if it doesn't match.
+
+    Tries "TS LEVEL [service] msg", then JSON lines, then "TS [-] LEVEL[:] msg".
+    """
+    raw = line.rstrip("\r\n")
+    if match := LINE_RE.match(raw):
+        return _entry(match["timestamp"], _normalise_level(match["level"]), match["service"], match["message"], line_no, raw)
+    if raw.lstrip().startswith("{"):
+        return parse_json_line(raw, line_no)
+    if (match := PLAIN_LINE_RE.match(raw)) and (level := _normalise_level(match["level"])) in LEVEL_RANK:
+        # Only known levels, so "2026-10-31 10:00:00 Starting up" isn't read as level "STARTING".
+        return _entry(match["timestamp"], level, DEFAULT_SERVICE, match["message"], line_no, raw)
+    return None
 
 
 def parse_log_text(text: str) -> tuple[list[dict[str, Any]], int]:

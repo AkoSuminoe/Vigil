@@ -25,6 +25,12 @@ def test_recency_handles_midpoint_and_bad_input():
     assert recency_factor(END, None, None) == 1.0
 
 
+def test_recency_handles_long_fractions_and_offsets():
+    # slog/.NET style: 7 fractional digits plus a UTC offset.
+    start, end = "2024-06-07T22:23:00.8730050+05:00", "2024-06-07T22:24:00.8730050+05:00"
+    assert recency_factor("2024-06-07T22:23:30.8730050+05:00", start, end) == 0.75
+
+
 def test_recent_issue_outranks_one_that_stopped():
     stopped = group("old", "ERROR", 10, last_seen=START)  # 5 * 10 * 0.5 = 25
     ongoing = group("new", "ERROR", 6)  # 5 * 6 * 1.0 = 30
