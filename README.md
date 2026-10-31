@@ -25,7 +25,7 @@ log text ─► parse + group + baseline rank (Python, deterministic)
 
 | Piece | File | Notes |
 | --- | --- | --- |
-| Parsing and grouping | [vigil/tools.py](vigil/tools.py) | `2026-10-31 10:15:02 ERROR [payments] message`; numbers, UUIDs, IPs, hex and request ids are normalised away, then lines are clustered by service + message. Each group keeps every line number it covers. |
+| Parsing and grouping | [vigil/tools.py](vigil/tools.py) | See [Supported log formats](#supported-log-formats). Numbers, UUIDs, IPs, emails, hex and request ids are normalised away, then lines are clustered by service + message. Each group keeps every line number it covers. |
 | Baseline ranker | [vigil/ranking.py](vigil/ranking.py) | `score = weight(CRITICAL 10, ERROR 5, WARNING 1) × count × recency`. Recency is 0.5 to 1.0 depending on how close to the end of the log the issue was last seen. |
 | Agent | [vigil/agent.py](vigil/agent.py) | Two modes. `root_agent` (interactive) is for `adk web`/`adk run`. Pipeline mode gets the log pre-loaded into session state: no tool reads a path or writes anything, and the answer must match the `AgentOutput` schema. |
 | Output contract | [vigil/schema.py](vigil/schema.py) | The ranking must be a permutation of the groups; one finding per group; a move with a reason for every group that changed position. Wrong position numbers are corrected and reported as warnings. |
@@ -36,6 +36,29 @@ log text ─► parse + group + baseline rank (Python, deterministic)
 
 Only the top 15 baseline groups are sent to the model; any others keep their baseline
 position.
+
+## Supported log formats
+
+| Format | Example |
+| --- | --- |
+| Text with service | `2026-10-31 10:15:02 ERROR [payments] connection refused` |
+| Text without service (service becomes `app`) | `2026-10-31 10:15:02 - ERROR: connection refused` or `2026-10-31 10:15:02 WARN disk 91% full` |
+| JSON lines (slog, pino, structlog...) | `{"time":"2026-10-31T10:15:02.123+03:00","level":"error","msg":"query failed","component":"db","err":"timeout"}` |
+
+Parsing details:
+- **Timestamps:** a `T` separator, fractional seconds and a timezone suffix all work.
+- **Level aliases:** `WARN`, `ERR`, `SEVERE`, `FATAL`, `CRIT`, `PANIC`, `ALERT`, `EMERG`, `NOTICE`, `TRACE`,
+  and pino's numeric levels (10–60) are mapped to DEBUG / INFO / WARNING / ERROR / CRITICAL.
+- **JSON fields:**
+  - timestamp: `time`, `timestamp`, `ts` or `@timestamp` (ISO string or epoch s/ms)
+  - level: `level`, `lvl`, `severity` or `levelname`
+  - message: `msg`, `message` or `event`
+  - service: `service`, `component`, `logger` or `app`
+- **Fields left out:** only an `error`/`err` string is appended to the message. Other fields (request ids,
+  client addresses, user agents) are left out on purpose: they would split every request into its own group
+  and send personal data to the model.
+- **Unmatched lines:** lines that match no format (stack trace frames, for example) are counted as unparsed.
+  If nothing in the file parses, vigil reports an unsupported format instead of an all-clear.
 
 ## Setup
 
@@ -174,3 +197,7 @@ Point the Cloudflare Tunnel at Caddy. Notes:
   Cloudflare.
 - **Single worker:** the rate limiter and concurrency cap live in memory, so run a single worker.
 - **Tuning:** adjust `RATE_LIMIT`, `RATE_WINDOW_S` and `MAX_CONCURRENT_ANALYSES` in `.env`.
+
+## Acknowledgements
+
+Some parsing ideas adapted from [silvermete0r/logs_analyzer_script_py](https://github.com/silvermete0r/logs_analyzer_script_py).
