@@ -1,0 +1,17 @@
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+.pytest_cache/
+
+# Secrets
+.env
+vigil/.env
+
+# ADK local state
+.adk/
+
+# Generated incident reports
+reports/*
+!reports/.gitkeep
