@@ -1,87 +1,143 @@
 # vigil
 
-A read-only log triage agent built on [Google ADK](https://adk.dev/). Point it at a
-server log and it will:
+A read-only log triage agent built on [Google ADK](https://adk.dev/) and Gemini.
+Give it a server log and it will:
 
-1. parse every line into `{timestamp, level, service, message}`,
-2. group errors and warnings that are the same underlying issue,
-3. rank each group as **critical / high / low** with a one-line justification,
-4. suggest a likely cause and fix for each (as text only),
-5. save a short markdown incident report to `reports/<timestamp>.md`.
+1. parse every line and group errors and warnings that are the same underlying issue,
+2. rank the groups with a deterministic **baseline** (level weight × count × recency),
+3. have the agent **re-rank** them with context (service dependencies, cascades, root
+   cause vs symptom), giving a one-line reason for every group it moved,
+4. give each group a severity, likely cause, suggested fix (text only), confidence and
+   **cited log line numbers**,
+5. **verify** every cited line in Python, flag what needs a human, and produce a markdown report.
 
-vigil never runs commands or changes anything. The only file it writes is the report.
+vigil never runs commands or changes anything. In the CLI and `adk web` the only thing it
+writes is the report under `reports/`; the web app writes nothing at all.
 
 ## How it works
 
-Parsing and grouping are deterministic Python ([vigil/tools.py](vigil/tools.py)); the
-LLM only does the reasoning and writing.
-
-| Tool | What it does |
-| --- | --- |
-| `read_logs(path)` | Parses the log, keeps the entries in session state, returns a summary (counts per level and service, time range, unparsed lines). The raw log never goes to the model. |
-| `group_errors()` | Normalises WARNING+ messages (strips numbers, UUIDs, IPs, hex and request ids) and clusters them by service + normalised message. Returns count, first/last seen and up to 3 sample lines per group. |
-| `write_report(report_markdown)` | Saves the report to `reports/<timestamp>.md`. vigil chooses the file name, not the model. |
-
-Supported line format (a `T` separator, fractional seconds, a timezone suffix and
-`WARN`/`FATAL` aliases also work):
-
 ```
-2026-10-31 10:15:02 ERROR [payments] message
+log text ─► parse + group + baseline rank (Python, deterministic)
+         ─► agent (Gemini via ADK Runner): get_log_summary, get_groups ─► JSON answer
+         ─► validate against a Pydantic schema (1 retry) ─► verify cited lines
+         ─► review flags + metrics + markdown report
 ```
 
-Lines that don't match (stack trace frames, for example) are counted as unparsed.
+| Piece | File | Notes |
+| --- | --- | --- |
+| Parsing and grouping | [vigil/tools.py](vigil/tools.py) | `2026-10-31 10:15:02 ERROR [payments] message`; numbers, UUIDs, IPs, hex and request ids are normalised away, then lines are clustered by service + message. Each group keeps every line number it covers. |
+| Baseline ranker | [vigil/ranking.py](vigil/ranking.py) | `score = weight(CRITICAL 10, ERROR 5, WARNING 1) × count × recency`. Recency is 0.5 to 1.0 depending on how close to the end of the log the issue was last seen. |
+| Agent | [vigil/agent.py](vigil/agent.py) | Two modes. `root_agent` (interactive) is for `adk web`/`adk run`. Pipeline mode gets the log pre-loaded into session state: no tool reads a path or writes anything, and the answer must match the `AgentOutput` schema. |
+| Output contract | [vigil/schema.py](vigil/schema.py) | The ranking must be a permutation of the groups; one finding per group; a move with a reason for every group that changed position. Wrong position numbers are corrected and reported as warnings. |
+| Verifier | [vigil/verify.py](vigil/verify.py) | A cited line must exist and belong to the finding's group, otherwise the finding is marked `unverified` with reasons. It is never dropped. |
+| Guardrails | [vigil/pipeline.py](vigil/pipeline.py) | One retry on invalid output, then a clear error. `RunConfig(max_llm_calls=10)`, a tool-call cap (`before_tool_callback`, 6 per turn, plus a hard stop at 8) and an overall timeout (`VIGIL_TIMEOUT_S`, default 120 s). |
+| Escalation | [vigil/schema.py](vigil/schema.py) | Computed in Python: `needs_human_review = severity == "critical" or confidence < 0.6`. |
+| Metrics | [vigil/pipeline.py](vigil/pipeline.py) | Latency, attempts, LLM calls, tool calls and prompt/output/total tokens are included in every result, success or error. |
+
+Only the top 15 baseline groups are sent to the model; any others keep their baseline
+position.
 
 ## Setup
 
-Requires Python 3.10+ and a Gemini API key from [Google AI Studio](https://aistudio.google.com/apikey).
+Requires Python 3.11+ and a Gemini API key from [Google AI Studio](https://aistudio.google.com/apikey).
 
 ```bash
 python -m venv .venv
 # Windows: .venv\Scripts\activate    macOS/Linux: source .venv/bin/activate
 pip install -r requirements.txt
-
-cp .env.example .env    # then put your key in GOOGLE_API_KEY
+cp .env.example .env    # put your key in GOOGLE_API_KEY
 ```
 
-`.env` settings:
+Save `.env` as UTF-8. On Windows PowerShell 5.1, `echo ... > .env` writes UTF-16, which
+python-dotenv can't read.
 
-| Variable | Purpose |
-| --- | --- |
-| `GOOGLE_GENAI_USE_VERTEXAI` | Keep `FALSE` to use the Gemini API rather than Vertex AI. |
-| `GOOGLE_API_KEY` | Your Gemini API key. |
-| `VIGIL_MODEL` | Gemini model name (default `gemini-flash-latest`). |
+If the app reports that the Gemini API **rejected** the key (`API_KEY_SERVICE_BLOCKED`), the
+key isn't allowed to call the Generative Language API. Create one in AI Studio, or in Google
+Cloud Console → Credentials, add *Generative Language API* to that key's API restrictions.
 
 ## Run
 
-From the project root (the folder that contains `vigil/`):
+**Web app**
 
 ```bash
-adk web            # open http://127.0.0.1:8000 and pick "vigil"
-adk web --port 8765 .   # if port 8000 is already taken
-adk run vigil      # terminal chat instead of the browser UI
+uvicorn app.main:app --host 127.0.0.1 --port 8100
 ```
 
-Then ask, for example:
+Open http://127.0.0.1:8100, pick a sample (or upload a `.log`/`.txt` up to 2 MB) and click
+**Analyze**. The page shows:
+- the baseline and Vigil rankings side by side, with the moves and their reasons,
+- finding cards with the cited lines and verified / needs-review badges,
+- a metrics strip and a report download.
 
-> Triage sample_logs/payments_incident.log
+API:
 
-Relative paths resolve against the project root. When the agent finishes, it replies
-with the path of the report it saved under `reports/`.
+| Endpoint | Purpose |
+| --- | --- |
+| `GET /api/samples` | List the sample logs. |
+| `POST /api/analyze` | Multipart form with `file` (upload) **or** `sample` (a sample name). Returns the full result as JSON: 200 on success, 413 too large, 400 bad input, 429 rate limited, 502/503/504 when the model step fails (the body still includes the baseline). |
+| `GET /healthz` | Liveness check. |
+
+Uploads are read with a hard 2 MB cap and processed in memory; nothing is written to disk.
+The API key stays on the server.
+
+**CLI**
+
+```bash
+python -m vigil sample_logs/payments_incident.log          # prints the markdown report
+python -m vigil sample_logs/payments_incident.log --save   # also saves reports/<timestamp>.md
+python -m vigil some.log --json                            # full result as JSON
+```
+
+**ADK dev UI**
+
+```bash
+adk web              # http://127.0.0.1:8000, pick "vigil"; use --port 8765 if 8000 is taken
+adk run vigil
+```
+
+Ask, for example: *Triage sample_logs/payments_incident.log*.
+
+## Evals
+
+[evals/](evals/) has three synthetic incidents, each with a known root cause in
+`evals/answers/<name>.json`:
+
+| Case | Root cause | Baseline #1 (a symptom) |
+| --- | --- | --- |
+| `dns_outage` | CoreDNS has no healthy upstreams | orders → inventory timeouts |
+| `expired_internal_cert` | cert-manager failed to renew the internal mTLS cert | checkout TLS handshake errors |
+| `redis_maxmemory` | Redis hit maxmemory (noeviction) | auth session write failures |
+
+The logs are built so symptoms outnumber the cause: the baseline ranks the real root cause
+6th in every case, so a pass means the re-rank found it.
+
+```bash
+python -m evals.run                     # all cases
+python -m evals.run --case dns_outage   # one case
+```
+
+Output ends with, for example:
+
+```
+Root cause found: 3/3
+Baseline #1 was the root cause: 0/3
+```
+
+The evals call the real model, so they need `GOOGLE_API_KEY`.
 
 ## Sample logs
 
-[sample_logs/](sample_logs/) holds three fake logs (no real personal data; IPs are
-private or documentation ranges):
+[sample_logs/](sample_logs/) holds the demo logs. All three are fake: IPs come from
+private or documentation ranges and the ids are random.
 
-- `payments_incident.log`: a slow reconciliation query exhausts the payments DB
-  connection pool, causing cascading 503s/500s in orders and the API gateway (the
-  critical issue), plus unrelated broker blips and noise.
-- `auth_service.log`: a Redis failover window, SMTP relay throttling, failed logins,
-  rate limiting and an expiring TLS certificate.
-- `batch_worker.log`: a disk filling up until jobs fail with ENOSPC, slow uploads and
-  a recurring reporting exception with a traceback.
+- `payments_incident.log`: a slow reconciliation query exhausts the payments DB pool, and
+  orders and the API gateway fail in a cascade. Counting alone puts the gateway's 500s first;
+  the agent should move the pool exhaustion and the slow query above them.
+- `auth_service.log`: a Redis failover window, SMTP throttling, failed logins and an expiring cert.
+- `batch_worker.log`: a disk filling up until jobs fail with ENOSPC, plus a recurring traceback.
 
-Regenerate them (seeded, so the output is identical) with `python scripts/make_sample_logs.py`.
+Regenerate the sample and eval logs (seeded, so the output is identical) with
+`python scripts/make_sample_logs.py`.
 
 ## Tests
 
@@ -89,5 +145,32 @@ Regenerate them (seeded, so the output is identical) with `python scripts/make_s
 pytest
 ```
 
-The tests cover parsing, normalisation, grouping, determinism and report saving. They
-don't need an API key.
+The tests cover parsing, grouping, the baseline ranker, the output validator, the evidence
+verifier, the pipeline guardrails (using a scripted fake agent) and the web API. They don't
+need an API key.
+
+## Deploy (pm2 + Caddy + Cloudflare Tunnel)
+
+Run the app bound to localhost and let Caddy and the tunnel be the only way in:
+
+```bash
+# on the server, in the project directory, with .env in place (TRUST_PROXY=1)
+pm2 start .venv/bin/uvicorn --name vigil --interpreter none -- \
+  app.main:app --host 127.0.0.1 --port 8100 --workers 1
+pm2 save
+```
+
+```caddyfile
+vigil.example.com {
+    reverse_proxy 127.0.0.1:8100
+}
+```
+
+Point the Cloudflare Tunnel at Caddy. Notes:
+- **Real client IP:** with `TRUST_PROXY=1`, the rate limiter keys on `CF-Connecting-IP`, then the
+  first `X-Forwarded-For` entry. Without it, every request would look like `127.0.0.1` and share
+  one limit.
+- **Header spoofing:** keep uvicorn on `127.0.0.1` so those headers can't be forged by bypassing
+  Cloudflare.
+- **Single worker:** the rate limiter and concurrency cap live in memory, so run a single worker.
+- **Tuning:** adjust `RATE_LIMIT`, `RATE_WINDOW_S` and `MAX_CONCURRENT_ANALYSES` in `.env`.
